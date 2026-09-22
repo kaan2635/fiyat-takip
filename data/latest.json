@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-09-22T20:30:15+00:00",
+  "products": [
+    {
+      "id": "besafe-izi-turn-b-i-size",
+      "name": "BeSafe iZi Turn B i-Size",
+      "site": "trendyol.com",
+      "url": "https://www.trendyol.com/besafe/izi-turn-b-i-size-oto-koltugu-0-18-kg-anthracite-mesh-p-346523972",
+      "status": "ok",
+      "price": 43500.0,
+      "currency": "TRY",
+      "in_stock": true,
+      "lowest": 43500.0,
+      "highest": 43500.0,
+      "change_percent": null,
+      "points": 1,
+      "note": "chrome116"
+    }
+  ]
+}

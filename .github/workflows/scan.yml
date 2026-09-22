@@ -1,0 +1,179 @@
+name: Fiyat taramasi
+
+on:
+  schedule:
+    # UTC. 06:00/12:00/18:00 UTC = Turkiye saatiyle 09:00/15:00/21:00
+    - cron: "0 6,12,18 * * *"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Sadece bu urunler (bosluklla ayrilmis kimlikler; bos = hepsi)"
+        required: false
+        default: ""
+      browser:
+        description: "Gercek tarayici yedegini kur (yavas ama zor siteleri acar)"
+        type: boolean
+        required: false
+        default: false
+      notify:
+        description: "Telegram bildirimi gonder"
+        type: boolean
+        required: false
+        default: true
+      add_url:
+        description: "Eklenecek urun adresi (bos = ekleme yapma)"
+        required: false
+        default: ""
+      add_name:
+        description: "Eklenecek urunun adi (bos = sayfadan oku)"
+        required: false
+        default: ""
+      add_target:
+        description: "Eklenecek urunun hedef fiyati"
+        required: false
+        default: ""
+      add_mode:
+        description: "Eklenecek urun icin mod: http veya browser"
+        required: false
+        default: ""
+      remove_id:
+        description: "Takipten cikarilacak urun kimligi"
+        required: false
+        default: ""
+
+# Iki tarama ayni anda calisip ayni dosyalara commit atmasin
+concurrency:
+  group: fiyat-taramasi
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Bagimliliklari kur
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Tarayici gerekli mi
+        id: browser
+        env:
+          FORCE_BROWSER: ${{ inputs.browser }}
+          ADD_MODE: ${{ inputs.add_mode }}
+        run: |
+          # Elle istendiyse, eklenen urun browser istiyorsa ya da listede varsa kurariz
+          if [ "$FORCE_BROWSER" = "true" ] || [ "$ADD_MODE" = "browser" ] \
+             || grep -qE '^[[:space:]]*mode:[[:space:]]*browser' products.yaml 2>/dev/null; then
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Tarayiciyi kur
+        if: steps.browser.outputs.needed == 'true'
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Urun ekle
+        if: inputs.add_url != ''
+        env:
+          # Girdiler kabuga degil ortama gecer; komut enjeksiyonunu onler
+          ADD_URL: ${{ inputs.add_url }}
+          ADD_NAME: ${{ inputs.add_name }}
+          ADD_TARGET: ${{ inputs.add_target }}
+          ADD_MODE: ${{ inputs.add_mode }}
+        run: |
+          ARGS=()
+          [ -n "$ADD_NAME" ]   && ARGS+=(--name "$ADD_NAME")
+          [ -n "$ADD_TARGET" ] && ARGS+=(--target "$ADD_TARGET")
+          [ -n "$ADD_MODE" ]   && ARGS+=(--mode "$ADD_MODE")
+          # Zaten listede olan bir URL is akisini durdurmasin, uyari yeter
+          if ! python -m tracker add "$ADD_URL" "${ARGS[@]}"; then
+            echo "::warning::Urun eklenemedi (muhtemelen listede zaten var): $ADD_URL"
+          fi
+
+      - name: Urunu takipten cikar
+        if: inputs.remove_id != ''
+        env:
+          REMOVE_ID: ${{ inputs.remove_id }}
+        run: |
+          if ! python -m tracker remove "$REMOVE_ID"; then
+            echo "::warning::Urun bulunamadi: $REMOVE_ID"
+          fi
+
+      - name: Fiyatlari tara
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Girdiler kabuga degil, ortam degiskenine gecer (komut enjeksiyonunu onler)
+          ONLY: ${{ inputs.only }}
+          NOTIFY: ${{ inputs.notify }}
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: |
+          set -o noglob
+          ARGS=()
+          if [ -n "$ONLY" ]; then
+            ARGS+=(--only $ONLY)
+          fi
+          if [ "$NOTIFY" = "false" ]; then
+            ARGS+=(--no-notify)
+          fi
+          python -m tracker scan "${ARGS[@]}" --report-url "$PAGES_URL"
+
+      - name: Sonuclari depoya yaz
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/ products.yaml
+          if git diff --staged --quiet; then
+            echo "Degisiklik yok, commit atlaniyor."
+          else
+            git commit -m "Fiyat taramasi: $(date -u '+%Y-%m-%d %H:%M') UTC [skip ci]"
+            # Araya baska bir tarama girdiyse once onu al, sonra gonder
+            for i in 1 2 3; do
+              if git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+                exit 0
+              fi
+              echo "Push denemesi $i basarisiz, tekrar deneniyor..."
+              sleep $((i * 4))
+            done
+            echo "::error::Sonuclar depoya yazilamadi."
+            exit 1
+          fi
+
+      - name: Ozeti is akisina yaz
+        if: always()
+        run: |
+          echo "## Fiyat taramasi sonucu" >> "$GITHUB_STEP_SUMMARY"
+          if [ ! -f data/latest.json ]; then
+            echo "Sonuc dosyasi uretilemedi." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          d = json.load(open("data/latest.json"))
+          print(f"\nSon tarama: `{d['generated_at']}`\n")
+          print("| Urun | Site | Fiyat | Degisim | Durum |")
+          print("|---|---|--:|--:|---|")
+          for p in d["products"]:
+              # TR bicimi: binlik nokta, ondalik virgul (once takas, sonra yer degistir)
+              price = (f"{p['price']:,.2f}".replace(",", "\x00").replace(".", ",").replace("\x00", ".") + " TL"
+                       ) if p["price"] is not None else "—"
+              chg = f"{p['change_percent']:+.1f}%" if p["change_percent"] is not None else "—"
+              print(f"| {p['name'][:45]} | {p['site']} | {price} | {chg} | {p['status']} |")
+          PY

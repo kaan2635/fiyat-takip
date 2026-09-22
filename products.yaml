@@ -1,0 +1,28 @@
+settings:
+  drop_alert_percent: 5.0
+  notify_on_target: true
+  notify_on_back_in_stock: true
+  browser_fallback: true
+  min_delay_seconds: 2.0
+  timeout_seconds: 30
+products:
+- id: iphone-15-128-gb-siyah
+  name: iPhone 15 128 GB Siyah
+  url: https://www.trendyol.com/apple/iphone-15-128-gb-siyah-p-762254878
+  target_price: 50000.0
+- id: logitech-mx-master-4
+  name: Logitech MX Master 4
+  url: https://www.hepsiburada.com/logitech-mx-master-4-dokunsal-geri-bildirim-ozellikli-8000-dpi-optik-sensorlu-sessiz-kablosuz-bluetooth-mouse-koyu-gri-pm-HBC0000C4QAAX
+  target_price: 6000.0
+- id: philips-tah1205bk-kulaklik
+  name: Philips TAH1205BK Kulaklik
+  url: https://www.n11.com/urun/philips-tah1205bk00-bluetooth-kulak-ustu-kulaklik-67019198
+- id: amazon-magsafe-kilif
+  name: Amazon MagSafe Kilif
+  url: https://www.amazon.com.tr/dp/B0CHX3QBCH
+  mode: browser
+  note: Amazon duz HTTP isteklerini engelliyor; tarayici modu gerekiyor
+- id: besafe-izi-turn-b-i-size
+  name: BeSafe iZi Turn B i-Size
+  url: https://www.trendyol.com/besafe/izi-turn-b-i-size-oto-koltugu-0-18-kg-anthracite-mesh-p-346523972
+  target_price: 43500.0

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#2a78d6">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Fiyat Takip">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+
+<meta name="ft-generated" content="2026-09-22T20:30:15+00:00">
+<title>Fiyat Takip Raporu</title>
+<style>
+:root{color-scheme:light;
+ --surface-1:#fcfcfb; --plane:#f9f9f7;
+ --text-primary:#0b0b0b; --text-secondary:#52514e; --muted:#898781;
+ --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+ --series-1:#2a78d6; --series-1-soft:rgba(42,120,214,.13);
+ --good:#006300; --good-bg:rgba(12,163,12,.12);
+ --bad:#d03b3b;  --bad-bg:rgba(208,59,59,.12);
+ --warn:#ec835a;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+ --surface-1:#1a1a19; --plane:#0d0d0d;
+ --text-primary:#fff; --text-secondary:#c3c2b7; --muted:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --series-1:#3987e5; --series-1-soft:rgba(57,135,229,.18);
+ --good:#0ca30c; --good-bg:rgba(12,163,12,.16);
+ --bad:#e66767; --bad-bg:rgba(230,103,103,.16);
+}}
+:root[data-theme="dark"]{color-scheme:dark;
+ --surface-1:#1a1a19; --plane:#0d0d0d;
+ --text-primary:#fff; --text-secondary:#c3c2b7; --muted:#898781;
+ --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+ --series-1:#3987e5; --series-1-soft:rgba(57,135,229,.18);
+ --good:#0ca30c; --good-bg:rgba(12,163,12,.16);
+ --bad:#e66767; --bad-bg:rgba(230,103,103,.16);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--plane);color:var(--text-primary);
+ font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;
+ padding:32px 16px 64px}
+.wrap{max-width:980px;margin:0 auto}
+header h1{font-size:1.5rem;margin:0 0 4px}
+header p{margin:0;color:var(--text-secondary);font-size:.9rem}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+.tile{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.tile .k{font-size:.78rem;color:var(--text-secondary);text-transform:none;margin-bottom:6px}
+.tile .v{font-size:1.6rem;font-weight:650;letter-spacing:-.02em}
+.tile .v small{font-size:.85rem;font-weight:500;color:var(--text-secondary)}
+h2{font-size:1.05rem;margin:32px 0 12px;color:var(--text-secondary);font-weight:600}
+.card{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;
+ padding:16px 18px;margin-bottom:14px}
+.card-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;justify-content:space-between}
+.card-head h3{margin:0;font-size:1rem;font-weight:600;flex:1 1 320px;min-width:0}
+.card-head h3 a{color:inherit;text-decoration:none}
+.card-head h3 a:hover{text-decoration:underline}
+.price{font-size:1.45rem;font-weight:650;letter-spacing:-.02em;white-space:nowrap}
+.meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:8px;
+ font-size:.82rem;color:var(--text-secondary)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.78rem;font-weight:550;white-space:nowrap}
+.badge.good{background:var(--good-bg);color:var(--good)}
+.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.badge.neutral{background:var(--border);color:var(--text-secondary)}
+.chart-box{position:relative;margin-top:10px}
+svg.chart{width:100%;height:auto;display:block;overflow:visible}
+.grid{stroke:var(--grid);stroke-width:1}
+.target{stroke:var(--muted);stroke-width:1.5;stroke-dasharray:5 4}
+.area{fill:var(--series-1-soft);stroke:none}
+.line{fill:none;stroke:var(--series-1);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.dot{fill:var(--series-1);stroke:var(--surface-1);stroke-width:2}
+.dot.low{fill:var(--good)}
+.tick{fill:var(--muted);font-size:11px}
+.target-tick{font-size:10px}
+.low-label{fill:var(--good);font-weight:600}
+.value-label{fill:var(--text-primary);font-size:12.5px;font-weight:650}
+.hit{fill:transparent;cursor:crosshair}
+.crosshair{stroke:var(--baseline);stroke-width:1;stroke-dasharray:3 3}
+.hover-dot{fill:var(--series-1);stroke:var(--surface-1);stroke-width:2}
+.tip{position:absolute;pointer-events:none;background:var(--surface-1);color:var(--text-primary);
+ border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:.8rem;
+ box-shadow:0 4px 14px rgba(0,0,0,.14);opacity:0;transition:opacity .1s;white-space:nowrap;z-index:5}
+.empty{color:var(--muted);font-size:.85rem;margin:14px 0 4px}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;
+ border:1px solid var(--border);border-radius:12px;background:var(--surface-1)}
+table{width:100%;min-width:640px;border-collapse:collapse;font-size:.86rem;
+}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{color:var(--text-secondary);font-weight:600;font-size:.78rem}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:none}
+td a{color:var(--series-1);text-decoration:none}
+td:first-child{min-width:190px}
+td a:hover{text-decoration:underline}
+.fail{border-left:3px solid var(--warn)}
+footer{margin-top:36px;color:var(--muted);font-size:.78rem;text-align:center}
+@media (max-width:640px){body{padding:20px 12px 48px}.price{font-size:1.2rem}}
+
+/* --- uygulama kabugu --- */
+body{padding:0 0 calc(56px + env(safe-area-inset-bottom))}
+.wrap{padding:0 16px}
+.ft-bar{position:sticky;top:0;z-index:20;
+ padding:calc(10px + env(safe-area-inset-top)) 16px 10px;
+ background:var(--surface-1);border-bottom:1px solid var(--border);
+ backdrop-filter:saturate(180%) blur(12px)}
+.ft-bar-inner{display:flex;align-items:center;gap:8px;max-width:980px;margin:0 auto}
+.ft-bar .ft-title{font-weight:650;font-size:1rem;flex:1;letter-spacing:-.01em}
+.ft-sub{margin:16px 0 0;color:var(--text-secondary);font-size:.86rem}
+.ft-status,.ft-install{margin:14px 0 0}
+.ft-btn{appearance:none;border:1px solid var(--border);background:var(--plane);
+ color:var(--text-primary);border-radius:10px;min-width:40px;height:36px;padding:0 10px;
+ font-size:.95rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;
+ justify-content:center;gap:6px;-webkit-tap-highlight-color:transparent}
+.ft-btn:active{transform:scale(.97)}
+.ft-btn.primary{background:var(--series-1);border-color:var(--series-1);color:#fff}
+.ft-btn[disabled],body.ft-busy .ft-btn{opacity:.55;pointer-events:none}
+.ft-status{padding:9px 12px;border-radius:10px;font-size:.85rem;
+ background:var(--series-1-soft);color:var(--text-primary);border:1px solid var(--border)}
+.ft-status.ok{background:var(--good-bg);color:var(--good)}
+.ft-status.warn{background:var(--bad-bg);color:var(--bad)}
+.ft-install{padding:10px 12px;border-radius:10px;font-size:.83rem;
+ background:var(--series-1-soft);border:1px solid var(--border);display:flex;gap:10px;align-items:flex-start}
+.ft-install button{margin-left:auto;background:none;border:none;color:var(--text-secondary);
+ font-size:1.1rem;cursor:pointer;line-height:1;padding:0 2px}
+#ft-scrim{position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:40}
+.ft-sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--surface-1);
+ border-top-left-radius:18px;border-top-right-radius:18px;padding:18px 18px calc(22px + env(safe-area-inset-bottom));
+ box-shadow:0 -8px 30px rgba(0,0,0,.2);max-height:88vh;overflow-y:auto;
+ animation:ft-up .22s cubic-bezier(.22,.9,.3,1)}
+@keyframes ft-up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@media(min-width:620px){.ft-sheet{left:50%;right:auto;bottom:auto;top:50%;width:460px;
+ transform:translate(-50%,-50%);border-radius:16px;animation:none}}
+.ft-sheet h3{margin:0 0 4px;font-size:1.05rem}
+.ft-sheet p.hint{margin:0 0 14px;font-size:.82rem;color:var(--text-secondary);line-height:1.45}
+.ft-field{display:block;margin-bottom:12px}
+.ft-field span{display:block;font-size:.8rem;color:var(--text-secondary);margin-bottom:5px}
+.ft-field input[type=text],.ft-field input[type=url],.ft-field input[type=password],
+.ft-field input[type=number]{width:100%;padding:11px 12px;font-size:16px;
+ border:1px solid var(--border);border-radius:10px;background:var(--plane);
+ color:var(--text-primary);font-family:inherit}
+.ft-check{display:flex;align-items:center;gap:8px;font-size:.85rem;margin-bottom:14px}
+.ft-actions{display:flex;gap:8px;margin-top:6px}
+.ft-actions .ft-btn{flex:1;height:44px}
+.ft-msg{font-size:.82rem;margin:10px 0 0;color:var(--text-secondary)}
+.ft-msg.ok{color:var(--good)}
+.ft-msg.warn{color:var(--bad)}
+.ft-link{color:var(--series-1);text-decoration:none}
+.ft-remove{appearance:none;border:none;background:none;color:var(--text-secondary);
+ font-size:.78rem;cursor:pointer;padding:2px 6px;border-radius:6px;display:none}
+body.ft-configured .ft-remove{display:inline-block}
+.ft-remove:hover{background:var(--bad-bg);color:var(--bad)}
+@media(max-width:520px){
+ .tiles{grid-template-columns:repeat(2,1fr);gap:8px;margin:16px 0}
+ .tile{padding:10px 12px}
+ .tile .k{font-size:.72rem;margin-bottom:2px}
+ .tile .v{font-size:1.25rem}
+ .ft-sub{margin-top:12px;font-size:.82rem}
+}
+</style>
+</head>
+<body>
+
+<div class="ft-bar">
+  <div class="ft-bar-inner">
+    <span class="ft-title">Fiyat Takip</span>
+    <button class="ft-btn" id="ft-open-add" title="Urun ekle" aria-label="Urun ekle">＋</button>
+    <button class="ft-btn primary" id="ft-scan" title="Simdi tara">⟳ Tara</button>
+    <button class="ft-btn" id="ft-open-settings" title="Ayarlar" aria-label="Ayarlar">⚙</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="ft-status" id="ft-status" hidden></div>
+<div class="ft-install" id="ft-install" hidden>
+  <span>Ana ekrana eklemek icin: Paylas <strong>&#8593;</strong> &rarr; <strong>Ana Ekrana Ekle</strong>.
+  Uygulama gibi tam ekran acilir.</span>
+  <button id="ft-install-close" aria-label="Kapat">&times;</button>
+</div>
+<p class="ft-sub">Son tarama: 22.09.2026 20:30 · 1/1 urun basariyla okundu</p>
+
+<div class="tiles">
+<div class="tile"><div class="k">Takip edilen</div><div class="v">1</div></div>
+<div class="tile"><div class="k">Ucuzlayan</div><div class="v">0</div></div>
+<div class="tile"><div class="k">Rekor dusuk</div><div class="v">0</div></div>
+<div class="tile"><div class="k">Zirveden fark</div><div class="v">0 TL</div></div>
+</div>
+<h2>Urunler</h2>
+<article class="card">
+<div class="card-head">
+<h3><a href="https://www.trendyol.com/besafe/izi-turn-b-i-size-oto-koltugu-0-18-kg-anthracite-mesh-p-346523972" target="_blank" rel="noopener">BeSafe iZi Turn B i-Size</a></h3>
+<div class="price">43.500,00 TL</div>
+</div>
+<div class="meta">
+<span class="badge neutral">ilk olcum</span>
+<span class="badge good">✓ stokta</span>
+<span>trendyol.com</span>
+<span>hedef 43.500,00 TL</span>
+<span>1 olcum</span>
+<button class="ft-remove" data-ft-remove="besafe-izi-turn-b-i-size" data-ft-name="BeSafe iZi Turn B i-Size">sil</button>
+</div>
+<div class="chart-box">
+<p class="empty">Tek olcum var — grafik ikinci taramadan sonra olusur (43.500,00 TL).</p>
+</div></article>
+<h2>Tablo gorunumu</h2>
+<div class="table-wrap"><table><thead><tr>
+<th class="">Urun</th>
+<th class="">Site</th>
+<th class="num">Guncel</th>
+<th class="num">Degisim</th>
+<th class="num">En dusuk</th>
+<th class="num">En yuksek</th>
+<th class="">Stok</th>
+<th class="num">Olcum</th>
+</tr></thead><tbody>
+<tr><td><a href="https://www.trendyol.com/besafe/izi-turn-b-i-size-oto-koltugu-0-18-kg-anthracite-mesh-p-346523972" target="_blank" rel="noopener">BeSafe iZi Turn B i-Size</a></td><td>trendyol.com</td><td class="num">43.500,00 TL</td><td class="num">—</td><td class="num">43.500,00 TL</td><td class="num">43.500,00 TL</td><td>stokta</td><td class="num">1</td></tr>
+</tbody></table></div>
+<footer>Fiyatlar bilgi amaclidir; alisveristen once urun sayfasindan dogrulayin.<br>Bu rapor her taramada otomatik olarak yeniden uretilir.</footer>
+</div>
+
+<div id="ft-scrim" hidden></div>
+
+<section class="ft-sheet" id="ft-sheet-settings" hidden role="dialog" aria-label="Ayarlar">
+  <h3>Ayarlar</h3>
+  <p class="hint">Tarama GitHub Actions'ta calisir. Telefondan baslatabilmek icin
+  deponun adi ve bir erisim anahtari gerekiyor. Anahtar yalnizca bu telefonda saklanir,
+  sayfanin kodunda yer almaz.</p>
+  <form id="ft-settings-form">
+    <label class="ft-field"><span>Depo (kullanici/repo)</span>
+      <input type="text" id="ft-repo" placeholder="kullanici/fiyat-takip"
+             autocapitalize="off" autocorrect="off" spellcheck="false" required></label>
+    <label class="ft-field"><span>Erisim anahtari (fine-grained PAT)</span>
+      <input type="password" id="ft-token" placeholder="github_pat_..."
+             autocapitalize="off" autocorrect="off" spellcheck="false" required></label>
+    <label class="ft-field"><span>Is akisi dosyasi</span>
+      <input type="text" id="ft-wf" placeholder="scan.yml"
+             autocapitalize="off" autocorrect="off" spellcheck="false"></label>
+    <p class="hint">Anahtari <a class="ft-link" target="_blank" rel="noopener"
+      href="https://github.com/settings/personal-access-tokens/new">github.com/settings/personal-access-tokens</a>
+      adresinden olustur. Sadece bu depoyu sec ve tek yetki ver:
+      <strong>Actions: Read and write</strong>.</p>
+    <div class="ft-actions">
+      <button type="button" class="ft-btn" data-ft-close>Vazgec</button>
+      <button type="submit" class="ft-btn primary">Kaydet ve dene</button>
+    </div>
+    <p class="ft-msg" id="ft-settings-msg"></p>
+    <div class="ft-actions"><button type="button" class="ft-btn" id="ft-forget">Bu cihazdaki bilgileri sil</button></div>
+  </form>
+</section>
+
+<section class="ft-sheet" id="ft-sheet-add" hidden role="dialog" aria-label="Urun ekle">
+  <h3>Urun ekle</h3>
+  <p class="hint">Urun sayfasinin adresini yapistir. Isim bos birakilirsa sayfadan okunur.</p>
+  <form id="ft-add-form">
+    <label class="ft-field"><span>Urun adresi</span>
+      <input type="url" id="ft-add-url" placeholder="https://www.trendyol.com/..."
+             autocapitalize="off" autocorrect="off" spellcheck="false" required></label>
+    <label class="ft-field"><span>Isim (istege bagli)</span>
+      <input type="text" id="ft-add-name" placeholder="iPhone 15 128 GB"></label>
+    <label class="ft-field"><span>Hedef fiyat (istege bagli)</span>
+      <input type="number" id="ft-add-target" inputmode="decimal" step="0.01" placeholder="45000"></label>
+    <label class="ft-check"><input type="checkbox" id="ft-add-browser">
+      Tarayici modu (Amazon gibi zor siteler icin)</label>
+    <div class="ft-actions">
+      <button type="button" class="ft-btn" data-ft-close>Vazgec</button>
+      <button type="submit" class="ft-btn primary">Ekle ve tara</button>
+    </div>
+  </form>
+</section>
+
+<script>
+document.querySelectorAll('.chart-box').forEach(function(box){
+  var svg = box.querySelector('svg.chart');
+  var dataEl = box.querySelector('.chart-data');
+  if(!svg || !dataEl) return;
+  var data = JSON.parse(dataEl.textContent);
+  var tip = document.createElement('div');
+  tip.className = 'tip';
+  box.appendChild(tip);
+  var cross = svg.querySelector('.crosshair');
+  var dot = svg.querySelector('.hover-dot');
+
+  function show(rect){
+    var i = +rect.dataset.i, x = +rect.dataset.x, y = +rect.dataset.y;
+    var d = data[i]; if(!d) return;
+    cross.setAttribute('x1', x); cross.setAttribute('x2', x); cross.style.opacity = 1;
+    dot.setAttribute('cx', x); dot.setAttribute('cy', y); dot.style.opacity = 1;
+    tip.innerHTML = '<strong>' + d.p + '</strong><br>' + d.t;
+    // SVG koordinatini kutu icindeki piksele cevir
+    var box_w = box.clientWidth, vb = svg.viewBox.baseVal;
+    var px = x / vb.width * box_w, py = y / vb.height * svg.clientHeight;
+    tip.style.opacity = 1;
+    var tw = tip.offsetWidth;
+    tip.style.left = Math.max(0, Math.min(px - tw/2, box_w - tw)) + 'px';
+    tip.style.top = Math.max(0, py - tip.offsetHeight - 12) + 'px';
+  }
+  function hide(){ tip.style.opacity = 0; cross.style.opacity = 0; dot.style.opacity = 0; }
+
+  svg.querySelectorAll('.hit').forEach(function(r){
+    r.addEventListener('mouseenter', function(){ show(r); });
+    r.addEventListener('touchstart', function(e){ show(r); }, {passive:true});
+  });
+  svg.addEventListener('mouseleave', hide);
+});
+</script>
+<script src="app.js" defer></script>
+</body></html>

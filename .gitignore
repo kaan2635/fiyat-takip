@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+.pytest_cache/
+
+# Secrets / local configuration
+*.secret
+*.token
+secrets/
+.local/
+
+# macOS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
