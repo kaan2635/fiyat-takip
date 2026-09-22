@@ -256,11 +256,15 @@
       e.preventDefault();
       const url = $('#ft-add-url').value.trim();
       if (!url) return;
+      // Ayni alan hem urun adini hem adresi kabul ediyor; hangisi oldugunu
+      // sunucu tarafi (tracker add) kendisi anliyor.
       const inputs = { add_url: url, notify: 'true' };
       const name = $('#ft-add-name').value.trim();
       const target = $('#ft-add-target').value.trim();
+      const exclude = $('#ft-add-exclude').value.trim();
       if (name) inputs.add_name = name;
       if (target) inputs.add_target = target;
+      if (exclude) inputs.add_exclude = exclude;
       if ($('#ft-add-browser').checked) inputs.add_mode = 'browser';
       closeSheets();
       $('#ft-add-form').reset();
