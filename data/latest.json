@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T20:43:04+00:00",
+  "generated_at": "2026-09-22T21:50:09+00:00",
   "products": [
     {
       "id": "iphone-15-128-gb-siyah",
@@ -13,7 +13,7 @@
       "lowest": 56999.0,
       "highest": 56999.0,
       "change_percent": 0.0,
-      "points": 6,
+      "points": 7,
       "note": "chrome116"
     },
     {
@@ -27,8 +27,8 @@
       "in_stock": true,
       "lowest": 5699.0,
       "highest": 6417.35,
-      "change_percent": -11.19,
-      "points": 6,
+      "change_percent": 0.0,
+      "points": 7,
       "note": "chrome116"
     },
     {
@@ -43,7 +43,7 @@
       "lowest": 1168.0,
       "highest": 1168.0,
       "change_percent": 0.0,
-      "points": 6,
+      "points": 7,
       "note": "chrome116"
     },
     {
@@ -73,7 +73,7 @@
       "lowest": 43500.0,
       "highest": 43500.0,
       "change_percent": 0.0,
-      "points": 2,
+      "points": 3,
       "note": "chrome116"
     }
   ]
