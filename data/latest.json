@@ -1,6 +1,66 @@
 {
-  "generated_at": "2026-09-22T20:30:15+00:00",
+  "generated_at": "2026-09-22T20:43:04+00:00",
   "products": [
+    {
+      "id": "iphone-15-128-gb-siyah",
+      "name": "iPhone 15 128 GB Siyah",
+      "site": "trendyol.com",
+      "url": "https://www.trendyol.com/apple/iphone-15-128-gb-siyah-p-762254878",
+      "status": "ok",
+      "price": 56999.0,
+      "currency": "TRY",
+      "in_stock": true,
+      "lowest": 56999.0,
+      "highest": 56999.0,
+      "change_percent": 0.0,
+      "points": 6,
+      "note": "chrome116"
+    },
+    {
+      "id": "logitech-mx-master-4",
+      "name": "Logitech MX Master 4",
+      "site": "hepsiburada.com",
+      "url": "https://www.hepsiburada.com/logitech-mx-master-4-dokunsal-geri-bildirim-ozellikli-8000-dpi-optik-sensorlu-sessiz-kablosuz-bluetooth-mouse-koyu-gri-pm-HBC0000C4QAAX",
+      "status": "ok",
+      "price": 5699.0,
+      "currency": "TRY",
+      "in_stock": true,
+      "lowest": 5699.0,
+      "highest": 6417.35,
+      "change_percent": -11.19,
+      "points": 6,
+      "note": "chrome116"
+    },
+    {
+      "id": "philips-tah1205bk-kulaklik",
+      "name": "Philips TAH1205BK Kulaklik",
+      "site": "n11.com",
+      "url": "https://www.n11.com/urun/philips-tah1205bk00-bluetooth-kulak-ustu-kulaklik-67019198",
+      "status": "ok",
+      "price": 1168.0,
+      "currency": "TRY",
+      "in_stock": true,
+      "lowest": 1168.0,
+      "highest": 1168.0,
+      "change_percent": 0.0,
+      "points": 6,
+      "note": "chrome116"
+    },
+    {
+      "id": "amazon-magsafe-kilif",
+      "name": "Amazon MagSafe Kilif",
+      "site": "amazon.com.tr",
+      "url": "https://www.amazon.com.tr/dp/B0CHX3QBCH",
+      "status": "blocked",
+      "price": null,
+      "currency": "TRY",
+      "in_stock": null,
+      "lowest": null,
+      "highest": null,
+      "change_percent": null,
+      "points": 0,
+      "note": "sayfa cok kucuk (3871 bayt) - muhtemelen engel sayfasi"
+    },
     {
       "id": "besafe-izi-turn-b-i-size",
       "name": "BeSafe iZi Turn B i-Size",
@@ -12,8 +72,8 @@
       "in_stock": true,
       "lowest": 43500.0,
       "highest": 43500.0,
-      "change_percent": null,
-      "points": 1,
+      "change_percent": 0.0,
+      "points": 2,
       "note": "chrome116"
     }
   ]
