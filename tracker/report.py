@@ -266,6 +266,15 @@ svg.chart{width:100%;height:auto;display:block;overflow:visible}
  border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:.8rem;
  box-shadow:0 4px 14px rgba(0,0,0,.14);opacity:0;transition:opacity .1s;white-space:nowrap;z-index:5}
 .empty{color:var(--muted);font-size:.85rem;margin:14px 0 4px}
+.offers{margin-top:10px;font-size:.83rem}
+.offers summary{cursor:pointer;color:var(--text-secondary);padding:4px 0}
+.offers ul{list-style:none;margin:6px 0 0;padding:0}
+.offers li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;
+ padding:5px 0;border-top:1px solid var(--border)}
+.offers .o-price{font-weight:650;font-variant-numeric:tabular-nums;min-width:104px}
+.offers .o-site{color:var(--text-secondary);min-width:118px}
+.offers a{color:var(--series-1);text-decoration:none;flex:1 1 200px;min-width:0}
+.offers a:hover{text-decoration:underline}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;
  border:1px solid var(--border);border-radius:12px;background:var(--surface-1)}
 table{width:100%;min-width:640px;border-collapse:collapse;font-size:.86rem;
@@ -321,7 +330,8 @@ document.querySelectorAll('.chart-box').forEach(function(box){
 
 def build_html(rows: list[ScanRow], stats: dict[str, PriceStats],
                series: dict[str, list[dict]], products_by_id: dict,
-               generated_at: str, title: str = "Fiyat Takip Raporu") -> str:
+               generated_at: str, title: str = "Fiyat Takip Raporu",
+               offers: dict | None = None) -> str:
     ok_rows = [r for r in rows if r.ok]
     fail_rows = [r for r in rows if not r.ok]
 
@@ -388,6 +398,23 @@ def build_html(rows: list[ScanRow], stats: dict[str, PriceStats],
                    f'data-ft-name="{_esc(row.name)}">sil</button>')
         out.append("</div>")
 
+        # Arama urunu: hangi saticida bulundugu ve diger teklifler
+        product_offers = (offers or {}).get(row.product_id) or []
+        if product_offers:
+            out.append('<details class="offers">')
+            out.append(
+                f'<summary>{len(product_offers)} teklif bulundu · en ucuz '
+                f"<strong>{_esc(row.site)}</strong></summary>"
+            )
+            out.append("<ul>")
+            for o in product_offers[:10]:
+                out.append(
+                    f'<li><span class="o-price">{_esc(format_price(o.price, row.currency))}</span>'
+                    f'<span class="o-site">{_esc(o.site)}</span>'
+                    f'<a href="{_esc(o.url)}" target="_blank" rel="noopener">{_esc(o.title[:80])}</a></li>'
+                )
+            out.append("</ul></details>")
+
         out.append('<div class="chart-box">')
         out.append(_sparkline(points, row.currency, target))
         out.append("</div></article>")
@@ -446,10 +473,11 @@ def build_html(rows: list[ScanRow], stats: dict[str, PriceStats],
 
 
 def write_report(rows, stats, series, products_by_id, generated_at,
-                 path: Path = REPORT_PATH, title: str = "Fiyat Takip Raporu") -> Path:
+                 path: Path = REPORT_PATH, title: str = "Fiyat Takip Raporu",
+                 offers: dict | None = None) -> Path:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(build_html(rows, stats, series, products_by_id, generated_at, title),
+    path.write_text(build_html(rows, stats, series, products_by_id, generated_at, title, offers),
                     encoding="utf-8")
     # manifest.webmanifest / sw.js / app.js her raporla birlikte tazelenir
     pwa.write_assets(path.parent)

@@ -174,7 +174,7 @@ def all_stats(path: Path = HISTORY_PATH) -> dict[str, PriceStats]:
 
 
 def write_latest(rows: list[ScanRow], stats: dict[str, PriceStats],
-                 path: Path = LATEST_PATH) -> None:
+                 path: Path = LATEST_PATH, offers: dict | None = None) -> None:
     """Son durumun makine okunur ozetini yazar (baska araclar icin)."""
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {"generated_at": now_iso(), "products": []}
@@ -195,6 +195,11 @@ def write_latest(rows: list[ScanRow], stats: dict[str, PriceStats],
                 "change_percent": round(st.change_percent, 2) if st.change_percent is not None else None,
                 "points": st.points,
                 "note": row.note,
+                # Arama urunlerinde bulunan tum teklifler (ucuzdan pahaliya)
+                "offers": [
+                    {"site": o.site, "title": o.title, "price": float(o.price), "url": o.url}
+                    for o in (offers or {}).get(row.product_id, [])
+                ],
             }
         )
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

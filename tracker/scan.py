@@ -10,6 +10,7 @@ from . import browser as browser_mod
 from .config import Config, Product
 from .fetch import Fetcher
 from .parsers import parse_page
+from .search import MatchRules, Offer, search
 from .store import PriceStats, ScanRow, now_iso, series_by_product, stats_for
 
 log = logging.getLogger("tracker.scan")
@@ -35,6 +36,8 @@ class ScanReport:
     rows: list[ScanRow] = field(default_factory=list)
     alerts: list[Alert] = field(default_factory=list)
     stats: dict[str, PriceStats] = field(default_factory=dict)
+    # Arama urunlerinde bulunan tum teklifler (urun kimligi -> ucuzdan pahaliya)
+    offers: dict[str, list[Offer]] = field(default_factory=dict)
 
     @property
     def ok_rows(self) -> list[ScanRow]:
@@ -64,6 +67,47 @@ def sanity_check(price: Decimal, history: list[dict]) -> str | None:
     if price < med * SANITY_LOW or price > med * SANITY_HIGH:
         return f"supheli fiyat: {price} (gecmis medyan {med})"
     return None
+
+
+def rules_for(product: Product) -> MatchRules:
+    """Urunun eslestirme kurallarini hazirlar."""
+    return MatchRules(
+        must_include=list(product.must_include),
+        exclude=list(product.exclude),
+        min_price=product.min_price,
+        max_price=product.max_price,
+    )
+
+
+def scan_search_product(product: Product, fetcher: Fetcher, cfg: Config,
+                        history: list[dict]) -> tuple[ScanRow, list[Offer]]:
+    """Urun adini pazaryerlerinde arar ve en ucuz eslesen teklifi kaydeder."""
+    offers, notes = search(product.query, fetcher, product.sites, rules_for(product))
+
+    base = dict(
+        scanned_at=now_iso(), product_id=product.id,
+        name=product.name or product.query, site="arama",
+        url="", currency="TRY",
+    )
+    if not offers:
+        # Hicbir teklif eslesmediyse sessiz kalmak yerine sebebini yaziyoruz;
+        # kullanici sorguyu ya da kurallari buna bakarak duzeltebilsin.
+        return ScanRow(**base, price=None, in_stock=None, status="no_match",
+                       method="arama", note=("; ".join(notes) or "sonuc yok")[:200]), []
+
+    best = offers[0]
+    problem = sanity_check(best.price, history)
+
+    base.update(name=product.name or product.query, site=best.site, url=best.url,
+                currency=best.currency or "TRY")
+    row = ScanRow(
+        **base, price=best.price, in_stock=True,
+        status="suspicious" if problem else "ok",
+        method=f"arama/{best.site}",
+        # Hangi urunun eslestigi gorunsun ki yanlis eslesme fark edilebilsin
+        note=(problem + " | " if problem else "") + f"{len(offers)} teklif | {best.title}"[:200],
+    )
+    return row, offers
 
 
 def scan_product(product: Product, fetcher: Fetcher, cfg: Config,
@@ -194,7 +238,12 @@ def run_scan(cfg: Config, only: list[str] | None = None,
             past = series.get(product.id, [])
             previous_in_stock = past[-1].get("in_stock") if past else None
 
-            row, browser = scan_product(product, fetcher, cfg, past, browser)
+            if product.is_search:
+                row, offers = scan_search_product(product, fetcher, cfg, past)
+                if offers:
+                    report.offers[product.id] = offers
+            else:
+                row, browser = scan_product(product, fetcher, cfg, past, browser)
             report.rows.append(row)
 
             # Istatistikleri bu olcumu de dahil ederek hesapla

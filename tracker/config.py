@@ -41,27 +41,58 @@ def slugify(text: str, fallback: str = "urun") -> str:
 
 @dataclass
 class Product:
+    """Takip edilen bir urun.
+
+    Iki sekilde tanimlanir:
+      - `url`   : belirli bir satici sayfasi izlenir
+      - `query` : urun adi pazaryerlerinde aranir, en ucuz teklif izlenir
+    """
     id: str
-    url: str
+    url: str = ""
+    query: str = ""                 # url yerine: aranacak urun adi
     name: str = ""
     target_price: Decimal | None = None
     mode: str = "http"              # "http" | "browser"
     selector: str | None = None     # siteye ozel CSS secici (istege bagli)
     enabled: bool = True
     note: str = ""
+    # Arama urunleri icin eslestirme kurallari
+    sites: list[str] | None = None          # None = varsayilan kaynaklar
+    must_include: list[str] = field(default_factory=list)
+    exclude: list[str] = field(default_factory=list)
+    min_price: Decimal | None = None
+    max_price: Decimal | None = None
+
+    @property
+    def is_search(self) -> bool:
+        return bool(self.query)
 
     @property
     def site(self) -> str:
-        return site_of(self.url)
+        return site_of(self.url) if self.url else "arama"
 
     def to_dict(self) -> dict:
-        data = {"id": self.id, "name": self.name, "url": self.url}
+        data = {"id": self.id, "name": self.name}
+        if self.query:
+            data["query"] = self.query
+        if self.url:
+            data["url"] = self.url
         if self.target_price is not None:
             data["target_price"] = float(self.target_price)
         if self.mode != "http":
             data["mode"] = self.mode
         if self.selector:
             data["selector"] = self.selector
+        if self.sites:
+            data["sites"] = list(self.sites)
+        if self.must_include:
+            data["must_include"] = list(self.must_include)
+        if self.exclude:
+            data["exclude"] = list(self.exclude)
+        if self.min_price is not None:
+            data["min_price"] = float(self.min_price)
+        if self.max_price is not None:
+            data["max_price"] = float(self.max_price)
         if not self.enabled:
             data["enabled"] = False
         if self.note:
@@ -85,26 +116,41 @@ class Config:
         raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         settings = {**DEFAULT_SETTINGS, **(raw.get("settings") or {})}
 
+        def _dec(value):
+            return Decimal(str(value)) if value not in (None, "") else None
+
+        def _list(value):
+            if not value:
+                return []
+            return [str(v) for v in (value if isinstance(value, list) else [value])]
+
         products: list[Product] = []
         for entry in raw.get("products") or []:
-            if isinstance(entry, str):          # sadece URL yazilmis olabilir
-                entry = {"url": entry}
+            if isinstance(entry, str):
+                # Duz yazilmis satir: URL gibi duruyorsa url, degilse arama sorgusu
+                entry = {"url": entry} if entry.strip().startswith("http") else {"query": entry}
             url = (entry.get("url") or "").strip()
-            if not url:
+            query = (entry.get("query") or "").strip()
+            if not url and not query:
                 continue
             name = entry.get("name") or ""
-            pid = entry.get("id") or slugify(name or url)
-            target = entry.get("target_price")
+            pid = entry.get("id") or slugify(name or query or url)
             products.append(
                 Product(
                     id=str(pid),
                     url=url,
+                    query=query,
                     name=name,
-                    target_price=Decimal(str(target)) if target not in (None, "") else None,
+                    target_price=_dec(entry.get("target_price")),
                     mode=(entry.get("mode") or "http").lower(),
                     selector=entry.get("selector"),
                     enabled=entry.get("enabled", True),
                     note=entry.get("note", ""),
+                    sites=_list(entry.get("sites")) or None,
+                    must_include=_list(entry.get("must_include")),
+                    exclude=_list(entry.get("exclude")),
+                    min_price=_dec(entry.get("min_price")),
+                    max_price=_dec(entry.get("max_price")),
                 )
             )
         return cls(settings=settings, products=products, path=path)
@@ -127,10 +173,10 @@ class Config:
     def find(self, needle: str) -> Product | None:
         needle = needle.strip().lower()
         for p in self.products:
-            if p.id.lower() == needle or p.url.lower() == needle:
+            if needle in (p.id.lower(), p.url.lower(), p.query.lower()):
                 return p
         for p in self.products:           # kismi isim eslesmesi
-            if needle in p.name.lower() or needle in p.id.lower():
+            if needle in p.name.lower() or needle in p.id.lower() or needle in p.query.lower():
                 return p
         return None
 

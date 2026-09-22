@@ -3,6 +3,7 @@
 from decimal import Decimal
 
 import pytest
+from bs4 import BeautifulSoup
 
 from tracker.config import Config, Product, slugify
 from tracker.fetch import cookies_for, detect_block, host_of
@@ -343,3 +344,114 @@ def test_rapor_pwa_kabugunu_icerir(tmp_path):
     assert 'id="ft-sheet-settings"' in html       # ayarlar panosu
     assert 'meta name="ft-generated"' in html     # yayin damgasi
     assert (tmp_path / "app.js").exists()         # varliklar yaninda uretildi
+
+
+# --------------------------------------------------------------- urun arama
+from tracker.search import (MatchRules, Offer, match_reason, normalize,  # noqa: E402
+                            parse_hepsiburada, parse_trendyol, query_tokens, token_hit)
+
+
+def test_normalize_turkce_harfleri_katlar():
+    assert normalize("BeSafe iZi Turn B i-Size") == "besafe izi turn b i size"
+    assert normalize("Oto Koltuğu ÇÖĞÜŞ") == "oto koltugu cogus"
+    # Buyuk I ve noktali İ ayni forma inmeli, yoksa "i-Size" eslesmez
+    assert normalize("İZİ") == normalize("IZI") == "izi"
+
+
+def test_query_tokens_rakamlari_korur():
+    # Tek harfler gurultu, tek haneli rakam model numarasi olabilir
+    assert query_tokens("BeSafe iZi Turn B i-Size") == ["besafe", "izi", "turn", "size"]
+    assert query_tokens("Logitech MX Master 4") == ["logitech", "mx", "master", "4"]
+
+
+@pytest.mark.parametrize("token,title,beklenen", [
+    # "4" aranirken "8000" icindeki 4'e takilmamali
+    ("4", "logitech mx master 3s performans 8000 dpi", False),
+    ("4", "logitech mx master 4 dokunsal 8000 dpi", True),
+    # Turkce unsuz yumusamasi
+    ("koltuk", "besafe izi turn b i size oto koltugu", True),
+    ("kitap", "psikoloji kitabi seti", True),
+    ("15", "apple iphone 16 156 gb", False),
+    ("master", "logitech mx master 4", True),
+])
+def test_token_hit_kelime_sinirina_bakar(token, title, beklenen):
+    assert token_hit(token, set(title.split())) is beklenen
+
+
+def _offer(title, price="1000", site="trendyol.com"):
+    return Offer(site=site, title=title, price=Decimal(price), url="https://x/y")
+
+
+def test_eslestirme_yanlis_modeli_reddeder():
+    q = "Logitech MX Master 4"
+    assert match_reason(q, _offer("Logitech MX Master 4 Kablosuz Mouse"), MatchRules()) is None
+    red = match_reason(q, _offer("Logitech MX Master 3S Bluetooth"), MatchRules())
+    assert red is not None and "4" in red
+
+
+def test_eslestirme_kurallari():
+    q = "iPhone 15 128 GB"
+    kural = MatchRules(exclude=["kılıf"], min_price=Decimal("10000"), max_price=Decimal("90000"))
+    assert match_reason(q, _offer("Apple iPhone 15 128 GB Siyah", "56999"), kural) is None
+    assert "dislanan" in match_reason(q, _offer("iPhone 15 128 GB Kılıf", "250"), kural)
+    assert "alt sinirin" in match_reason(q, _offer("Apple iPhone 15 128 GB", "500"), kural)
+    assert "ust sinirin" in match_reason(q, _offer("Apple iPhone 15 128 GB", "150000"), kural)
+
+    zorunlu = MatchRules(must_include=["anthracite"])
+    assert "zorunlu" in match_reason("BeSafe iZi Turn", _offer("BeSafe iZi Turn Mesh"), zorunlu)
+
+
+def test_trendyol_arama_ayristirma():
+    # Trendyol markayi ayri alanda tutuyor; baslikla birlestirilmezse
+    # "besafe" kelimesi bulunamaz ve dogru urun elenir
+    html = ('{"products":[{"brand":"Besafe","name":"Izi Turn B I-Size Oto Koltugu",'
+            '"url":"/besafe/izi-turn-p-1","price":{"discountedPrice":43500,"currency":"TL"}}]}')
+    offers = parse_trendyol(html, BeautifulSoup("<html></html>", "lxml"))
+    assert len(offers) == 1
+    assert offers[0].price == Decimal("43500")
+    assert "besafe" in normalize(offers[0].title)
+    assert offers[0].url.startswith("https://www.trendyol.com/")
+
+
+def test_hepsiburada_arama_ayristirma():
+    # Fiyat "43.424" ve ",25" diye iki parcaya bolunmus; ayirici koyarsak kurus kaybolur
+    html = """
+    <ul><li class="productListContent-abc123">
+      <a href="/urun-p-HBC1"><h3 data-test-id="title-1">BeSafe Izi Turn B i-Size Oto Koltugu</h3></a>
+      <div class="price-module_finalPrice__x"><span>43.424</span><span>,25</span><span>TL</span></div>
+    </li></ul>"""
+    offers = parse_hepsiburada(html, BeautifulSoup(html, "lxml"))
+    assert len(offers) == 1
+    assert offers[0].price == Decimal("43424.25")
+    assert offers[0].url == "https://www.hepsiburada.com/urun-p-HBC1"
+
+
+def test_arama_urunu_taranir(monkeypatch):
+    """Arama urunu en ucuz eslesen teklifi kaydeder."""
+    from tracker import scan as scan_mod
+
+    sahte = [_offer("BeSafe iZi Turn B i-Size Oto Koltugu", "43424.25", "hepsiburada.com"),
+             _offer("BeSafe iZi Turn B i-Size Mesh", "43500", "trendyol.com")]
+    monkeypatch.setattr(scan_mod, "search", lambda *a, **k: (sahte, ["test"]))
+
+    p = Product(id="besafe", query="BeSafe iZi Turn B i-Size", name="Oto koltugu")
+    row, offers = scan_mod.scan_search_product(p, None, Config(), [])
+
+    assert row.status == "ok"
+    assert row.price == Decimal("43424.25")
+    assert row.site == "hepsiburada.com"          # en ucuz satici kaydedilir
+    assert "BeSafe" in row.note                   # eslesen baslik gorunur olmali
+    assert len(offers) == 2
+
+
+def test_arama_sonucsuzsa_sebep_yazilir(monkeypatch):
+    from tracker import scan as scan_mod
+
+    monkeypatch.setattr(scan_mod, "search", lambda *a, **k: ([], ["trendyol: 36 sonuc, 0 eslesti"]))
+    p = Product(id="x", query="bulunmayan urun")
+    row, offers = scan_mod.scan_search_product(p, None, Config(), [])
+
+    assert row.status == "no_match"
+    assert row.price is None
+    assert "0 eslesti" in row.note
+    assert offers == []

@@ -1,0 +1,22 @@
+Bu paket SADECE degisen dosyalari icerir.
+data/ ve docs/ bilerek disarida birakildi: fiyat gecmisini ezmemek icin.
+
+Uygulamak icin, fiyat-takip klasorunun icinde:
+
+  1) Bu klasorun icindekileri depo klasorune kopyala (uzerine yaz)
+  2) python -m pytest tests/ -q        # 62 test gecmeli
+  3) python -m tracker list            # tek urun: BeSafe, mod "arama"
+  4) git add -A && git commit -m "Urun adiyla fiyat arama" && git push
+
+Degisenler:
+  YENI  tracker/search.py           urun adiyla arama + eslestirme
+  tracker/config.py                 query/sites/exclude/min_price alanlari
+  tracker/scan.py                   arama urunlerini tarama
+  tracker/store.py                  latest.json'a teklif listesi
+  tracker/report.py                 raporda satici + diger teklifler
+  tracker/cli.py                    "add <urun adi>" ve "search" komutu
+  tracker/pwa.py                    telefonda urun adiyla ekleme formu
+  .github/workflows/scan.yml        add_exclude girdisi
+  tests/test_tracker.py             14 yeni test (toplam 62)
+  README.md                         "Urun adiyla takip" bolumu
+  products.yaml                     4 ornek urun silindi, BeSafe arama moduna gecti

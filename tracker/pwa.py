@@ -336,11 +336,15 @@ APP_JS = r"""
       e.preventDefault();
       const url = $('#ft-add-url').value.trim();
       if (!url) return;
+      // Ayni alan hem urun adini hem adresi kabul ediyor; hangisi oldugunu
+      // sunucu tarafi (tracker add) kendisi anliyor.
       const inputs = { add_url: url, notify: 'true' };
       const name = $('#ft-add-name').value.trim();
       const target = $('#ft-add-target').value.trim();
+      const exclude = $('#ft-add-exclude').value.trim();
       if (name) inputs.add_name = name;
       if (target) inputs.add_target = target;
+      if (exclude) inputs.add_exclude = exclude;
       if ($('#ft-add-browser').checked) inputs.add_mode = 'browser';
       closeSheets();
       $('#ft-add-form').reset();
@@ -524,17 +528,21 @@ def sheets() -> str:
 
 <section class="ft-sheet" id="ft-sheet-add" hidden role="dialog" aria-label="Urun ekle">
   <h3>Urun ekle</h3>
-  <p class="hint">Urun sayfasinin adresini yapistir. Isim bos birakilirsa sayfadan okunur.</p>
+  <p class="hint">Urun <strong>adini</strong> yaz &mdash; pazaryerlerinde aranir ve en ucuz
+  teklif takip edilir. Belirli bir saticiyi izlemek istersen onun yerine
+  <strong>adresini</strong> yapistir.</p>
   <form id="ft-add-form">
-    <label class="ft-field"><span>Urun adresi</span>
-      <input type="url" id="ft-add-url" placeholder="https://www.trendyol.com/..."
+    <label class="ft-field"><span>Urun adi veya adresi</span>
+      <input type="text" id="ft-add-url" placeholder="BeSafe iZi Turn B i-Size"
              autocapitalize="off" autocorrect="off" spellcheck="false" required></label>
-    <label class="ft-field"><span>Isim (istege bagli)</span>
-      <input type="text" id="ft-add-name" placeholder="iPhone 15 128 GB"></label>
+    <label class="ft-field"><span>Listede gorunecek isim (istege bagli)</span>
+      <input type="text" id="ft-add-name" placeholder="Oto koltugu"></label>
     <label class="ft-field"><span>Hedef fiyat (istege bagli)</span>
       <input type="number" id="ft-add-target" inputmode="decimal" step="0.01" placeholder="45000"></label>
+    <label class="ft-field"><span>Haric tut (virgulle ayir, istege bagli)</span>
+      <input type="text" id="ft-add-exclude" placeholder="kilif, aksesuar, yenilenmis"></label>
     <label class="ft-check"><input type="checkbox" id="ft-add-browser">
-      Tarayici modu (Amazon gibi zor siteler icin)</label>
+      Tarayici modu (yalnizca adres verdiysen, Amazon gibi zor siteler icin)</label>
     <div class="ft-actions">
       <button type="button" class="ft-btn" data-ft-close>Vazgec</button>
       <button type="submit" class="ft-btn primary">Ekle ve tara</button>

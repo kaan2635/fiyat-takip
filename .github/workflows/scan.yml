@@ -21,7 +21,7 @@ on:
         required: false
         default: true
       add_url:
-        description: "Eklenecek urun adresi (bos = ekleme yapma)"
+        description: "Eklenecek urun ADI veya adresi (bos = ekleme yapma)"
         required: false
         default: ""
       add_name:
@@ -34,6 +34,10 @@ on:
         default: ""
       add_mode:
         description: "Eklenecek urun icin mod: http veya browser"
+        required: false
+        default: ""
+      add_exclude:
+        description: "Aramada elenecek kelimeler (virgulle ayir)"
         required: false
         default: ""
       remove_id:
@@ -69,6 +73,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: PWA ikonlarini uret (eksikse)
+        run: |
+          # Ikonlar depoda yoksa (orn. binary dosyalar aktarilamadiysa) yeniden
+          # uretilir. Uretici saf Python, ek bagimlilik istemiyor.
+          if [ ! -f docs/icons/icon-512.png ] || [ ! -f docs/icons/apple-touch-icon.png ]; then
+            echo "PWA ikonlari eksik, uretiliyor..."
+            python tools/make_icons.py
+          else
+            echo "Ikonlar yerinde, atlaniyor."
+          fi
+
       - name: Tarayici gerekli mi
         id: browser
         env:
@@ -97,11 +112,21 @@ jobs:
           ADD_NAME: ${{ inputs.add_name }}
           ADD_TARGET: ${{ inputs.add_target }}
           ADD_MODE: ${{ inputs.add_mode }}
+          ADD_EXCLUDE: ${{ inputs.add_exclude }}
         run: |
           ARGS=()
           [ -n "$ADD_NAME" ]   && ARGS+=(--name "$ADD_NAME")
           [ -n "$ADD_TARGET" ] && ARGS+=(--target "$ADD_TARGET")
           [ -n "$ADD_MODE" ]   && ARGS+=(--mode "$ADD_MODE")
+          if [ -n "$ADD_EXCLUDE" ]; then
+            # "kilif, aksesuar" -> --exclude "kilif" "aksesuar"
+            ARGS+=(--exclude)
+            IFS=',' read -ra PARCALAR <<< "$ADD_EXCLUDE"
+            for parca in "${PARCALAR[@]}"; do
+              parca="$(printf '%s' "$parca" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+              [ -n "$parca" ] && ARGS+=("$parca")
+            done
+          fi
           # Zaten listede olan bir URL is akisini durdurmasin, uyari yeter
           if ! python -m tracker add "$ADD_URL" "${ARGS[@]}"; then
             echo "::warning::Urun eklenemedi (muhtemelen listede zaten var): $ADD_URL"

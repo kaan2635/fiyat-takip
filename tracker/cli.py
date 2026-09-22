@@ -14,7 +14,8 @@ from .fetch import Fetcher
 from .money import format_price, parse_price
 from .parsers import parse_page, site_of
 from .report import REPORT_PATH, write_report
-from .scan import run_scan
+from .scan import rules_for, run_scan
+from .search import DEFAULT_SITES, SOURCES, search
 from .store import (HISTORY_PATH, LATEST_PATH, all_stats, append_rows,
                     now_iso, series_by_product, write_latest)
 
@@ -44,8 +45,57 @@ def _decimal(value) -> Decimal | None:
 
 
 # --------------------------------------------------------------------- komutlar
+def _looks_like_url(text: str) -> bool:
+    return text.strip().lower().startswith(("http://", "https://", "www."))
+
+
+def _preview_offers(product, cfg) -> list:
+    """Arama urununu ekler/kontrol ederken bulunan teklifleri gosterir."""
+    fetcher = Fetcher(min_delay=cfg.get("min_delay_seconds"))
+    try:
+        offers, notes = search(product.query, fetcher, product.sites, rules_for(product))
+    finally:
+        fetcher.close()
+    for n in notes:
+        print(f"  {C.DIM}{n}{C.RESET}")
+    for o in offers[:6]:
+        print(f"    {format_price(o.price):>14}  {C.DIM}{o.site:16}{C.RESET} {o.title[:52]}")
+    return offers
+
+
 def cmd_add(args, cfg: Config) -> int:
-    url = args.url.strip()
+    target = args.url.strip()
+
+    # URL degilse urun adi olarak alinir ve pazaryerlerinde aranir
+    if not _looks_like_url(target):
+        if cfg.find(target):
+            print(f"{C.YELLOW}Bu urun zaten listede.{C.RESET}")
+            return 1
+        product = Product(
+            id=args.id or cfg.unique_id(slugify(args.name or target)),
+            query=target, name=args.name or target,
+            target_price=_decimal(args.target),
+            sites=args.sites or None,
+            exclude=args.exclude or [],
+            must_include=args.must_include or [],
+            min_price=_decimal(args.min_price),
+            max_price=_decimal(args.max_price),
+        )
+        print(f"Aranan urun: {C.BOLD}{target}{C.RESET}")
+        offers = _preview_offers(product, cfg)
+        if not offers:
+            print(f"  {C.YELLOW}!{C.RESET} Hicbir teklif eslesmedi. Urun yine de eklenecek; "
+                  f"sorguyu sadelestirmeyi ya da --exclude kurallarini gozden gecirmeyi dene.")
+        else:
+            print(f"  {C.GREEN}✓{C.RESET} en ucuz: "
+                  f"{C.BOLD}{format_price(offers[0].price)}{C.RESET} @ {offers[0].site}")
+        cfg.products.append(product)
+        cfg.save()
+        print(f"{C.GREEN}Eklendi:{C.RESET} {C.BOLD}{product.name}{C.RESET} "
+              f"{C.DIM}[{product.id}] · arama{C.RESET}")
+        return 0
+
+    url = target
     if cfg.find(url):
         print(f"{C.YELLOW}Bu URL zaten listede.{C.RESET}")
         return 1
@@ -169,13 +219,13 @@ def cmd_scan(args, cfg: Config) -> int:
 
     append_rows(report.rows)
     stats = all_stats()
-    write_latest(report.rows, stats)
+    write_latest(report.rows, stats, offers=report.offers)
     cfg.save()   # cozulen urun adlarini kalici hale getirir
 
     if not args.no_report:
         path = write_report(report.rows, stats, series_by_product(),
                             {p.id: p for p in cfg.products}, now_iso(),
-                            path=Path(args.report_path))
+                            path=Path(args.report_path), offers=report.offers)
         print(f"Rapor: {C.BLUE}{path}{C.RESET}")
 
     if not args.no_notify:
@@ -227,6 +277,28 @@ def cmd_report(args, cfg: Config) -> int:
     path = write_report(rows, stats, series, {p.id: p for p in cfg.products},
                         now_iso(), path=Path(args.report_path))
     print(f"Rapor yazildi: {C.BLUE}{path}{C.RESET}")
+    return 0
+
+
+def cmd_search(args, cfg: Config) -> int:
+    """Bir urun adini kaydetmeden arar - sorgu ayarlamak icin."""
+    product = Product(
+        id="onizleme", query=" ".join(args.query),
+        sites=args.sites or None,
+        exclude=args.exclude or [],
+        must_include=args.must_include or [],
+        min_price=_decimal(args.min_price),
+        max_price=_decimal(args.max_price),
+    )
+    print(f"Aranan: {C.BOLD}{product.query}{C.RESET}"
+          f"  {C.DIM}({', '.join(product.sites or DEFAULT_SITES)}){C.RESET}\n")
+    offers = _preview_offers(product, cfg)
+    if not offers:
+        print(f"\n{C.RED}Eslesen teklif yok.{C.RESET} Sorguyu kisaltmayi dene "
+              f"(marka + model genelde yeterli).")
+        return 1
+    print(f"\n{C.GREEN}En ucuz:{C.RESET} {C.BOLD}{format_price(offers[0].price)}{C.RESET} "
+          f"@ {offers[0].site}\n  {offers[0].url}")
     return 0
 
 
@@ -285,14 +357,29 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--version", action="version", version=f"fiyat-takip {__version__}")
     sub = p.add_subparsers(dest="command", required=True)
 
-    a = sub.add_parser("add", help="takibe urun ekle")
-    a.add_argument("url")
+    def add_search_flags(parser):
+        parser.add_argument("--sites", nargs="*", choices=sorted(SOURCES),
+                            help=f"aranacak kaynaklar (varsayilan: {', '.join(DEFAULT_SITES)})")
+        parser.add_argument("--exclude", nargs="*", help="basliginda bunlar gecen sonuclari ele")
+        parser.add_argument("--must-include", nargs="*", dest="must_include",
+                            help="basliginda mutlaka gecmesi gereken kelimeler")
+        parser.add_argument("--min-price", dest="min_price", help="bu fiyatin altindakileri ele")
+        parser.add_argument("--max-price", dest="max_price", help="bu fiyatin ustundekileri ele")
+
+    a = sub.add_parser("add", help="takibe urun ekle (URL ya da urun adi)")
+    a.add_argument("url", metavar="URL_VEYA_URUN_ADI")
     a.add_argument("--name", help="urun adi (bos birakilirsa sayfadan okunur)")
     a.add_argument("--target", help="hedef fiyat; altina inince bildirim gelir")
     a.add_argument("--id", help="ozel kimlik")
     a.add_argument("--mode", choices=["http", "browser"], default="http")
     a.add_argument("--selector", help="ozel CSS fiyat secici")
+    add_search_flags(a)
     a.set_defaults(func=cmd_add)
+
+    sr = sub.add_parser("search", help="urun adini kaydetmeden ara (sorgu denemek icin)")
+    sr.add_argument("query", nargs="+", help="aranacak urun adi")
+    add_search_flags(sr)
+    sr.set_defaults(func=cmd_search)
 
     r = sub.add_parser("remove", help="urunu listeden cikar")
     r.add_argument("product", help="kimlik, URL veya ad parcasi")

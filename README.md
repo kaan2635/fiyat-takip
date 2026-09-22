@@ -6,6 +6,11 @@ Türk pazaryerlerindeki ürünlerin fiyatını izler. Üç yerden kullanılır:
 - **Otomatik** — GitHub Actions belirlediğin aralıkla (varsayılan: günde 3 kez) kendi tarar.
 - **Terminalden** — `python -m tracker scan`.
 
+Ürünü **iki şekilde** takip edebilirsin:
+
+- **Ürün adı yaz** — sistem pazaryerlerinde arar, en ucuz satıcıyı bulur ve onu izler. Satıcı değişirse otomatik olarak yeni en ucuza geçer.
+- **Adres yapıştır** — belirli bir satıcının o sayfadaki fiyatı izlenir.
+
 Fiyat düştüğünde Telegram'dan haber verir, her taramada grafikli bir rapor üretir ve tüm geçmişi `data/history.csv` içinde tutar.
 
 > **Tarama neden telefonda çalışmıyor?** Trendyol/Hepsiburada/n11 bot koruması ve tarayıcıların
@@ -108,6 +113,60 @@ python -m tracker scan
 
 ---
 
+## Ürün adıyla takip
+
+URL bulmakla uğraşmadan, ürünün adını yazman yeterli:
+
+```bash
+python -m tracker add "BeSafe iZi Turn B i-Size" --target 42000
+```
+
+Sistem her taramada Trendyol ve Hepsiburada'da arar, eşleşen teklifleri toplar ve **en ucuzunu** kaydeder. Raporda "3 teklif bulundu · en ucuz hepsiburada.com" satırını açınca bütün satıcıları fiyatlarıyla görürsün.
+
+### Sorgunu önce dene
+
+Kaydetmeden ne bulacağını görmek için:
+
+```bash
+python -m tracker search iPhone 15 128 GB --exclude yenilenmiş plus kılıf
+```
+
+### Yanlış eşleşmeyi önleme
+
+Arama motorları alakasız sonuç döndürebiliyor — ölçümde n11, bir oto koltuğu sorgusuna hiç ürün bulamayıp "önerilen ürünler" listesinden **psikoloji kitabı** döndürdü. Bu yüzden her teklif, başlığı sorgunun bütün anlamlı kelimelerini içermedikçe elenir.
+
+Eşleştirme kelime sınırına bakar, alt dizgeye değil: `MX Master 4` ararken `MX Master 3S` elenir, çünkü "4" başlıkta ayrı bir kelime olarak geçmiyor (ve "8000" içindeki 4'e takılmaz). Türkçe ekler de hesaba katılır — "koltuk" yazınca "koltuğu" eşleşir.
+
+Yine de gerekirse daraltabilirsin:
+
+| Ayar | Ne yapar |
+|---|---|
+| `exclude` | Başlığında bu kelimeler geçen sonuçları eler (`kılıf`, `aksesuar`, `yenilenmiş`) |
+| `must_include` | Başlıkta mutlaka geçmesi gereken kelimeler (`anthracite`) |
+| `min_price` / `max_price` | Fiyat aralığı dışındakileri eler |
+| `sites` | Hangi kaynaklarda aransın (`trendyol`, `hepsiburada`, `n11`) |
+
+```yaml
+- id: besafe-oto-koltugu
+  name: BeSafe Oto Koltuğu
+  query: BeSafe iZi Turn B i-Size
+  target_price: 42000
+  exclude: [kılıf, aksesuar]
+  min_price: 20000
+```
+
+Hiçbir teklif eşleşmezse ürün `no_match` olarak işaretlenir ve hangi kaynakta kaç sonuç bulunup kaçının elendiği not edilir — sorguyu ona bakarak daraltabilirsin. **Sessizce yanlış ürünü takip etmektense hiçbir şey takip etmemeyi tercih eder.**
+
+### Arama kaynakları
+
+| Kaynak | Durum |
+|---|---|
+| Hepsiburada | ✅ ölçüldü, çalışıyor |
+| Trendyol | ✅ ölçüldü, çalışıyor (gömülü JSON'dan) |
+| n11 | ⚠️ varsayılan kapalı — çoğu sorguda alakasız sonuç veriyor; `sites` ile açabilirsin |
+| Akakçe, Cimri | ❌ Cloudflare engeli, hiçbir tarayıcı profiliyle geçilemedi |
+| Google Shopping | ❌ fiyatları JavaScript ile yüklüyor |
+
 ## iPhone'da uygulama olarak kullanma
 
 Rapor aynı zamanda bir **PWA**'dır: ana ekrana eklenince Safari çubuğu olmadan, kendi ikonuyla,
@@ -193,7 +252,9 @@ Her taramanın sonunda ayrıca kısa bir özet mesajı gelir (`--no-summary` ile
 ## Komutlar
 
 ```bash
+python -m tracker add "Ürün Adı" [--target 45000] [--exclude kılıf aksesuar] [--sites trendyol hepsiburada]
 python -m tracker add <url> [--name ...] [--target 45000] [--mode browser] [--selector ".fiyat"]
+python -m tracker search Ürün Adı           # kaydetmeden ara, sorguyu dene
 python -m tracker list                      # takip listesi + güncel fiyatlar
 python -m tracker remove <kimlik|isim>
 python -m tracker scan                      # tara, kaydet, rapor üret, bildir
@@ -241,6 +302,7 @@ ya da "Run workflow" ekranında kutuyu işaretlediğinde otomatik kurar.
 | `docs/app.js`, `sw.js`, `manifest.webmanifest` | PWA parçaları — her raporla yeniden üretilir |
 | `docs/icons/` | Uygulama ikonları — `python tools/make_icons.py` ile yeniden üretilir |
 | `tracker/parsers/sites.py` | Siteye özel okuyucular — yeni site buraya eklenir |
+| `tracker/search.py` | Ürün adıyla arama ve eşleştirme kuralları |
 
 ### Ayarlar (`products.yaml` → `settings`)
 
@@ -258,6 +320,16 @@ settings:
 
 ```yaml
 products:
+  # Ürün adıyla takip (en ucuz satıcı otomatik bulunur)
+  - id: besafe-oto-koltugu
+    name: BeSafe Oto Koltuğu
+    query: BeSafe iZi Turn B i-Size
+    target_price: 42000
+    exclude: [kılıf, aksesuar]     # isteğe bağlı eşleştirme kuralları
+    min_price: 20000
+    sites: [trendyol, hepsiburada]
+
+  # Belirli bir satıcı sayfasını takip
   - id: iphone-15-128-gb-siyah   # otomatik üretilir
     name: iPhone 15 128 GB Siyah
     url: https://www.trendyol.com/...
