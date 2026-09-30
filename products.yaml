@@ -11,3 +11,6 @@ products:
   query: BeSafe iZi Turn B i-Size
   target_price: 43500.0
   min_price: 20000.0
+- id: besafe-izi-turn-i-size
+  name: besafe izi turn i size
+  query: besafe izi turn i size
