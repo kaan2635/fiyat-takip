@@ -14,3 +14,6 @@ products:
 - id: besafe-izi-turn-i-size
   name: besafe izi turn i size
   query: besafe izi turn i size
+- id: maxi-cosi-mica
+  name: Maxi Cosi Mica
+  query: Maxi Cosi Mica
