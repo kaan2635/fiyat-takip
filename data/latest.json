@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T16:32:52+00:00",
+  "generated_at": "2026-10-04T20:56:53+00:00",
   "products": [
     {
       "id": "besafe-izi-turn-b-i-size",
@@ -12,8 +12,8 @@
       "in_stock": true,
       "lowest": 43424.25,
       "highest": 45999.0,
-      "change_percent": -5.43,
-      "points": 43,
+      "change_percent": 0.0,
+      "points": 44,
       "note": "3 teklif | Besafe Izı Turn B I-Size Oto Koltuğu 0-18 Kg Metallic Melange",
       "offers": [
         {
@@ -47,8 +47,8 @@
       "in_stock": true,
       "lowest": 43424.25,
       "highest": 45999.0,
-      "change_percent": -5.43,
-      "points": 16,
+      "change_percent": 0.0,
+      "points": 17,
       "note": "3 teklif | Besafe Izı Turn B I-Size Oto Koltuğu 0-18 Kg Metallic Melange",
       "offers": [
         {
@@ -83,7 +83,7 @@
       "lowest": 27679.2,
       "highest": 27679.2,
       "change_percent": 0.0,
-      "points": 7,
+      "points": 8,
       "note": "15 teklif | MAXİ-COSİ Maxi-cosi Mica 360 Pro I-size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 Kg Oto Koltuğu",
       "offers": [
         {
@@ -97,6 +97,12 @@
           "title": "MAXİ-COSİ Maxi-cosi Mica 360 Pro Adac'lı Slidetech Kızaklı Isofix'li Dönebilir 0-18 Kg Oto Koltuğu Black",
           "price": 27679.2,
           "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-mica-360-pro-adac-li-slidetech-kizakli-isofix-li-donebilir-0-18-kg-oto-koltugu-black-p-811428041?boutiqueId=61&merchantId=109213"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-cosi Mica 360 Pro I-size Ilk Kızaklı ,araç Dışına Çıkabilen 360 Dönebilir Authentic Truffle",
+          "price": 27679.2,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-mica-360-pro-i-size-ilk-kizakli-arac-disina-cikabilen-360-donebilir-authentic-truffle-p-923115958?boutiqueId=61&merchantId=109213"
         },
         {
           "site": "hepsiburada.com",
@@ -145,12 +151,6 @@
           "title": "Maxi-Cosi Mica 360 Pro I-Size 0-10 kg Taşıma Kapasiteli Çok Renkli Kızaklı Oto Koltuğu",
           "price": 48161.81,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-adac-li-isofi-pm-HBC0000GCLNK1"
-        },
-        {
-          "site": "hepsiburada.com",
-          "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
-          "price": 56259.0,
-          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000JK85E0"
         },
         {
           "site": "hepsiburada.com",
