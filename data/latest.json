@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T12:01:41+00:00",
+  "generated_at": "2026-10-10T21:15:30+00:00",
   "products": [
     {
       "id": "besafe-izi-turn-b-i-size",
@@ -13,7 +13,7 @@
       "lowest": 43424.25,
       "highest": 45999.0,
       "change_percent": 0.0,
-      "points": 56,
+      "points": 57,
       "note": "3 teklif | Besafe Izı Turn B I-Size Oto Koltuğu 0-18 Kg Metallic Melange",
       "offers": [
         {
@@ -48,7 +48,7 @@
       "lowest": 43424.25,
       "highest": 45999.0,
       "change_percent": 0.0,
-      "points": 29,
+      "points": 30,
       "note": "3 teklif | Besafe Izı Turn B I-Size Oto Koltuğu 0-18 Kg Metallic Melange",
       "offers": [
         {
@@ -83,7 +83,7 @@
       "lowest": 27679.2,
       "highest": 27679.2,
       "change_percent": 0.0,
-      "points": 20,
+      "points": 21,
       "note": "7 teklif | MAXİ-COSİ Maxi-cosi Mica 360 Pro I-size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 Kg Oto Koltuğu",
       "offers": [
         {
@@ -94,15 +94,15 @@
         },
         {
           "site": "trendyol.com",
-          "title": "MAXİ-COSİ Maxi-cosi Mica 360 Pro I-size Ilk Kızaklı ,araç Dışına Çıkabilen 360 Dönebilir Authentic Truffle",
-          "price": 27679.2,
-          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-mica-360-pro-i-size-ilk-kizakli-arac-disina-cikabilen-360-donebilir-authentic-truffle-p-923115958?boutiqueId=61&merchantId=109213"
-        },
-        {
-          "site": "trendyol.com",
           "title": "MAXİ-COSİ Maxi-cosi Mica 360 Pro Adac'lı Slidetech Kızaklı Isofix'li Dönebilir 0-18 Kg Oto Koltuğu Black",
           "price": 27679.2,
           "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-mica-360-pro-adac-li-slidetech-kizakli-isofix-li-donebilir-0-18-kg-oto-koltugu-black-p-811428041?boutiqueId=61&merchantId=109213"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-cosi Mica 360 Pro I-size Ilk Kızaklı ,araç Dışına Çıkabilen 360 Dönebilir Authentic Truffle",
+          "price": 27679.2,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-mica-360-pro-i-size-ilk-kizakli-arac-disina-cikabilen-360-donebilir-authentic-truffle-p-923115958?boutiqueId=61&merchantId=109213"
         },
         {
           "site": "hepsiburada.com",
