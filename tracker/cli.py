@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import json
 import logging
+import os
 import sys
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -13,9 +15,9 @@ from .config import Config, Product, slugify
 from .fetch import Fetcher
 from .money import format_price, parse_price
 from .parsers import parse_page, site_of
-from .report import REPORT_PATH, write_report
-from .scan import rules_for, run_scan
-from .search import DEFAULT_SITES, SOURCES, search
+from .report import REPORT_PATH, write_app
+from .scan import rules_for, run_scan, sites_for
+from .search import DEFAULT_SITES, SOURCES, MatchRules, search
 from .store import (HISTORY_PATH, LATEST_PATH, all_stats, append_rows,
                     now_iso, series_by_product, write_latest)
 
@@ -53,14 +55,21 @@ def _preview_offers(product, cfg) -> list:
     """Arama urununu ekler/kontrol ederken bulunan teklifleri gosterir."""
     fetcher = Fetcher(min_delay=cfg.get("min_delay_seconds"))
     try:
-        offers, notes = search(product.query, fetcher, product.sites, rules_for(product))
+        result = search(product.query, fetcher, sites_for(product, cfg), rules_for(product))
     finally:
         fetcher.close()
-    for n in notes:
+    for n in result.notes:
         print(f"  {C.DIM}{n}{C.RESET}")
-    for o in offers[:6]:
-        print(f"    {format_price(o.price):>14}  {C.DIM}{o.site:16}{C.RESET} {o.title[:52]}")
-    return offers
+    for w in result.warnings:
+        print(f"  {C.YELLOW}! {w}{C.RESET}")
+    for o in result.offers[:8]:
+        print(f"    {format_price(o.price):>14}  {C.DIM}{o.site:18}{C.RESET} {o.title[:52]}")
+    near = result.near
+    if near:
+        print(f"  {C.DIM}yakin ama elenen {len(near)} sonuc, ornegin:{C.RESET}")
+        for r in sorted(near, key=lambda r: r.offer.price)[:3]:
+            print(f"    {format_price(r.offer.price):>14}  {C.DIM}{r.offer.site:18} {r.reason[:50]}{C.RESET}")
+    return result.offers
 
 
 def cmd_add(args, cfg: Config) -> int:
@@ -80,6 +89,7 @@ def cmd_add(args, cfg: Config) -> int:
             must_include=args.must_include or [],
             min_price=_decimal(args.min_price),
             max_price=_decimal(args.max_price),
+            added_at=now_iso(),
         )
         print(f"Aranan urun: {C.BOLD}{target}{C.RESET}")
         offers = _preview_offers(product, cfg)
@@ -125,7 +135,7 @@ def cmd_add(args, cfg: Config) -> int:
     pid = args.id or cfg.unique_id(slugify(name or url))
     cfg.products.append(Product(
         id=pid, url=url, name=name, target_price=_decimal(args.target),
-        mode=args.mode, selector=args.selector,
+        mode=args.mode, selector=args.selector, added_at=now_iso(),
     ))
     cfg.save()
     print(f"{C.GREEN}Eklendi:{C.RESET} {C.BOLD}{name or pid}{C.RESET} "
@@ -219,14 +229,13 @@ def cmd_scan(args, cfg: Config) -> int:
 
     append_rows(report.rows)
     stats = all_stats()
-    write_latest(report.rows, stats, offers=report.offers)
+    write_latest(report.rows, stats, searches=report.searches,
+                 keep_ids=[p.id for p in cfg.products])
     cfg.save()   # cozulen urun adlarini kalici hale getirir
 
     if not args.no_report:
-        path = write_report(report.rows, stats, series_by_product(),
-                            {p.id: p for p in cfg.products}, now_iso(),
-                            path=Path(args.report_path), offers=report.offers)
-        print(f"Rapor: {C.BLUE}{path}{C.RESET}")
+        path = write_app(cfg, path=Path(args.report_path))
+        print(f"Uygulama: {C.BLUE}{path}{C.RESET}")
 
     if not args.no_notify:
         from .notify import configured, notify
@@ -243,55 +252,117 @@ def cmd_scan(args, cfg: Config) -> int:
 
 
 def cmd_report(args, cfg: Config) -> int:
-    series = series_by_product()
-    if not series:
-        print("Gecmis bos. Once tarama yap:  python -m tracker scan")
-        return 1
-    stats = all_stats()
-    # Son olcumleri gecmisten geri kur
-    from .store import ScanRow, load_history
-    # Basarisiz urunler series_by_product() tarafindan elenir; onlarin son
-    # durumunu ham gecmisten alip raporda "okunamayan" olarak gosteririz.
-    last_any: dict[str, dict] = {}
-    for raw in load_history():
-        last_any[raw["product_id"]] = raw
-
-    rows = []
-    for p in cfg.products:
-        points = series.get(p.id)
-        last = points[-1] if points else last_any.get(p.id)
-        if not last:
-            continue
-        ok = bool(points) and last_any.get(p.id, last).get("status") == "ok"
-        latest = last_any.get(p.id, last)
-        rows.append(ScanRow(
-            scanned_at=latest.get("scanned_at", ""), product_id=p.id,
-            name=p.name or latest.get("name", p.id),
-            site=p.site, url=p.url,
-            price=last["price"] if ok else None,
-            currency=latest.get("currency") or "TRY",
-            in_stock=latest.get("in_stock"),
-            status="ok" if ok else (latest.get("status") or "error"),
-            method=latest.get("method", ""), note=latest.get("note", ""),
-        ))
-    path = write_report(rows, stats, series, {p.id: p for p in cfg.products},
-                        now_iso(), path=Path(args.report_path))
-    print(f"Rapor yazildi: {C.BLUE}{path}{C.RESET}")
+    """Gecmisten ve son durumdan uygulamayi (docs/) yeniden uretir."""
+    # Silinmis urunler son durum dosyasindan da cikarilir
+    from .store import load_latest
+    latest = load_latest()
+    if latest and set(latest) - {p.id for p in cfg.products}:
+        write_latest([], {}, keep_ids=[p.id for p in cfg.products])
+    path = write_app(cfg, path=Path(args.report_path))
+    print(f"Uygulama yazildi: {C.BLUE}{path}{C.RESET}")
     return 0
 
 
-def cmd_search(args, cfg: Config) -> int:
-    """Bir urun adini kaydetmeden arar - sorgu ayarlamak icin."""
-    product = Product(
-        id="onizleme", query=" ".join(args.query),
-        sites=args.sites or None,
-        exclude=args.exclude or [],
-        must_include=args.must_include or [],
-        min_price=_decimal(args.min_price),
-        max_price=_decimal(args.max_price),
+def cmd_apply(args, cfg: Config) -> int:
+    """Uygulamadan gelen JSON komutunu uygular (is akisi kullanir)."""
+    from .commands import CommandError, apply, parse_command
+
+    text = args.json
+    if text == "-":
+        text = sys.stdin.read()
+    try:
+        ops = parse_command(text)
+    except CommandError as exc:
+        print(f"{C.RED}Komut gecersiz:{C.RESET} {exc}")
+        _github_output(changed="false", scan_ids="", scan_all="false", need_scan="false")
+        return 2
+    result = apply(cfg, ops)
+    if result.changed:
+        cfg.save()
+    for msg in result.messages:
+        color = C.RED if msg.startswith("hata") else C.GREEN
+        print(f"  {color}{msg}{C.RESET}")
+    need_scan = bool(result.scan_ids) or result.scan_all
+    _github_output(
+        changed="true" if result.changed else "false",
+        scan_ids=" ".join(result.scan_ids),
+        scan_all="true" if result.scan_all else "false",
+        need_scan="true" if need_scan else "false",
     )
+    if args.result:
+        Path(args.result).write_text(json.dumps(result.to_dict(), ensure_ascii=False), encoding="utf-8")
+    errors = [m for m in result.messages if m.startswith("hata")]
+    return 1 if errors and not result.changed and not need_scan else 0
+
+
+def _github_output(**values) -> None:
+    """GitHub Actions adim ciktisi (yerelde calisirken sessizce atlanir)."""
+    out = os.environ.get("GITHUB_OUTPUT")
+    if not out:
+        return
+    with open(out, "a", encoding="utf-8") as fh:
+        for k, v in values.items():
+            fh.write(f"{k}={v}\n")
+
+
+def cmd_search(args, cfg: Config) -> int:
+    """Bir urun adini kaydetmeden arar - sorgu ayarlamak icin ya da uygulama icin."""
+    options = {}
+    if args.options:
+        try:
+            options = json.loads(args.options) or {}
+        except json.JSONDecodeError:
+            print(f"{C.RED}--options JSON degil{C.RESET}")
+            return 2
+        if not isinstance(options, dict):
+            options = {}
+
+    def opt_list(key, cli_value):
+        value = cli_value or options.get(key) or []
+        if isinstance(value, str):
+            value = [v.strip() for v in value.split(",")]
+        return [str(v).strip()[:80] for v in value if str(v).strip()][:30]
+
+    sites = [s for s in opt_list("sites", args.sites) if s in SOURCES]
+    product = Product(
+        id="onizleme", query=" ".join(args.query).strip()[:200],
+        sites=sites or None,
+        exclude=opt_list("exclude", args.exclude),
+        must_include=opt_list("must_include", args.must_include),
+        min_price=_decimal(args.min_price or options.get("min_price")),
+        max_price=_decimal(args.max_price or options.get("max_price")),
+    )
+    used_sites = sites_for(product, cfg)
+
+    if args.json:
+        fetcher = Fetcher(min_delay=cfg.get("min_delay_seconds"))
+        try:
+            result = search(product.query, fetcher, used_sites, rules_for(product))
+        finally:
+            fetcher.close()
+        payload = {
+            "request": args.request or "",
+            "query": product.query,
+            "generated_at": int(__import__("time").time()),
+            "options": {
+                "sites": product.sites or [],
+                "exclude": product.exclude,
+                "must_include": product.must_include,
+                "min_price": float(product.min_price) if product.min_price else None,
+                "max_price": float(product.max_price) if product.max_price else None,
+            },
+            "searched_sites": used_sites,
+            "result": result.to_dict(limit=40, rejected_limit=30),
+        }
+        Path(args.json).parent.mkdir(parents=True, exist_ok=True)
+        Path(args.json).write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        print(f"{len(result.offers)} teklif, {len(result.near)} yakin sonuc -> {args.json}")
+        for n in result.notes:
+            print(f"  {n}")
+        return 0
+
     print(f"Aranan: {C.BOLD}{product.query}{C.RESET}"
-          f"  {C.DIM}({', '.join(product.sites or DEFAULT_SITES)}){C.RESET}\n")
+          f"  {C.DIM}({', '.join(used_sites)}){C.RESET}\n")
     offers = _preview_offers(product, cfg)
     if not offers:
         print(f"\n{C.RED}Eslesen teklif yok.{C.RESET} Sorguyu kisaltmayi dene "
@@ -379,7 +450,15 @@ def build_parser() -> argparse.ArgumentParser:
     sr = sub.add_parser("search", help="urun adini kaydetmeden ara (sorgu denemek icin)")
     sr.add_argument("query", nargs="+", help="aranacak urun adi")
     add_search_flags(sr)
+    sr.add_argument("--json", help="sonucu bu JSON dosyasina yaz (uygulama icin)")
+    sr.add_argument("--request", help="istek kimligi (JSON ciktisina yazilir)")
+    sr.add_argument("--options", help="JSON secenekler: sites, exclude, must_include, min_price, max_price")
     sr.set_defaults(func=cmd_search)
+
+    ap = sub.add_parser("apply", help="uygulamadan gelen JSON komutunu uygula")
+    ap.add_argument("json", help="komut JSON'u ya da '-' (stdin)")
+    ap.add_argument("--result", help="sonucu bu dosyaya JSON olarak yaz")
+    ap.set_defaults(func=cmd_apply)
 
     r = sub.add_parser("remove", help="urunu listeden cikar")
     r.add_argument("product", help="kimlik, URL veya ad parcasi")
@@ -399,7 +478,7 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("-q", "--quiet", action="store_true", help="ilerleme satirlarini gizle")
     s.set_defaults(func=cmd_scan)
 
-    rp = sub.add_parser("report", help="gecmisten HTML raporu yeniden uret")
+    rp = sub.add_parser("report", help="uygulamayi (docs/) gecmisten yeniden uret")
     rp.add_argument("--report-path", default=str(REPORT_PATH))
     rp.set_defaults(func=cmd_report)
 

@@ -17,9 +17,9 @@ from pathlib import Path
 OUT = Path(__file__).resolve().parent.parent / "docs" / "icons"
 
 # --- Tasarim -----------------------------------------------------------------
-BG_TOP = (42, 120, 214)      # #2a78d6 - seri rengiyle ayni mavi
-BG_BOTTOM = (28, 92, 171)    # #1c5cab
-INK = (255, 255, 255)
+BG_TOP = (29, 46, 59)       # #1d2e3b - murekkep lacivert (uygulamanin dugme rengi)
+BG_BOTTOM = (20, 33, 43)    # #14212b
+INK = (255, 212, 59)        # #ffd43b - raf etiketi sarisi
 
 # Dusen fiyat cizgisi (birim koordinat: 0..1)
 LINE = [(0.17, 0.33), (0.33, 0.44), (0.46, 0.39), (0.61, 0.57), (0.79, 0.67)]

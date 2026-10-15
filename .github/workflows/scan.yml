@@ -1,4 +1,7 @@
 name: Fiyat taramasi
+# Uygulamadan gelen kosular istek kimligini basliga yazar; uygulama kendi
+# kosusunu bu baslikla bulup takip eder.
+run-name: ${{ inputs.istek && format('Uygulama {0}', inputs.istek) || 'Fiyat taramasi' }}
 
 on:
   schedule:
@@ -6,42 +9,42 @@ on:
     - cron: "0 6,12,18 * * *"
   workflow_dispatch:
     inputs:
-      only:
-        description: "Sadece bu urunler (bosluklla ayrilmis kimlikler; bos = hepsi)"
-        required: false
-        default: ""
-      browser:
-        description: "Gercek tarayici yedegini kur (yavas ama zor siteleri acar)"
-        type: boolean
-        required: false
-        default: false
-      notify:
-        description: "Telegram bildirimi gonder"
-        type: boolean
-        required: false
-        default: true
       add_url:
         description: "Eklenecek urun ADI veya adresi (bos = ekleme yapma)"
         required: false
         default: ""
       add_name:
-        description: "Eklenecek urunun adi (bos = sayfadan oku)"
+        description: "Eklenecek urunun listede gorunecek adi (istege bagli)"
         required: false
         default: ""
       add_target:
-        description: "Eklenecek urunun hedef fiyati"
-        required: false
-        default: ""
-      add_mode:
-        description: "Eklenecek urun icin mod: http veya browser"
-        required: false
-        default: ""
-      add_exclude:
-        description: "Aramada elenecek kelimeler (virgulle ayir)"
+        description: "Eklenecek urunun hedef fiyati (istege bagli)"
         required: false
         default: ""
       remove_id:
         description: "Takipten cikarilacak urun kimligi"
+        required: false
+        default: ""
+      only:
+        description: "Sadece bu urunleri tara (bosluklla ayrilmis kimlikler; bos = hepsi)"
+        required: false
+        default: ""
+      notify:
+        description: "Telegram bildirimi gonder"
+        type: boolean
+        required: false
+        default: true
+      browser:
+        description: "Gercek tarayici yedegini kur (yavas ama zor siteleri acar)"
+        type: boolean
+        required: false
+        default: false
+      komut:
+        description: "Uygulama komutu (JSON) - telefondaki uygulama doldurur"
+        required: false
+        default: ""
+      istek:
+        description: "Istek kimligi - telefondaki uygulama doldurur"
         required: false
         default: ""
 
@@ -60,10 +63,10 @@ jobs:
 
     steps:
       - name: Depoyu al
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Python kur
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -75,23 +78,18 @@ jobs:
 
       - name: PWA ikonlarini uret (eksikse)
         run: |
-          # Ikonlar depoda yoksa (orn. binary dosyalar aktarilamadiysa) yeniden
-          # uretilir. Uretici saf Python, ek bagimlilik istemiyor.
           if [ ! -f docs/icons/icon-512.png ] || [ ! -f docs/icons/apple-touch-icon.png ]; then
-            echo "PWA ikonlari eksik, uretiliyor..."
             python tools/make_icons.py
-          else
-            echo "Ikonlar yerinde, atlaniyor."
           fi
 
       - name: Tarayici gerekli mi
         id: browser
         env:
           FORCE_BROWSER: ${{ inputs.browser }}
-          ADD_MODE: ${{ inputs.add_mode }}
+          KOMUT: ${{ inputs.komut }}
         run: |
-          # Elle istendiyse, eklenen urun browser istiyorsa ya da listede varsa kurariz
-          if [ "$FORCE_BROWSER" = "true" ] || [ "$ADD_MODE" = "browser" ] \
+          if [ "$FORCE_BROWSER" = "true" ] \
+             || printf '%s' "$KOMUT" | grep -q '"mode": *"browser"' \
              || grep -qE '^[[:space:]]*mode:[[:space:]]*browser' products.yaml 2>/dev/null; then
             echo "needed=true" >> "$GITHUB_OUTPUT"
           else
@@ -104,30 +102,25 @@ jobs:
           pip install playwright
           playwright install --with-deps chromium
 
+      - name: Uygulama komutunu uygula
+        id: komut
+        if: inputs.komut != ''
+        env:
+          # Girdiler kabuga degil ortama gecer; komut enjeksiyonunu onler
+          KOMUT: ${{ inputs.komut }}
+        run: |
+          printf '%s' "$KOMUT" | python -m tracker apply - --result /tmp/komut-sonucu.json
+
       - name: Urun ekle
         if: inputs.add_url != ''
         env:
-          # Girdiler kabuga degil ortama gecer; komut enjeksiyonunu onler
           ADD_URL: ${{ inputs.add_url }}
           ADD_NAME: ${{ inputs.add_name }}
           ADD_TARGET: ${{ inputs.add_target }}
-          ADD_MODE: ${{ inputs.add_mode }}
-          ADD_EXCLUDE: ${{ inputs.add_exclude }}
         run: |
           ARGS=()
           [ -n "$ADD_NAME" ]   && ARGS+=(--name "$ADD_NAME")
           [ -n "$ADD_TARGET" ] && ARGS+=(--target "$ADD_TARGET")
-          [ -n "$ADD_MODE" ]   && ARGS+=(--mode "$ADD_MODE")
-          if [ -n "$ADD_EXCLUDE" ]; then
-            # "kilif, aksesuar" -> --exclude "kilif" "aksesuar"
-            ARGS+=(--exclude)
-            IFS=',' read -ra PARCALAR <<< "$ADD_EXCLUDE"
-            for parca in "${PARCALAR[@]}"; do
-              parca="$(printf '%s' "$parca" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
-              [ -n "$parca" ] && ARGS+=("$parca")
-            done
-          fi
-          # Zaten listede olan bir URL is akisini durdurmasin, uyari yeter
           if ! python -m tracker add "$ADD_URL" "${ARGS[@]}"; then
             echo "::warning::Urun eklenemedi (muhtemelen listede zaten var): $ADD_URL"
           fi
@@ -145,20 +138,34 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          # Girdiler kabuga degil, ortam degiskenine gecer (komut enjeksiyonunu onler)
           ONLY: ${{ inputs.only }}
           NOTIFY: ${{ inputs.notify }}
+          KOMUT: ${{ inputs.komut }}
+          NEED_SCAN: ${{ steps.komut.outputs.need_scan }}
+          SCAN_ALL: ${{ steps.komut.outputs.scan_all }}
+          SCAN_IDS: ${{ steps.komut.outputs.scan_ids }}
           PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: |
           set -o noglob
-          ARGS=()
-          if [ -n "$ONLY" ]; then
+          ARGS=(--report-url "$PAGES_URL")
+          if [ -n "$KOMUT" ]; then
+            # Uygulama komutu: yalnizca etkilenen urunleri tara, ozet mesaji atma
+            if [ "$NEED_SCAN" != "true" ]; then
+              echo "Komut tarama gerektirmiyor; uygulama yeniden uretiliyor."
+              python -m tracker report
+              exit 0
+            fi
+            ARGS+=(--no-summary)
+            if [ "$SCAN_ALL" != "true" ] && [ -n "$SCAN_IDS" ]; then
+              ARGS+=(--only $SCAN_IDS)
+            fi
+          elif [ -n "$ONLY" ]; then
             ARGS+=(--only $ONLY)
           fi
           if [ "$NOTIFY" = "false" ]; then
             ARGS+=(--no-notify)
           fi
-          python -m tracker scan "${ARGS[@]}" --report-url "$PAGES_URL"
+          python -m tracker scan "${ARGS[@]}"
 
       - name: Sonuclari depoya yaz
         run: |
@@ -185,6 +192,10 @@ jobs:
         if: always()
         run: |
           echo "## Fiyat taramasi sonucu" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f /tmp/komut-sonucu.json ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            python -c "import json; r=json.load(open('/tmp/komut-sonucu.json')); print('\n'.join('- '+m for m in r['messages']))" >> "$GITHUB_STEP_SUMMARY"
+          fi
           if [ ! -f data/latest.json ]; then
             echo "Sonuc dosyasi uretilemedi." >> "$GITHUB_STEP_SUMMARY"
             exit 0
@@ -196,7 +207,6 @@ jobs:
           print("| Urun | Site | Fiyat | Degisim | Durum |")
           print("|---|---|--:|--:|---|")
           for p in d["products"]:
-              # TR bicimi: binlik nokta, ondalik virgul (once takas, sonra yer degistir)
               price = (f"{p['price']:,.2f}".replace(",", "\x00").replace(".", ",").replace("\x00", ".") + " TL"
                        ) if p["price"] is not None else "—"
               chg = f"{p['change_percent']:+.1f}%" if p["change_percent"] is not None else "—"

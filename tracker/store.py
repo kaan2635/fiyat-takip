@@ -173,33 +173,69 @@ def all_stats(path: Path = HISTORY_PATH) -> dict[str, PriceStats]:
     return {pid: stats_for(rows) for pid, rows in series_by_product(path).items()}
 
 
+def load_latest(path: Path = LATEST_PATH) -> dict[str, dict]:
+    """Son durum dosyasini urun kimligine gore okur (yoksa bos)."""
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return {p["id"]: p for p in data.get("products", []) if isinstance(p, dict) and p.get("id")}
+
+
 def write_latest(rows: list[ScanRow], stats: dict[str, PriceStats],
-                 path: Path = LATEST_PATH, offers: dict | None = None) -> None:
-    """Son durumun makine okunur ozetini yazar (baska araclar icin)."""
+                 path: Path = LATEST_PATH, offers: dict | None = None,
+                 searches: dict | None = None, keep_ids: list[str] | None = None) -> None:
+    """Son durumun makine okunur ozetini yazar (uygulama ve baska araclar icin).
+
+    Yalnizca bazi urunler tarandiysa (`--only`) digerlerinin son durumu
+    onceki dosyadan korunur; aksi halde uygulamada kaybolurlardi.
+    `keep_ids` verilirse listede olmayan (silinmis) urunler dosyadan cikar.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
-    payload = {"generated_at": now_iso(), "products": []}
+    previous = load_latest(path)
+    entries: dict[str, dict] = {}
+
     for row in rows:
         st = stats.get(row.product_id, PriceStats())
-        payload["products"].append(
-            {
-                "id": row.product_id,
-                "name": row.name,
-                "site": row.site,
-                "url": row.url,
-                "status": row.status,
-                "price": float(row.price) if row.price is not None else None,
-                "currency": row.currency,
-                "in_stock": row.in_stock,
-                "lowest": float(st.lowest) if st.lowest is not None else None,
-                "highest": float(st.highest) if st.highest is not None else None,
-                "change_percent": round(st.change_percent, 2) if st.change_percent is not None else None,
-                "points": st.points,
-                "note": row.note,
-                # Arama urunlerinde bulunan tum teklifler (ucuzdan pahaliya)
-                "offers": [
-                    {"site": o.site, "title": o.title, "price": float(o.price), "url": o.url}
-                    for o in (offers or {}).get(row.product_id, [])
-                ],
-            }
-        )
+        result = (searches or {}).get(row.product_id)
+        offer_list = result.offers if result is not None else (offers or {}).get(row.product_id, [])
+        entry = {
+            "id": row.product_id,
+            "name": row.name,
+            "site": row.site,
+            "url": row.url,
+            "status": row.status,
+            "price": float(row.price) if row.price is not None else None,
+            "currency": row.currency,
+            "in_stock": row.in_stock,
+            "lowest": float(st.lowest) if st.lowest is not None else None,
+            "highest": float(st.highest) if st.highest is not None else None,
+            "change_percent": round(st.change_percent, 2) if st.change_percent is not None else None,
+            "points": st.points,
+            "note": row.note,
+            "scanned_at": row.scanned_at,
+            # Arama urunlerinde bulunan tum teklifler (ucuzdan pahaliya)
+            "offers": [
+                {"site": o.site, "title": o.title, "price": float(o.price), "url": o.url,
+                 **({"image": o.image} if getattr(o, "image", "") else {}),
+                 **({"key": o.key} if getattr(o, "key", "") else {})}
+                for o in offer_list[:40]
+            ],
+        }
+        if result is not None:
+            detail = result.to_dict(limit=0)
+            entry["rejected"] = detail["rejected"]
+            entry["warnings"] = detail["warnings"]
+            entry["per_site"] = detail["per_site"]
+        entries[row.product_id] = entry
+
+    ids = keep_ids if keep_ids is not None else list(dict.fromkeys(list(previous) + list(entries)))
+    products = []
+    for pid in ids:
+        if pid in entries:
+            products.append(entries[pid])
+        elif pid in previous:
+            products.append(previous[pid])
+
+    payload = {"generated_at": now_iso(), "products": products}
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -26,6 +26,8 @@ DEFAULT_SETTINGS: dict = {
     # Ayni siteye istekler arasi en az bekleme (saniye)
     "min_delay_seconds": 2.0,
     "timeout_seconds": 30,
+    # Arama urunlerinde varsayilan kaynaklar (bos = tracker.search.DEFAULT_SITES)
+    "default_sites": [],
 }
 
 _TR_MAP = str.maketrans("çğıöşüÇĞİÖŞÜ", "cgiosuCGIOSU")
@@ -62,6 +64,10 @@ class Product:
     exclude: list[str] = field(default_factory=list)
     min_price: Decimal | None = None
     max_price: Decimal | None = None
+    # Kullanicinin uygulamadan verdigi kararlar (ilan anahtarlari, bkz. search.listing_key)
+    include_listings: list[str] = field(default_factory=list)   # "bu dogru urun"
+    exclude_listings: list[str] = field(default_factory=list)   # "bu urun degil"
+    added_at: str = ""
 
     @property
     def is_search(self) -> bool:
@@ -93,6 +99,12 @@ class Product:
             data["min_price"] = float(self.min_price)
         if self.max_price is not None:
             data["max_price"] = float(self.max_price)
+        if self.include_listings:
+            data["include_listings"] = list(self.include_listings)
+        if self.exclude_listings:
+            data["exclude_listings"] = list(self.exclude_listings)
+        if self.added_at:
+            data["added_at"] = self.added_at
         if not self.enabled:
             data["enabled"] = False
         if self.note:
@@ -151,6 +163,9 @@ class Config:
                     exclude=_list(entry.get("exclude")),
                     min_price=_dec(entry.get("min_price")),
                     max_price=_dec(entry.get("max_price")),
+                    include_listings=_list(entry.get("include_listings")),
+                    exclude_listings=_list(entry.get("exclude_listings")),
+                    added_at=str(entry.get("added_at") or ""),
                 )
             )
         return cls(settings=settings, products=products, path=path)
@@ -169,6 +184,9 @@ class Config:
     # --------------------------------------------------------------- yardimci
     def get(self, key: str):
         return self.settings.get(key, DEFAULT_SETTINGS.get(key))
+
+    def by_id(self, pid: str) -> Product | None:
+        return next((p for p in self.products if p.id == pid), None)
 
     def find(self, needle: str) -> Product | None:
         needle = needle.strip().lower()

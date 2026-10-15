@@ -46,6 +46,18 @@ BASE_HEADERS = {
     "Upgrade-Insecure-Requests": "1",
 }
 
+# Olcumle bulunan, ilk denemede kabul edilen profil (GitHub Actions IP'sinden).
+# Bunlar olmadan da calisir ama her taramada once 2-3 reddedilen deneme yapilir.
+SITE_PROFILES: dict[str, str] = {
+    "trendyol.com": "chrome116",
+    "hepsiburada.com": "chrome116",
+    "n11.com": "chrome116",
+    "amazon.com.tr": "chrome116",
+    "pazarama.com": "safari17_0",
+    "teknosa.com": "safari17_0",
+    "mediamarkt.com.tr": "safari17_0",
+}
+
 # Trendyol yurt disi IP'lerde urun sayfasi yerine ulke secim ekrani gosteriyor;
 # magaza cerezleri bunu Turkiye vitrinine sabitliyor.
 SITE_COOKIES: dict[str, dict[str, str]] = {
@@ -149,7 +161,7 @@ class Fetcher:
         self.min_delay = min_delay
         self.profiles = profiles or IMPERSONATE_PROFILES
         self._last_hit: dict[str, float] = {}
-        self._good_profile: dict[str, str] = {}   # host -> calistigi bilinen profil
+        self._good_profile: dict[str, str] = dict(SITE_PROFILES)   # host -> calisan profil
         self._sessions: dict[str, object] = {}
 
     # ------------------------------------------------------------------ dahili
@@ -205,7 +217,8 @@ class Fetcher:
         order = list(self.profiles)
         known = self._good_profile.get(host)
         if known:
-            order.remove(known)
+            if known in order:
+                order.remove(known)
             order.insert(0, known)
 
         last = FetchResult(url=url, error="hic deneme yapilmadi")
@@ -227,6 +240,24 @@ class Fetcher:
         if not last.block_reason and last.error:
             last.block_reason = last.error
         return last
+
+    def fork(self) -> "Fetcher":
+        """Ayni ayarlarla ayri oturumlu bir kopya (paralel arama icin).
+
+        curl oturumlari is parcaciklari arasinda paylasilamaz; her site kendi
+        kopyasini kullanir, bitince ogrendigi profiller `absorb` ile geri alinir.
+        """
+        twin = Fetcher(timeout=self.timeout, retries=self.retries,
+                       min_delay=self.min_delay, profiles=self.profiles)
+        twin._good_profile = dict(self._good_profile)
+        twin._last_hit = dict(self._last_hit)
+        return twin
+
+    def absorb(self, twin: "Fetcher") -> None:
+        self._good_profile.update(twin._good_profile)
+        for host, ts in twin._last_hit.items():
+            self._last_hit[host] = max(ts, self._last_hit.get(host, 0))
+        twin.close()
 
     def close(self) -> None:
         for s in self._sessions.values():

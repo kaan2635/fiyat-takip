@@ -1,0 +1,108 @@
+name: Fiyat arama
+# Telefondaki uygulamanin "Ara" sekmesi bu is akisini tetikler. Takip
+# listesine dokunmaz, fiyat gecmisine yazmaz; yalnizca pazaryerlerinde arar
+# ve sonucu ayri bir dala (ft-veri) yazar. Uygulama sonucu oradan okur.
+run-name: ${{ format('Arama {0}', inputs.istek) }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      sorgu:
+        description: "Aranacak urun adi"
+        required: true
+      istek:
+        description: "Istek kimligi (uygulama doldurur; elle calistirirken bos birakilabilir)"
+        required: false
+        default: ""
+      ayar:
+        description: "JSON secenekler: sites, exclude, must_include, min_price, max_price"
+        required: false
+        default: ""
+
+# Aramalar birbirini beklemez; her biri kendi dosyasini yazar
+concurrency:
+  group: fiyat-arama-${{ inputs.istek || github.run_id }}
+
+permissions:
+  contents: write
+
+jobs:
+  ara:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v5
+        with:
+          # Kok dizindeki dosyalar (requirements.txt, products.yaml) her zaman gelir
+          sparse-checkout: tracker
+
+      - name: Python kur
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Bagimliliklari kur
+        run: pip install -r requirements.txt
+
+      - name: Ara
+        env:
+          SORGU: ${{ inputs.sorgu }}
+          ISTEK: ${{ inputs.istek }}
+          AYAR: ${{ inputs.ayar }}
+        run: |
+          # Kimlik dosya adi olacak; yalnizca harf/rakam kabul edilir
+          if ! printf '%s' "$ISTEK" | grep -qE '^[a-z0-9]{6,32}$'; then
+            ISTEK="elle$(date +%s)"
+          fi
+          echo "ISTEK=$ISTEK" >> "$GITHUB_ENV"
+          python -m tracker search --json "/tmp/sonuc/ara/$ISTEK.json" \
+            --request "$ISTEK" --options "$AYAR" -- "$SORGU"
+
+      - name: Sonucu ft-veri dalina yaz
+        env:
+          GH_REPO_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir /tmp/veri && cd /tmp/veri && git init -q && git remote add origin "$GH_REPO_URL"
+          for i in 1 2 3 4; do
+            if git fetch -q --depth=1 origin ft-veri 2>/dev/null; then
+              git checkout -q -B ft-veri FETCH_HEAD
+            else
+              git checkout -q --orphan ft-veri
+            fi
+            mkdir -p ara
+            cp "/tmp/sonuc/ara/$ISTEK.json" "ara/$ISTEK.json"
+            # Son 40 arama tutulur (kimlikler zaman damgasiyla basladigi icin
+            # alfabetik sira = zaman sirasi)
+            ls ara/*.json | sort | head -n -40 | xargs -r rm -f
+            printf '%s\n' "Telefondaki uygulamanin arama sonuclari. Elle duzenlemeye gerek yok." > README.md
+            git add -A
+            git commit -qm "Arama: $ISTEK" || true
+            if git push -q origin HEAD:ft-veri; then
+              echo "Sonuc yazildi: ara/$ISTEK.json"
+              exit 0
+            fi
+            echo "Push denemesi $i basarisiz, tekrar deneniyor..."
+            sleep $((i * 2))
+          done
+          echo "::error::Sonuc dala yazilamadi."
+          exit 1
+
+      - name: Ozet
+        if: always()
+        run: |
+          f="/tmp/sonuc/ara/$ISTEK.json"
+          [ -f "$f" ] || exit 0
+          python - "$f" <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, sys
+          d = json.load(open(sys.argv[1]))
+          r = d["result"]
+          print(f"## Arama: {d['query']}\n")
+          print("| Fiyat | Site | Urun |\n|--:|---|---|")
+          for o in r["offers"][:15]:
+              print(f"| {o['price']:,.2f} | {o['site']} | {o['title'][:70]} |")
+          print("\n" + "<br>".join(r["notes"]))
+          PY

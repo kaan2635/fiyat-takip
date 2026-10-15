@@ -301,9 +301,9 @@ def test_tarayici_yoksa_http_ile_devam(monkeypatch):
 # ------------------------------------------------------------------------ PWA
 def test_manifest_gecerli():
     import json as _json
-    from tracker.pwa import MANIFEST
+    from tracker.report import WEB_DIR
 
-    data = _json.loads(_json.dumps(MANIFEST))          # serilestirilebilir mi
+    data = _json.loads((WEB_DIR / "manifest.webmanifest").read_text(encoding="utf-8"))
     assert data["display"] == "standalone"
     # Goreli yollar sart: GitHub Pages depoyu /<repo>/ altinda yayinliyor
     assert data["start_url"] == "./" and data["scope"] == "./"
@@ -311,39 +311,13 @@ def test_manifest_gecerli():
     assert any(i["purpose"] == "maskable" for i in data["icons"])
 
 
-def test_pwa_varliklari_yazilir(tmp_path):
-    import json as _json
-    from tracker.pwa import write_assets
-
-    write_assets(tmp_path)
-    for name in ("manifest.webmanifest", "sw.js", "app.js", ".nojekyll"):
-        assert (tmp_path / name).exists(), name
-    _json.loads((tmp_path / "manifest.webmanifest").read_text(encoding="utf-8"))
-
-
 def test_head_etiketleri_ios_icin_tam():
-    from tracker.pwa import head_tags
+    from tracker.report import WEB_DIR
 
-    html = head_tags()
+    html = (WEB_DIR / "index.html").read_text(encoding="utf-8")
     for gerekli in ("manifest.webmanifest", "apple-mobile-web-app-capable",
-                    "apple-touch-icon", "viewport-fit=cover", "theme-color"):
+                    "apple-touch-icon", "viewport-fit=cover", "theme-color", "ft-data"):
         assert gerekli in html, gerekli
-
-
-def test_rapor_pwa_kabugunu_icerir(tmp_path):
-    from tracker.report import write_report
-    from tracker.store import ScanRow
-
-    row = ScanRow("2026-01-01T00:00:00+00:00", "p", "Urun", "ornek.com",
-                  "https://ornek.com/u", Decimal("100"), "TRY", True, "ok", "test")
-    path = write_report([row], {"p": PriceStats(current=Decimal("100"), points=1)},
-                        {"p": []}, {}, "2026-01-01T00:00:00+00:00",
-                        path=tmp_path / "index.html")
-    html = path.read_text(encoding="utf-8")
-    assert 'id="ft-scan"' in html                 # tarama dugmesi
-    assert 'id="ft-sheet-settings"' in html       # ayarlar panosu
-    assert 'meta name="ft-generated"' in html     # yayin damgasi
-    assert (tmp_path / "app.js").exists()         # varliklar yaninda uretildi
 
 
 # --------------------------------------------------------------- urun arama
@@ -435,13 +409,13 @@ def test_arama_urunu_taranir(monkeypatch):
     monkeypatch.setattr(scan_mod, "search", lambda *a, **k: (sahte, ["test"]))
 
     p = Product(id="besafe", query="BeSafe iZi Turn B i-Size", name="Oto koltugu")
-    row, offers = scan_mod.scan_search_product(p, None, Config(), [])
+    row, result = scan_mod.scan_search_product(p, None, Config(), [])
 
     assert row.status == "ok"
     assert row.price == Decimal("43424.25")
     assert row.site == "hepsiburada.com"          # en ucuz satici kaydedilir
     assert "BeSafe" in row.note                   # eslesen baslik gorunur olmali
-    assert len(offers) == 2
+    assert len(result.offers) == 2
 
 
 def test_arama_sonucsuzsa_sebep_yazilir(monkeypatch):
@@ -449,9 +423,9 @@ def test_arama_sonucsuzsa_sebep_yazilir(monkeypatch):
 
     monkeypatch.setattr(scan_mod, "search", lambda *a, **k: ([], ["trendyol: 36 sonuc, 0 eslesti"]))
     p = Product(id="x", query="bulunmayan urun")
-    row, offers = scan_mod.scan_search_product(p, None, Config(), [])
+    row, result = scan_mod.scan_search_product(p, None, Config(), [])
 
     assert row.status == "no_match"
     assert row.price is None
     assert "0 eslesti" in row.note
-    assert offers == []
+    assert result.offers == []
