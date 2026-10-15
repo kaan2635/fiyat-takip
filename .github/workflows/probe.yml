@@ -1,0 +1,28 @@
+name: Gecici site olcumu
+
+on:
+  push:
+    branches: [probe-tmp]
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python tools/probe.py
+      - name: Sonuclari gecici dala yaz
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir /tmp/pub && cp -r probe-out/* /tmp/pub/ && cd /tmp/pub
+          git init -q -b probe-out && git add -A && git commit -qm "probe sonuclari"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" probe-out
