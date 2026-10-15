@@ -1,7 +1,7 @@
 // Servis calisani: uygulama kabugu onbellekte, veri her zaman once agdan.
-// Surum her yayinda degisir (dc028711b3), eski onbellek temizlenir.
-const CACHE = 'fiyat-takip-dc028711b3';
-const SHELL = ['./', './app.js?v=dc028711b3', './app.css?v=dc028711b3', './manifest.webmanifest',
+// Surum her yayinda degisir (9c6729d3e1), eski onbellek temizlenir.
+const CACHE = 'fiyat-takip-9c6729d3e1';
+const SHELL = ['./', './app.js?v=9c6729d3e1', './app.css?v=9c6729d3e1', './manifest.webmanifest',
                './icons/icon-192.png', './icons/apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => {

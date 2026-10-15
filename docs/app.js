@@ -149,11 +149,12 @@
   }
 
   async function gh(path, { method = 'GET', body, raw = false, auth = true } = {}) {
-    const headers = {
-      'Accept': raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json',
-      'X-GitHub-Api-Version': '2022-11-28',
-    };
-    if (auth && token()) headers.Authorization = 'Bearer ' + token();
+    const headers = { 'Accept': raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json' };
+    // Anahtarsiz okumalar "basit istek" kalsin (on kontrol istegi gerekmesin)
+    if (auth && token()) {
+      headers.Authorization = 'Bearer ' + token();
+      headers['X-GitHub-Api-Version'] = '2022-11-28';
+    }
     if (body) headers['Content-Type'] = 'application/json';
     const res = await fetch(API + path, { method, headers, cache: 'no-store',
                                           body: body ? JSON.stringify(body) : undefined });
