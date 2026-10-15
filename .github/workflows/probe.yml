@@ -21,8 +21,8 @@ jobs:
       - run: python tools/probe.py
       - name: Sonuclari gecici dala yaz
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir /tmp/pub && cp -r probe-out/* /tmp/pub/ && cd /tmp/pub
           git init -q -b probe-out && git add -A && git commit -qm "probe sonuclari"
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" probe-out
