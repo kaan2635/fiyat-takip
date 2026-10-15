@@ -5,6 +5,7 @@ settings:
   browser_fallback: true
   min_delay_seconds: 2.0
   timeout_seconds: 30
+  default_sites: []
 products:
 - id: besafe-izi-turn-b-i-size
   name: BeSafe iZi Turn B i-Size
