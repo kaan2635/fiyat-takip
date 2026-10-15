@@ -223,7 +223,10 @@ def build_alerts(product: Product, row: ScanRow, stats: PriceStats,
     if threshold and pct is not None and pct <= -threshold:
         alerts.append(Alert("drop", product, row, stats, f"%{abs(pct):.1f} ucuzladi"))
 
-    if stats.is_lowest_ever and stats.points > 2:
+    # Yalnizca bu taramada yeni bir dip goruldugunde: fiyat en dusukte kaldikca
+    # her taramada ayni bildirimi tekrarlamamak icin onceki olcumden dusmus olmali
+    if (stats.is_lowest_ever and stats.points > 2
+            and stats.previous is not None and stats.current < stats.previous):
         alerts.append(Alert("lowest", product, row, stats, "gordugu en dusuk fiyat"))
 
     if cfg.get("notify_on_back_in_stock") and previous_in_stock is False and row.in_stock is True:

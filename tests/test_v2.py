@@ -399,3 +399,18 @@ def test_uygulama_yazilir_ve_veri_gomulur(tmp_path):
     embedded = html.split('id="ft-data" type="application/json">')[1].split("</script>")[0]
     assert json.loads(embedded)["products"][0]["name"] == "</script>"
     assert "__VERSION__" not in (docs / "sw.js").read_text(encoding="utf-8")
+
+
+def test_en_dusuk_bildirimi_tekrarlanmaz():
+    from tracker.scan import build_alerts
+    from tracker.store import PriceStats
+    cfg = Config()
+    p = Product(id="p", url="https://ornek.com/u")
+    row = ScanRow("2026-01-01T00:00:00+00:00", "p", "Urun", "ornek.com", "u", Decimal("90"),
+                  "TRY", True, "ok", "t")
+    yeni_dip = PriceStats(current=Decimal("90"), previous=Decimal("95"), lowest=Decimal("90"),
+                          highest=Decimal("100"), points=4)
+    assert any(a.kind == "lowest" for a in build_alerts(p, row, yeni_dip, True, cfg))
+    dipte_kaldi = PriceStats(current=Decimal("90"), previous=Decimal("90"), lowest=Decimal("90"),
+                             highest=Decimal("100"), points=5)
+    assert not any(a.kind == "lowest" for a in build_alerts(p, row, dipte_kaldi, True, cfg))
