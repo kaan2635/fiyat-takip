@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T15:44:38+00:00",
+  "generated_at": "2026-10-15T16:27:25+00:00",
   "products": [
     {
       "id": "besafe-izi-turn-b-i-size",
@@ -13,9 +13,9 @@
       "lowest": 43424.25,
       "highest": 45999.0,
       "change_percent": 0.0,
-      "points": 68,
+      "points": 69,
       "note": "3 teklif | BeSafe Izi Turn B i-Size 0-18kg Oto Koltuğu Anthracite Mesh",
-      "scanned_at": "2026-10-15T15:06:59+00:00",
+      "scanned_at": "2026-10-15T16:27:18+00:00",
       "offers": [
         {
           "site": "hepsiburada.com",
@@ -66,282 +66,6 @@
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (3/4, eksik: besafe)",
           "near": true
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Valkyrie 10cm Boy 1cm En Full Magnezyum Ateş Başlatıcı Bar - %100 Katkısız Alüminyum İçermez Fire Starter Siyah",
-          "price": 494.94,
-          "url": "https://www.teknosa.com/valkyrie-10cm-boy-1cm-en-full-magnezyum-ates-baslatici-bar-100-katkisiz-aluminyum-icermez-fire-starter-siyah-p-789288535",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/789288535/789288535_0_MC/5710cd2104df418f8bb6208d56d4240b.jpg",
-          "key": "teknosa:789288535",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Al Ahli Doha F.C. Kupa Bardak - 1 Adet 0957",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-al-ahli-doha-fc-kupa-bardak-1-adet-0957-p-790706578",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706578/790706578_0_MC/6921088839754f3b949daa673654951b.jpg",
-          "key": "teknosa:790706578",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Al Ahli Doha F.C. Kupa Bardak - 1 Adet 0952",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-al-ahli-doha-fc-kupa-bardak-1-adet-0952-p-790706769",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706769/790706769_0_MC/96dc1a458b1843aba74c7c8b25472c5c.jpg",
-          "key": "teknosa:790706769",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Kuwait F.A. Kupa Bardak - 1 Adet 0919",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-kuwait-fa-kupa-bardak-1-adet-0919-p-790706732",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706732/790706732_0_MC/aace9281df0742658f5b8f8f7efe85bc.jpg",
-          "key": "teknosa:790706732",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Hazbin Hotel Kupa Bardak - 1 Adet K0569",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-hazbin-hotel-kupa-bardak-1-adet-k0569-p-790706412",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706412/790706412_0_MC/e87409f8be2e4a96a2ecee966a6fbbf7.jpg",
-          "key": "teknosa:790706412",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Ruh Hali Saatleri Kupa Bardak - 1 Adet K0494",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-ruh-hali-saatleri-kupa-bardak-1-adet-k0494-p-790706486",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706486/790706486_0_MC/f298b857cda54604a4c91d2ee7571799.jpg",
-          "key": "teknosa:790706486",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Al Ain F.C. Kupa Bardak - 1 Adet 0958",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-al-ain-fc-kupa-bardak-1-adet-0958-p-790706673",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706673/790706673_0_MC/fe29c758a7084cb0a019116237579b40.jpg",
-          "key": "teknosa:790706673",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Zootropolis Judy ve Nick Kupa Bardak - 1 Adet 0891",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-zootropolis-judy-nick-kupa-bardak-1-adet-0891-p-790706761",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706761/790706761_0_MC/231affa6b035415c987f5f23778b85f7.jpg",
-          "key": "teknosa:790706761",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Al Ittihad F.C. Kupa Bardak - 1 Adet 0947",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-al-ittihad-fc-kupa-bardak-1-adet-0947-p-790706742",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706742/790706742_0_MC/0ef26f26bcd44dbea33e0d2590c319e3.jpg",
-          "key": "teknosa:790706742",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Kişiye Özel Zootropolis Judy ve Nick Kupa Bardak - 1 Adet 0927",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-kisiye-ozel-zootropolis-judy-nick-kupa-bardak-1-adet-0927-p-790706590",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706590/790706590_0_MC/195eb08caa064a7ebed5cfe8546cf7e4.jpg",
-          "key": "teknosa:790706590",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Hazbin Hotel Kupa Bardak - 1 Adet K0570",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-hazbin-hotel-kupa-bardak-1-adet-k0570-p-790706335",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706335/790706335_0_MC/802bf47be1114dc58adf11000616b807.jpg",
-          "key": "teknosa:790706335",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Doğum Günü Striptizi Kupa Bardak - 1 Adet 0129",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-dogum-gunu-striptizi-kupa-bardak-1-adet-0129-p-790707519",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790707519/790707519_0_MC/70ba85b37e84443693e5950e984db6f8.jpg",
-          "key": "teknosa:790707519",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Hazbin Hotel Kupa Bardak - 1 Adet K0571",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-hazbin-hotel-kupa-bardak-1-adet-k0571-p-790706559",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706559/790706559_0_MC/7ca2b273d7ca42bf810db6e44c921c34.jpg",
-          "key": "teknosa:790706559",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Ters Yüz Temor Kupa Bardak - 1 Adet 0607",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-ters-yuz-temor-kupa-bardak-1-adet-0607-p-790707538",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790707538/790707538_0_MC/4a40b0c8471643708d07399c05a4910f.jpg",
-          "key": "teknosa:790707538",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Bizimkiler Sabri Bey Kupa Bardak - 1 Adet 069",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-bizimkiler-sabri-bey-kupa-bardak-1-adet-069-p-790707883",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790707883/790707883_0_MC/f03e693e235742ed869fbf0493469391.jpg",
-          "key": "teknosa:790707883",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Dinamo Zagreb Kupa Bardak - 1 Adet 0981",
-          "price": 549.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-dinamo-zagreb-kupa-bardak-1-adet-0981-p-790706455",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790706455/790706455_0_MC/700160b046b54c9ab8eb672a92d207f0.jpg",
-          "key": "teknosa:790706455",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "amazon.com.tr",
-          "title": "BeSafe iZi Bebek Oto Koltuk Transfer Ünitesi",
-          "price": 599.0,
-          "url": "https://www.amazon.com.tr/dp/B08DK5LYZR",
-          "currency": "TRY",
-          "image": "https://m.media-amazon.com/images/I/41GwunI3k-L._AC_UL320_.jpg",
-          "key": "amazon:B08DK5LYZR",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (2/4, eksik: turn, size)",
-          "near": false
-        },
-        {
-          "site": "amazon.com.tr",
-          "title": "Besafe Izi Comfortx3/Comfort Isofix X3/Combi X4 Is Koruyucu Koltuk Örtüsü",
-          "price": 599.0,
-          "url": "https://www.amazon.com.tr/dp/B07CN28YGH",
-          "currency": "TRY",
-          "image": "https://m.media-amazon.com/images/I/81J6sVHIrYS._AC_UL320_.jpg",
-          "key": "amazon:B07CN28YGH",
-          "code": "default_exclude",
-          "reason": "'koruyucu' iceriyor (aksesuar/ikinci el olabilir)",
-          "near": false
-        },
-        {
-          "site": "amazon.com.tr",
-          "title": "Besafe Izi Flex Koruyucu Koltuk Örtüsü",
-          "price": 599.0,
-          "url": "https://www.amazon.com.tr/dp/B081W33WM4",
-          "currency": "TRY",
-          "image": "https://m.media-amazon.com/images/I/81Jq7u+aXpS._AC_UL320_.jpg",
-          "key": "amazon:B081W33WM4",
-          "code": "default_exclude",
-          "reason": "'koruyucu' iceriyor (aksesuar/ikinci el olabilir)",
-          "near": false
-        },
-        {
-          "site": "teknosa.com",
-          "title": "Ghostbastır Design Al Ahli Doha F.C. Türk Kahvesi Fincanı 085",
-          "price": 599.0,
-          "url": "https://www.teknosa.com/ghostbastir-design-al-ahli-doha-fc-turk-kahvesi-fincani-085-p-790708016",
-          "currency": "TRY",
-          "image": "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/300/300/productimage/790708016/790708016_0_MC/7a9ea6cadbba406aa4dbde13adf887cb.jpg",
-          "key": "teknosa:790708016",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "mediamarkt.com.tr",
-          "title": "POPULER Philips XC8057 XC8055 XC7057 Uyumlu Aqua Plus 8000 7000 6000 Süpürge Filtresi Çok Renkli",
-          "price": 599.0,
-          "url": "https://www.mediamarkt.com.tr/tr/product/_populer-philips-xc8057-xc8055-xc7057-uyumlu-aqua-plus-8000-7000-6000-supurge-filtresi-cok-renkli-179661136.html",
-          "currency": "TRY",
-          "image": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_179661323",
-          "key": "mediamarkt:179661136",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "mediamarkt.com.tr",
-          "title": "POPULER Roborock Saros 10R G20S Ultra Uyumlu Hepa Filtre Yıkanabilir Robot Süpürge Filtresi 2 adet Çok Renkli",
-          "price": 599.0,
-          "url": "https://www.mediamarkt.com.tr/tr/product/_populer-roborock-saros-10r-g20s-ultra-uyumlu-hepa-filtre-yikanabilir-robot-supurge-filtresi-2-adet-cok-renkli-179660904.html",
-          "currency": "TRY",
-          "image": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_179661169",
-          "key": "mediamarkt:179660904",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
-        },
-        {
-          "site": "mediamarkt.com.tr",
-          "title": "POPULER Roborock Saros 10 S9 MaxV Ultra G30 Uyumlu 2 Adet Hepa Filtre Robot Süpürge Filtresi Çok Renkli",
-          "price": 599.0,
-          "url": "https://www.mediamarkt.com.tr/tr/product/_populer-roborock-saros-10-s9-maxv-ultra-g30-uyumlu-2-adet-hepa-filtre-robot-supurge-filtresi-cok-renkli-179661316.html",
-          "currency": "TRY",
-          "image": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_179661386",
-          "key": "mediamarkt:179661316",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (0/4, eksik: besafe, izi, turn, size)",
-          "near": false
         }
       ],
       "warnings": [],
@@ -358,7 +82,7 @@
         },
         "amazon": {
           "ok": true,
-          "found": 11,
+          "found": 12,
           "kept": 0
         },
         "n11": {
@@ -395,9 +119,9 @@
       "lowest": 24719.0,
       "highest": 27679.2,
       "change_percent": 0.0,
-      "points": 33,
-      "note": "46 teklif | Maxi-cosi Mica 360 Pro I-size Slidetech Kızaklı İsofix'li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic Black",
-      "scanned_at": "2026-10-15T15:44:38+00:00",
+      "points": 34,
+      "note": "49 teklif | Maxi-cosi Mica 360 Pro I-size Slidetech Kızaklı İsofix'li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic Black",
+      "scanned_at": "2026-10-15T16:27:25+00:00",
       "offers": [
         {
           "site": "n11.com",
@@ -438,6 +162,30 @@
           "url": "https://www.hepsiburada.com/maxicosi-mica-360-pro-isize-dunyanin-ilk-kizakli-arac-disina-cikabilen-adac-li-isofix-li-360-donebilir-yatabilir-018-kg-bebek-oto-koltugu-authentic-black-p-HBCV00005TB73N",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001209427686.jpg",
           "key": "hepsiburada:HBCV00005TB73N"
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Mica 360 Pro i-Size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen ADAC'lı İsofix'li 360 Dönebilir Yatabilir 0-18 kg Bebek Oto Koltuğu Authentic Truffle",
+          "price": 25949.25,
+          "url": "https://www.amazon.com.tr/dp/B0F28Z3CQG",
+          "image": "https://m.media-amazon.com/images/I/51r32dnMPjL._AC_UL320_.jpg",
+          "key": "amazon:B0F28Z3CQG"
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size SlideTech Kızaklı İsofix'li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic",
+          "price": 25949.25,
+          "url": "https://www.amazon.com.tr/dp/B0CTKNRDNR",
+          "image": "https://m.media-amazon.com/images/I/51J9uj2KkIL._AC_UL320_.jpg",
+          "key": "amazon:B0CTKNRDNR"
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size SlideTech Kızaklı İsofix'li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic",
+          "price": 25949.25,
+          "url": "https://www.amazon.com.tr/dp/B0CTKNPQ69",
+          "image": "https://m.media-amazon.com/images/I/615PjvFwA+L._AC_UL320_.jpg",
+          "key": "amazon:B0CTKNPQ69"
         },
         {
           "site": "n11.com",
@@ -513,14 +261,6 @@
         },
         {
           "site": "hepsiburada.com",
-          "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
-          "price": 44014.66,
-          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000HIOJS2",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110002013825293.jpg",
-          "key": "hepsiburada:HBC0000HIOJS2"
-        },
-        {
-          "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro I-Size Dünyanın Ilk Kızaklı, Araç Dışına Çıkabilen Adac'lı Isofi",
           "price": 44560.22,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-adac-li-isofi-p-HBCV0000GWXN33",
@@ -534,6 +274,14 @@
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-p-HBCV0000GWX891",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001951989066.jpg",
           "key": "hepsiburada:HBCV0000GWX891"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
+          "price": 44560.22,
+          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-p-HBCV0000GWW0EB",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001951835240.jpg",
+          "key": "hepsiburada:HBCV0000GWW0EB"
         },
         {
           "site": "hepsiburada.com",
@@ -553,11 +301,27 @@
         },
         {
           "site": "hepsiburada.com",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
+          "price": 45051.11,
+          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-p-HBCV0000H0MN95",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001963405376.jpg",
+          "key": "hepsiburada:HBCV0000H0MN95"
+        },
+        {
+          "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro I-Size Dünyanın Ilk Kızaklı, Araç Dışına Çıkabilen Adac'lı Isofi",
           "price": 45058.62,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-adac-li-isofi-pm-HBC0000H7HN9R",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001982712717.jpg",
           "key": "hepsiburada:HBC0000H7HN9R"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
+          "price": 45058.62,
+          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000H7FZ77",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001982576354.jpg",
+          "key": "hepsiburada:HBC0000H7FZ77"
         },
         {
           "site": "hepsiburada.com",
@@ -633,19 +397,19 @@
         },
         {
           "site": "hepsiburada.com",
-          "title": "Maxi-Cosi Mica 360 Pro I-Size Dünyanın Ilk Kızaklı, Araç Dışına Çıkabilen Adac'lı Isofi",
-          "price": 48160.69,
-          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-adac-li-isofi-pm-HBC0000KIYJHW",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110002357673253.jpg",
-          "key": "hepsiburada:HBC0000KIYJHW"
-        },
-        {
-          "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
           "price": 48160.69,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000JSOO6J",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110002282340541.jpg",
           "key": "hepsiburada:HBC0000JSOO6J"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size Dünyanın Ilk Kızaklı, Araç Dışına Çıkabilen Adac'lı Isofi",
+          "price": 48160.69,
+          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-adac-li-isofi-pm-HBC0000KIYJHW",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110002357673253.jpg",
+          "key": "hepsiburada:HBC0000KIYJHW"
         },
         {
           "site": "hepsiburada.com",
@@ -678,46 +442,6 @@
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-p-HBCV0000HMGVSU",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110002025274900.jpg",
           "key": "hepsiburada:HBCV0000HMGVSU"
-        },
-        {
-          "site": "hepsiburada.com",
-          "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
-          "price": 48212.1,
-          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000HMHH43",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110002025326819.jpg",
-          "key": "hepsiburada:HBC0000HMHH43"
-        },
-        {
-          "site": "hepsiburada.com",
-          "title": "Maxi-Cosi Mica 360 Pro I-Size Dünyanın Ilk Kızaklı, Araç Dışına Çıkabilen Adac'lı Isofix'li 360 Dönebilir Yatabilir 0-18 kg Bebek Oto Koltuğu Authentic Truffle",
-          "price": 48844.06,
-          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-adac-li-isofix-li-360-donebilir-yatabilir-0-18-kg-bebek-oto-koltugu-authentic-truffle-pm-HBC0000MM1XO1",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110002675015648.jpg",
-          "key": "hepsiburada:HBC0000MM1XO1"
-        },
-        {
-          "site": "hepsiburada.com",
-          "title": "AyrStore Maxi-Cosi Mica 360 Pro I-Size Dünyanın Ilk Kızaklı, Araç Dışına Çıkabilen Adac'lı Isofi",
-          "price": 50751.04,
-          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-adac-li-isofi-pm-HBC0000GH50SU",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001898917642.jpg",
-          "key": "hepsiburada:HBC0000GH50SU"
-        },
-        {
-          "site": "hepsiburada.com",
-          "title": "AyrStore Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
-          "price": 50751.04,
-          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000GGWNAU",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001898079825.jpg",
-          "key": "hepsiburada:HBC0000GGWNAU"
-        },
-        {
-          "site": "hepsiburada.com",
-          "title": "AyrStore Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
-          "price": 50751.04,
-          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000GH3K79",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001898783381.jpg",
-          "key": "hepsiburada:HBC0000GH3K79"
         }
       ],
       "rejected": [
@@ -783,6 +507,30 @@
         },
         {
           "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-Cosi Fonksiyonel Bebek Bakım Çantası XL Alt Değiştirme Matı Ve Ekstra Bebek Bezi Çantalı Sand",
+          "price": 8699.25,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-fonksiyonel-bebek-bakim-cantasi-xl-alt-degistirme-mati-ve-ekstra-bebek-bezi-cantali-sand-p-946335787?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1696/prod/QC_PREP/20250619/15/2ec366f0-7e34-3bc2-bdd4-59d06dcef470/1_org_zoom.jpg",
+          "key": "trendyol:946335787",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Lara2 Ultra Kompakt Otomatik Katlanan Kabin Boy Seyahat Sistem Olabilen Bebek Arabası Essential Gri",
+          "price": 11563.02,
+          "url": "https://www.amazon.com.tr/dp/B0CKBPPL2K",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/61N2zVVKT1L._AC_UL320_.jpg",
+          "key": "amazon:B0CKBPPL2K",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
           "title": "MAXİ-COSİ Dove Pro Cloudsoft Titreşimli Sezgisel Sallanan Ikonik Tasarım Ev Tipi Ana Kucağı Elegance Beige",
           "price": 11898.75,
           "url": "https://www.trendyol.com/maxi-cosi/dove-pro-cloudsoft-titresimli-sezgisel-sallanan-ikonik-tasarim-ev-tipi-ana-kucagi-elegance-beige-p-929719048?boutiqueId=61&merchantId=109213",
@@ -807,6 +555,18 @@
         },
         {
           "site": "trendyol.com",
+          "title": "MAXİ-COSİ Dove Pro Dünyada İlk CloudSoft Titreşimli Sezgisel Sallanan Ikonik Tasarım Ev Tipi Ana Kuc",
+          "price": 11898.75,
+          "url": "https://www.trendyol.com/maxi-cosi/dove-pro-dunyada-ilk-cloudsoft-titresimli-sezgisel-sallanan-ikonik-tasarim-ev-tipi-ana-kuc-p-970751525?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1727/prod/QC_PREP/20250813/12/bf2285c4-ffb4-3f4f-82fe-a6ae111d1367/1_org_zoom.jpg",
+          "key": "trendyol:970751525",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
           "title": "MAXİ-COSİ Lara2 Ultra Kompakt Otomatik Katlanan Kabin Boy Bebek Arabası Essential Graphite",
           "price": 11999.25,
           "url": "https://www.trendyol.com/maxi-cosi/lara2-ultra-kompakt-otomatik-katlanan-kabin-boy-bebek-arabasi-essential-graphite-p-299365998?boutiqueId=61&merchantId=109213",
@@ -825,6 +585,18 @@
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1661/prod/QC/20250409/17/8ef889d0-8539-34c0-b740-58f1bb3f872c/1_org_zoom.jpg",
           "key": "trendyol:292890141",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi CabrioFix i-Size ADAC'lı Bebek Oto Koltuğu ve Ana Kucağı, Essential Graph, 0-13 kg",
+          "price": 12048.75,
+          "url": "https://www.amazon.com.tr/dp/B09LVKQMBQ",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/716bchart+L._AC_UL320_.jpg",
+          "key": "amazon:B09LVKQMBQ",
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
           "near": true
@@ -866,13 +638,13 @@
           "near": true
         },
         {
-          "site": "trendyol.com",
-          "title": "MAXİ-COSİ Maxi-Cosi Iora Air Sallanabilen Ahşap Görünümlü Anne Yanı Beşik Beyond Green",
-          "price": 15498.75,
-          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-iora-air-sallanabilen-ahsap-gorunumlu-anne-yani-besik-beyond-green-p-825889039?boutiqueId=61&merchantId=109213",
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Maxi Cosi Eva Otomatik Katlanan Kompakt Bebek Arabası Essential Black Champagne",
+          "price": 14298.75,
+          "url": "https://www.amazon.com.tr/dp/B09SNQLZ2D",
           "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1761/prod/QC_ENRICHMENT/20250924/11/53b1bd96-16bf-3370-bbf3-c75adacd67dd/1_org_zoom.jpg",
-          "key": "trendyol:825889039",
+          "image": "https://m.media-amazon.com/images/I/51KcA+6ZMNL._AC_UL320_.jpg",
+          "key": "amazon:B09SNQLZ2D",
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
           "near": true
@@ -914,13 +686,13 @@
           "near": true
         },
         {
-          "site": "trendyol.com",
-          "title": "MAXİ-COSİ Familyfix Slide Pro 360 Dönebilen 27 cm Araç Dışına Kaydırılabilen Isofix Bazası",
-          "price": 22698.75,
-          "url": "https://www.trendyol.com/maxi-cosi/familyfix-slide-pro-360-donebilen-27-cm-arac-disina-kaydirilabilen-isofix-bazasi-p-1119977334?boutiqueId=61&merchantId=109213",
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Spinel 360 S i-Size Dönebilen Yatabilen Isofix'li 0-36 kg Oto Koltuğu Authentic Graphite",
+          "price": 21149.25,
+          "url": "https://www.amazon.com.tr/dp/B0DJRFTM5M",
           "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1839/prod/QC_PREP/20260316/10/f437c24b-7023-38eb-9aed-ee0f3e3e736c/1_org_zoom.jpg",
-          "key": "trendyol:1119977334",
+          "image": "https://m.media-amazon.com/images/I/51UIT0QmV-L._AC_UL320_.jpg",
+          "key": "amazon:B0DJRFTM5M",
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
           "near": true
@@ -972,54 +744,6 @@
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
           "near": true
-        },
-        {
-          "site": "trendyol.com",
-          "title": "MAXİ-COSİ Lara2-cabriofix I-size Ultra Kompakt Kabin Boy Seyahat Sistem Bebek Arabası Graphite",
-          "price": 25875.0,
-          "url": "https://www.trendyol.com/maxi-cosi/lara2-cabriofix-i-size-ultra-kompakt-kabin-boy-seyahat-sistem-bebek-arabasi-graphite-p-759661470?boutiqueId=61&merchantId=109213",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1795/prod/QC_ENRICHMENT/20251203/13/076fffe0-8507-3a59-bc47-d61a98e285e4/1_org_zoom.jpg",
-          "key": "trendyol:759661470",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
-          "near": true
-        },
-        {
-          "site": "trendyol.com",
-          "title": "MAXİ-COSİ Maxi-Cosi Lara2-Pebble S Tek Elle Katlanabilen Ultra Kompakt Seyahat Sistem Bebek Arabası Graphite",
-          "price": 28125.0,
-          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-lara2-pebble-s-tek-elle-katlanabilen-ultra-kompakt-seyahat-sistem-bebek-arabasi-graphite-p-942548200?boutiqueId=61&merchantId=109213",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1690/prod/QC_PREP/20250604/11/e2cea7d8-15c0-37d3-ac98-6420b70e74d5/1_org_zoom.jpg",
-          "key": "trendyol:942548200",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
-          "near": true
-        },
-        {
-          "site": "trendyol.com",
-          "title": "MAXİ-COSİ Maxi-Cosi Lara2-Pebble S Tek Elle Katlanabilen Ultra Kompakt Seyahat Sistem Bebek Arabası Black",
-          "price": 28125.0,
-          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-lara2-pebble-s-tek-elle-katlanabilen-ultra-kompakt-seyahat-sistem-bebek-arabasi-black-p-942559569?boutiqueId=61&merchantId=109213",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1689/prod/QC_PREP/20250604/11/41ba688e-473d-3d3a-beb9-b3658e4be87b/1_org_zoom.jpg",
-          "key": "trendyol:942559569",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
-          "near": true
-        },
-        {
-          "site": "trendyol.com",
-          "title": "MAXİ-COSİ Zelia S Trio 2 Portbebeye Dönüşebilen ve Cabriofix i-size Ana Kucaklı 3'ü Bir Arada Seyaha",
-          "price": 28499.25,
-          "url": "https://www.trendyol.com/maxi-cosi/zelia-s-trio-2-portbebeye-donusebilen-ve-cabriofix-i-size-ana-kucakli-3-u-bir-arada-seyaha-p-1199409878?boutiqueId=61&merchantId=109213",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1957/prod/QC_PREP/20260914/12/59e4ba13-c528-3130-acc7-b77369d61183/1_org_zoom.jpg",
-          "key": "trendyol:1199409878",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
-          "near": true
         }
       ],
       "warnings": [
@@ -1037,10 +761,9 @@
           "kept": 36
         },
         "amazon": {
-          "ok": false,
-          "found": 0,
-          "kept": 0,
-          "note": "amazon: sayfa cok kucuk (2329 bayt) - muhtemelen engel sayfasi"
+          "ok": true,
+          "found": 9,
+          "kept": 3
         },
         "n11": {
           "ok": true,
