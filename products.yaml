@@ -15,3 +15,5 @@ products:
 - id: maxi-cosi-mica
   name: Maxi Cosi Mica
   query: Maxi Cosi Mica
+  exclude_listings:
+  - n11:66354387
