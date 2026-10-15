@@ -169,6 +169,7 @@ class Rejected:
     code: str          # tokens | exclude | default_exclude | must_include | price | variant | outlier | user
     reason: str
     near: bool = False  # kullaniciya "yakin sonuc" olarak gosterilmeye deger mi
+    score: float = 0.0  # ne kadar yakin (siralama icin): 1 = neredeyse ayni urun
 
     def to_dict(self) -> dict:
         return {**self.offer.to_dict(), "code": self.code, "reason": self.reason, "near": self.near}
@@ -519,8 +520,8 @@ def match_reason(query: str, offer: Offer, rules: MatchRules) -> str | None:
     return result[1] if result else None
 
 
-def _check(query: str, offer: Offer, rules: MatchRules) -> tuple[str, str, bool] | None:
-    """(kod, sebep, yakin_mi) ya da None."""
+def _check(query: str, offer: Offer, rules: MatchRules) -> tuple[str, str, bool, float] | None:
+    """(kod, sebep, yakin_mi, yakinlik) ya da None."""
     title = normalize(offer.title)
     tokens = title.split()
     qnorm = normalize(query)
@@ -528,12 +529,12 @@ def _check(query: str, offer: Offer, rules: MatchRules) -> tuple[str, str, bool]
     for word in rules.exclude:
         w = normalize(word)
         if w and w in title:
-            return "exclude", f"dislanan kelime: {word!r}", False
+            return "exclude", f"dislanan kelime: {word!r}", False, 0.0
 
     for word in rules.default_exclude or ():
         w = normalize(word)
         if w and w not in qnorm and _phrase_in(w, tokens):
-            return "default_exclude", f"{word!r} iceriyor (aksesuar/ikinci el olabilir)", False
+            return "default_exclude", f"{word!r} iceriyor (aksesuar/ikinci el olabilir)", False, 0.0
 
     # "Apple Uyumlu iPhone 15 ..." / "Samsung icin ..." kaliplari aksesuardir:
     # uyumluluk kelimesi urun adindan ONCE geliyorsa satilan sey o urun degildir.
@@ -541,11 +542,11 @@ def _check(query: str, offer: Offer, rules: MatchRules) -> tuple[str, str, bool]
         qtok = query_tokens(query)
         first = next((i for i, t in enumerate(tokens) if any(token_hit(q, (t,)) for q in qtok)), None)
         if first is not None and {"uyumlu", "icin"} & set(tokens[max(0, first - 3):first]):
-            return "default_exclude", "uyumlu aksesuar gibi gorunuyor", False
+            return "default_exclude", "uyumlu aksesuar gibi gorunuyor", False, 0.0
 
     for word in rules.must_include:
         if normalize(word) not in title:
-            return "must_include", f"zorunlu kelime yok: {word!r}", True
+            return "must_include", f"zorunlu kelime yok: {word!r}", True, 0.8
 
     qtokens = query_tokens(query)
     if qtokens:
@@ -553,15 +554,15 @@ def _check(query: str, offer: Offer, rules: MatchRules) -> tuple[str, str, bool]
         missing = [t for t in qtokens if not token_hit(t, tset)]
         hit = len(qtokens) - len(missing)
         if hit / len(qtokens) < rules.min_token_ratio:
-            near = hit / len(qtokens) >= 0.6
+            ratio = hit / len(qtokens)
             return ("tokens",
                     f"baslik sorguyla ortusmuyor ({hit}/{len(qtokens)}, eksik: {', '.join(missing)})",
-                    near)
+                    ratio >= 0.6, round(ratio * 0.9, 3))
 
     if rules.min_price is not None and offer.price < rules.min_price:
-        return "price", f"fiyat alt sinirin altinda ({offer.price} < {rules.min_price})", True
+        return "price", f"fiyat alt sinirin altinda ({offer.price} < {rules.min_price})", True, 0.9
     if rules.max_price is not None and offer.price > rules.max_price:
-        return "price", f"fiyat ust sinirin uzerinde ({offer.price} > {rules.max_price})", True
+        return "price", f"fiyat ust sinirin uzerinde ({offer.price} > {rules.max_price})", True, 0.9
     return None
 
 
@@ -622,10 +623,16 @@ class SearchResult:
         return [r for r in self.rejected if r.near]
 
     def to_dict(self, limit: int = 40, rejected_limit: int = 25) -> dict:
-        rej = sorted(self.rejected, key=lambda r: (not r.near, r.offer.price))
+        # Yalnizca kullaniciya gostermeye deger (yakin) elenenler saklanir; alakasiz
+        # sonuclar (arama motorunun dondurdugu kupa bardaklar...) sadece sayilir.
+        near = sorted((r for r in self.rejected if r.near), key=lambda r: (-r.score, r.offer.price))
+        counts: dict[str, int] = {}
+        for r in self.rejected:
+            counts[r.code] = counts.get(r.code, 0) + 1
         return {
             "offers": [o.to_dict() for o in self.offers[:limit]],
-            "rejected": [r.to_dict() for r in rej[:rejected_limit]],
+            "rejected": [r.to_dict() for r in near[:rejected_limit]],
+            "rejected_counts": counts,
             "notes": self.notes,
             "warnings": self.warnings,
             "per_site": self.per_site,
@@ -654,15 +661,15 @@ def evaluate(query: str, found: list[Offer], rules: MatchRules | None = None) ->
     pinned, candidates = [], []
     for o in unique.values():
         if o.key and o.key in rules.exclude_keys:
-            result.rejected.append(Rejected(o, "user", "bu ilani 'bu urun degil' diye isaretledin"))
+            result.rejected.append(Rejected(o, "user", "bu ilani 'bu urun degil' diye isaretledin", True, 1.0))
             continue
         if o.key and o.key in rules.include_keys:
             pinned.append(o)              # kullanici onayladi: kurallar uygulanmaz
             continue
         problem = _check(query, o, rules)
         if problem:
-            code, reason, near = problem
-            result.rejected.append(Rejected(o, code, reason, near))
+            code, reason, near, score = problem
+            result.rejected.append(Rejected(o, code, reason, near, score))
         else:
             candidates.append(o)
 
@@ -676,7 +683,7 @@ def evaluate(query: str, found: list[Offer], rules: MatchRules | None = None) ->
             for o, v in tagged:
                 if v:
                     result.rejected.append(Rejected(
-                        o, "variant", f"farkli model olabilir (sorguda yok: {', '.join(sorted(v))})", True))
+                        o, "variant", f"farkli model olabilir (sorguda yok: {', '.join(sorted(v))})", True, 0.95))
             candidates = exact
         elif not exact:
             common = sorted(set.intersection(*(v for _, v in tagged)))
@@ -695,7 +702,7 @@ def evaluate(query: str, found: list[Offer], rules: MatchRules | None = None) ->
                 result.rejected.append(Rejected(
                     o, "outlier",
                     f"diger tekliflerden cok ucuz (medyan {med:.0f}); aksesuar ya da yanlis urun olabilir",
-                    True))
+                    True, 0.97))
             else:
                 kept.append(o)
         candidates = kept
