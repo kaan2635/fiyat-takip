@@ -17,3 +17,31 @@ products:
   query: Maxi Cosi Mica
   exclude_listings:
   - n11:66354387
+- id: ikea-antilop
+  name: ikea antilop
+  query: ikea antilop
+  target_price: 1000.0
+  exclude_listings:
+  - n11:140821695
+  - pazarama:2569658857
+  - hepsiburada:HBC00003HZXNR
+  - trendyol:1174933439
+  - hepsiburada:HBC00003P0AW6
+  - hepsiburada:HB000007RFQQ
+  - amazon:B0GV89Z922
+  - amazon:B0GV8FZY6T
+  - amazon:B0GV7XLSKL
+  - amazon:B00GMM4ELG
+  - hepsiburada:HBC0000AL34RD
+  - hepsiburada:HBC0000A71M9O
+  - hepsiburada:HBC000048ADQT
+  - amazon:B0GV8G11H7
+  - hepsiburada:HBC00008YYPWC
+  - hepsiburada:HBC00008YZ28A
+  - hepsiburada:HBC0000DC3SSC
+  - hepsiburada:HBC00003HZYTH
+  - amazon:B0H6MDWWVV
+  - trendyol:866271423
+  - hepsiburada:HBC0000A8XKEH
+  - amazon:B0GZ4F9DYH
+  added_at: '2026-10-17T19:21:37+00:00'

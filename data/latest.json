@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T19:20:49+00:00",
+  "generated_at": "2026-10-17T19:21:46+00:00",
   "products": [
     {
       "id": "besafe-izi-turn-b-i-size",
@@ -778,6 +778,345 @@
         "teknosa": {
           "ok": true,
           "found": 19,
+          "kept": 0
+        },
+        "mediamarkt": {
+          "ok": true,
+          "found": 12,
+          "kept": 0
+        }
+      }
+    },
+    {
+      "id": "ikea-antilop",
+      "name": "ikea antilop",
+      "site": "trendyol.com",
+      "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-emniyet-kemerli-tepsi-dahil-degildir-p-34236339?boutiqueId=61&merchantId=1065872",
+      "status": "ok",
+      "price": 1410.0,
+      "currency": "TRY",
+      "in_stock": true,
+      "lowest": 1410.0,
+      "highest": 1410.0,
+      "change_percent": null,
+      "points": 1,
+      "note": "11 teklif | IKEA Antilop Mama Sandalyesi Emniyet Kemerli Tepsi Dahil Değildir",
+      "scanned_at": "2026-10-17T19:21:46+00:00",
+      "offers": [
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Antilop Mama Sandalyesi Emniyet Kemerli Tepsi Dahil Değildir",
+          "price": 1410.0,
+          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-emniyet-kemerli-tepsi-dahil-degildir-p-34236339?boutiqueId=61&merchantId=1065872",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1444/product/media/images/prod/QC/20240727/13/cebcbb19-ee90-3e63-8633-531a9fb98796/1_org_zoom.jpg",
+          "key": "trendyol:34236339"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antılop Mama Sandalyesi Beyaz 90 cm",
+          "price": 1444.15,
+          "url": "https://www.hepsiburada.com/antilop-mama-sandalyesi-beyaz-90-cm-pm-HBC0000ARG8X7",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001280349035.jpg",
+          "key": "hepsiburada:HBC0000ARG8X7"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Antılop Tepsili Mama Sandalyesi",
+          "price": 1670.0,
+          "url": "https://www.trendyol.com/ikea/antilop-tepsili-mama-sandalyesi-p-216960231?boutiqueId=61&merchantId=1065872",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1601/prod/QC/20241112/00/925496f6-2bc0-3576-b306-4056984d1222/1_org_zoom.jpg",
+          "key": "trendyol:216960231"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antilop Beyaz Tepsili Kemerli Mama Sandalyesi 0 - 4 Yaş İçin Portatif Kullanım",
+          "price": 1846.63,
+          "url": "https://www.hepsiburada.com/ikea-antilop-siyah-tepsili-kemerli-mama-sandalyesi-0-4-yas-icin-portatif-kullanim-pm-HB000007RFQG",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001361871627.jpg",
+          "key": "hepsiburada:HB000007RFQG"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA  Beyaz Antilop Tepsili Mama Sandalyesi 0 - 3 Yaş İçin Kemerli ve Portatif Tasarım",
+          "price": 1848.0,
+          "url": "https://www.hepsiburada.com/ikea-unisex-beyaz-antilop-tepsili-mama-sandalyesi-pm-HBC00005L52NQ",
+          "image": "https://productimages.hepsiburada.net/s/530/222-222/110000588049682.jpg",
+          "key": "hepsiburada:HBC00005L52NQ"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Antilop Mama Sandalyesi Tepsili",
+          "price": 1861.2,
+          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-tepsili-p-32510146?boutiqueId=61&merchantId=997706",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1844/prod/QC_ENRICHMENT/20260323/20/73d05c58-4c7c-3ce6-81b5-822d20ca63ed/1_org_zoom.jpg",
+          "key": "trendyol:32510146"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Premium Ürün Kaliteli Dayanıklı Taşınabilir Kolay Kurulum 90 Cm Tepsili Mama Sandalyesi ANTILOP",
+          "price": 1861.2,
+          "url": "https://www.trendyol.com/ikea/premium-urun-kaliteli-dayanikli-tasinabilir-kolay-kurulum-90-cm-tepsili-mama-sandalyesi-antilop-p-898225840?boutiqueId=61&merchantId=997706",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1631/prod/QC/20250130/12/e9962148-2b2f-3051-bc95-a42bd9c3409d/1_org_zoom.jpg",
+          "key": "trendyol:898225840"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Elite Unisex Beyaz Antilop Tepsili Mama Sandalyesi 1 Adet",
+          "price": 1993.0,
+          "url": "https://www.hepsiburada.com/ikea-elite-unisex-beyaz-antilop-tepsili-mama-sandalyesi-1-adet-pm-HBC00008YYQGE",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001054921140.jpg",
+          "key": "hepsiburada:HBC00008YYQGE"
+        },
+        {
+          "site": "n11.com",
+          "title": "Xmlbayiciniz İkea Antilop Mama Sandalyesi İçin Destek Minderi, Çift Taraflı, Doğa Yeşilli",
+          "price": 2009.4,
+          "url": "https://www.n11.com/urun/ikea-antilop-mama-sandalyesi-icin-destek-minderi-cift-tarafli-doga-yesilli-143565437",
+          "image": "https://n11scdn.akamaized.net/a1/640/16/23/86/86/IMG-6009562674380957438.jpg",
+          "key": "n11:143565437"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Antılop Tepsili Mama Sandalyesi Ve Destekleyici Minderi",
+          "price": 2277.0,
+          "url": "https://www.trendyol.com/ikea/antilop-tepsili-mama-sandalyesi-ve-destekleyici-minderi-p-472501796?boutiqueId=61&merchantId=997706",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1551/product/media/images/ty1547/prod/QC/20240915/19/a7674128-12d4-317c-8c91-68b8589d0880/1_org_zoom.jpg",
+          "key": "trendyol:472501796"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Unisex Mavi Antilop Tepsili Mama Sandalyesi",
+          "price": 2480.0,
+          "url": "https://www.trendyol.com/ikea/unisex-mavi-antilop-tepsili-mama-sandalyesi-p-1055996070?boutiqueId=61&merchantId=668259",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1792/prod/QC_PREP/20251124/13/a99fe407-ed44-32fd-b5f1-b5eaf276c838/1_org_zoom.jpg",
+          "key": "trendyol:1055996070"
+        }
+      ],
+      "rejected": [
+        {
+          "site": "n11.com",
+          "title": "K&G Foot Rest K&g Mama Sandalyesi Ayak Koyma Desteği İkea Antilop Uyumlu, Ayarlanabilir",
+          "price": 389.76,
+          "url": "https://www.n11.com/urun/kg-mama-sandalyesi-ayak-koyma-destegi-ikea-antilop-uyumlu-ayarlanabilir-140821695",
+          "currency": "TRY",
+          "image": "https://n11scdn.akamaized.net/a1/640/15/88/50/13/IMG-5538056017078125248.jpg",
+          "key": "n11:140821695",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "pazarama.com",
+          "title": "Ahşap Mama Sandalyesi Ayak Dayama Desteği - ikea Antilop, E Bebek Baby Plus Star, Faros Orzo Uyumlu",
+          "price": 449.0,
+          "url": "https://www.pazarama.com/ahsap-mama-sandalyesi-ayak-dayama-destegi-ikea-antilop-e-bebek-baby-plus-star-faros-orzo-uyumlu-p-2569658857",
+          "currency": "TRY",
+          "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/2569658857/images/ahapmamasandalyesiayakdayamadesteiikeaantilopebebekbabyplusstarfarosorzouyumlu-1.png",
+          "key": "pazarama:2569658857",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antilop Mama Sandalyesi Tepsisi Beyaz, 42X42 cm",
+          "price": 497.0,
+          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-tepsisi-beyaz-42x42-cm-pm-HBC00003HZXNR",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/338/222-222/110000343887603.jpg",
+          "key": "hepsiburada:HBC00003HZXNR",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Antilop Mama Sandalyesi Tepsisi Beyaz, 42x42 Cm",
+          "price": 535.82,
+          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-tepsisi-beyaz-42x42-cm-p-1174933439?boutiqueId=61&merchantId=610698",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1619/prod/QC/20241229/22/e080d18d-a83d-360b-8ac2-c4dce51fb901/1_org_zoom.jpg",
+          "key": "trendyol:1174933439",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antilop Mama Sandalyesi Beyaz Tepsi 42x42 cm Kolay Temizlenebilir 0-4 Yaş İçin",
+          "price": 550.0,
+          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-beyaz-tepsi-42x42-cm-kolay-temizlenebilir-0-4-yas-icin-pm-HBC00003P0AW6",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/354/222-222/110000363180985.jpg",
+          "key": "hepsiburada:HBC00003P0AW6",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antilop Mama Sandalyesi Tepsisi Yükseltilmiş Kenarlarla Beyaz Renkli Kolay Temizlenebilir",
+          "price": 551.0,
+          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-tepsisi-yukseltilmis-kenarlarla-beyaz-renkli-kolay-temizlenebilir-pm-HB000007RFQQ",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/6/222-222/9715963920434.jpg",
+          "key": "hepsiburada:HB000007RFQQ",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antılop Beyaz Mama Sandalyesi Ayağı Ergonomik Tasarım İle Kolay Temizlenebilir",
+          "price": 666.0,
+          "url": "https://www.hepsiburada.com/antilop-mama-sandalyesi-ayagi-beyaz-pm-HBC0000AL34RD",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001260399806.jpg",
+          "key": "hepsiburada:HBC0000AL34RD",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antilop Mama Sandalyesi Ayağı Alpha Good",
+          "price": 718.25,
+          "url": "https://www.hepsiburada.com/antilop-mama-sandalyesi-ayagi-alpha-good-pm-HBC0000A71M9O",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001216493754.jpg",
+          "key": "hepsiburada:HBC0000A71M9O",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antilop Mama Sandalyesi Renkli 0-4 Yaş İçin Portatif 4 Adet Ayak Seti",
+          "price": 743.75,
+          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-renkli-0-4-yas-icin-portatif-4-adet-ayak-seti-pm-HBC000048ADQT",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/397/222-222/110000422536025.jpg",
+          "key": "hepsiburada:HBC000048ADQT",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Elite Çok Renkli Antılop Destek Minderi Kılıfı 1 Adet 0-6 Yaş İçin Geometrik Desenli",
+          "price": 770.0,
+          "url": "https://www.hepsiburada.com/ikea-elite-antilop-destek-minderi-kilifi-cok-renkli-1-adet-pm-HBC00008YYPWC",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001054919482.jpg",
+          "key": "hepsiburada:HBC00008YYPWC",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Elite Antılop Destek Minderi Kılıfı Sarı-Beyaz 40573695 1 Adet",
+          "price": 799.0,
+          "url": "https://www.hepsiburada.com/ikea-elite-antilop-destek-minderi-kilifi-sari-beyaz-40573695-1-adet-pm-HBC00008YZ28A",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001054949123.jpg",
+          "key": "hepsiburada:HBC00008YZ28A",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antılop Mavi-Beyaz Destek Minderi Kılıfı",
+          "price": 837.25,
+          "url": "https://www.hepsiburada.com/antilop-mavi-beyaz-destek-minderi-kilifi-pm-HBC0000DC3SSC",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001574958315.jpg",
+          "key": "hepsiburada:HBC0000DC3SSC",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antilop Mama Sandalyesi Oturağı Antilop",
+          "price": 841.5,
+          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-oturagi-antilop-pm-HBC00003HZYTH",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/338/222-222/110000343887775.jpg",
+          "key": "hepsiburada:HBC00003HZYTH",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Antilop Bebek mama masa saandelyesi Destek Minderi Kılıfı, Çok Renkli",
+          "price": 877.0,
+          "url": "https://www.trendyol.com/ikea/antilop-bebek-mama-masa-saandelyesi-destek-minderi-kilifi-cok-renkli-p-866271423?boutiqueId=61&merchantId=637733",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1584/prod/QC/20241013/23/531c2307-6215-305d-868f-34125dabc81d/1_org_zoom.jpg",
+          "key": "trendyol:866271423",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Ikea Antilop Mama Sandalyesi Oturma Yeri, Beyaz, 39X37X35 cm",
+          "price": 1121.0,
+          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-oturma-yeri-beyaz-39x37x35-cm-pm-HBC0000A8XKEH",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001223621892.jpg",
+          "key": "hepsiburada:HBC0000A8XKEH",
+          "code": "user",
+          "reason": "bu ilani 'bu urun degil' diye isaretledin",
+          "near": true
+        },
+        {
+          "site": "n11.com",
+          "title": "K&G Foot Rest O-ring Kauçuk Halka 6 Adet Antilop İkea Mama Sandalyesine Uyumlu Conta",
+          "price": 254.15,
+          "url": "https://www.n11.com/urun/o-ring-kaucuk-halka-6-adet-antilop-ikea-mama-sandalyesine-uyumlu-conta-144307064",
+          "currency": "TRY",
+          "image": "https://n11scdn.akamaized.net/a1/640/06/75/46/56/IMG-7012498290413744519.jpg",
+          "key": "n11:144307064",
+          "code": "outlier",
+          "reason": "diger tekliflerden cok ucuz (medyan 1855); aksesuar ya da yanlis urun olabilir",
+          "near": true
+        }
+      ],
+      "warnings": [],
+      "per_site": {
+        "trendyol": {
+          "ok": true,
+          "found": 36,
+          "kept": 6
+        },
+        "hepsiburada": {
+          "ok": true,
+          "found": 15,
+          "kept": 4
+        },
+        "amazon": {
+          "ok": false,
+          "found": 0,
+          "kept": 0,
+          "note": "amazon: sayfa cok kucuk (2319 bayt) - muhtemelen engel sayfasi"
+        },
+        "n11": {
+          "ok": true,
+          "found": 4,
+          "kept": 1
+        },
+        "pazarama": {
+          "ok": true,
+          "found": 3,
+          "kept": 0
+        },
+        "teknosa": {
+          "ok": true,
+          "found": 20,
           "kept": 0
         },
         "mediamarkt": {
