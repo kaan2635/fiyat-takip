@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T12:17:30+00:00",
+  "generated_at": "2026-10-30T21:59:21+00:00",
   "products": [
     {
       "id": "besafe-izi-turn-b-i-size",
@@ -13,9 +13,9 @@
       "lowest": 42499.15,
       "highest": 49999.0,
       "change_percent": 0.0,
-      "points": 110,
+      "points": 111,
       "note": "4 teklif | BeSafe Besafe Izi Turn B i-Size 0-18kg Oto Koltuğu Metallic Melange",
-      "scanned_at": "2026-10-30T12:17:08+00:00",
+      "scanned_at": "2026-10-30T21:59:02+00:00",
       "offers": [
         {
           "site": "hepsiburada.com",
@@ -50,20 +50,7 @@
           "key": "trendyol:346523972"
         }
       ],
-      "rejected": [
-        {
-          "site": "pazarama.com",
-          "title": "Izi Turn B I-size 0-18kg Oto Koltuğu Metallic Melange",
-          "price": 57899.0,
-          "url": "https://www.pazarama.com/izi-turn-b-i-size-0-18kg-oto-koltugu-metallic-melange-p-7072754011444",
-          "currency": "TRY",
-          "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/7072754011444/e80fb731-7cd3-4d8b-21b4-08d9fda71d8e/iziturnbisize018kgotokoltuumetallicmelange-1.jpg",
-          "key": "pazarama:7072754011444",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/4, eksik: besafe)",
-          "near": true
-        }
-      ],
+      "rejected": [],
       "warnings": [],
       "per_site": {
         "trendyol": {
@@ -78,7 +65,7 @@
         },
         "amazon": {
           "ok": true,
-          "found": 7,
+          "found": 8,
           "kept": 0
         },
         "n11": {
@@ -88,7 +75,7 @@
         },
         "pazarama": {
           "ok": true,
-          "found": 2,
+          "found": 1,
           "kept": 1
         },
         "teknosa": {
@@ -115,9 +102,9 @@
       "lowest": 21243.0,
       "highest": 50302.98,
       "change_percent": 0.0,
-      "points": 75,
+      "points": 76,
       "note": "2 teklif | Maxi-cosi Mica Adac'lı İsofixli 0-18 Kg Bebek Oto Koltuğu Authentic Black",
-      "scanned_at": "2026-10-30T12:17:15+00:00",
+      "scanned_at": "2026-10-30T21:59:09+00:00",
       "offers": [
         {
           "site": "n11.com",
@@ -130,7 +117,7 @@
         {
           "site": "pazarama.com",
           "title": "Maxi-Cosi Mica ADAC'lı İsofixli 0-18 KG Bebek Oto Koltuğu Authentic Black",
-          "price": 21900.0,
+          "price": 21300.0,
           "url": "https://www.pazarama.com/maxi-cosi-mica-oto-koltugu-360-isofix-siyah-0-18kg-micaaa-p-micaaa",
           "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/micaaa/images/maxicosimicaadaclsofixli018kgbebekotokoltuuauthenticblack-19a46d097-1228-4940-b15c-44da7182b6a8.jpg",
           "key": "pazarama:micaaa"
@@ -199,18 +186,6 @@
         },
         {
           "site": "amazon.com.tr",
-          "title": "Sponsorlu Bu reklam, ürünün arama sorgunuzla alaka düzeyine bağlı olarak gösteriliyor. Reklam için geri bildirim bırakın Maxi-Cosi Mica 360 Pro I-Size SlideTech Kızaklı İsofix'li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic",
-          "price": 22990.0,
-          "url": "https://www.amazon.com.tr/dp/B0CTKNPQ69",
-          "currency": "TRY",
-          "image": "https://m.media-amazon.com/images/I/615PjvFwA+L._AC_UL320_.jpg",
-          "key": "amazon:B0CTKNPQ69",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
-        },
-        {
-          "site": "amazon.com.tr",
           "title": "Maxi-Cosi Mica 360 Pro i-Size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen ADAC'lı İsofix'li 360 Dönebilir Yatabilir 0-18 kg Bebek Oto Koltuğu Authentic Truffle",
           "price": 22990.0,
           "url": "https://www.amazon.com.tr/dp/B0F28Z3CQG",
@@ -246,13 +221,13 @@
           "near": true
         },
         {
-          "site": "n11.com",
-          "title": "Maxi Cosi MaxiCosi Mica 360 Pro İSize Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen Adac'Lı İsofix'Li 360 Dönebilir Yatabilir 018 Kg Bebek Oto Koltuğu Authentic Grey",
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size SlideTech Kızaklı İsofix'li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic",
           "price": 22990.0,
-          "url": "https://www.n11.com/urun/maxicosi-mica-360-pro-isize-dunyanin-ilk-kizakli-arac-disina-cikabilen-adacli-isofixli-360-donebilir-yatabilir-018-kg-bebek-oto-koltugu-authentic-grey-53614891",
+          "url": "https://www.amazon.com.tr/dp/B0CTKNPQ69",
           "currency": "TRY",
-          "image": "https://n11scdn.akamaized.net/a1/640/03/48/25/48/IMG-1919905570097683288.jpg",
-          "key": "n11:53614891",
+          "image": "https://m.media-amazon.com/images/I/615PjvFwA+L._AC_UL320_.jpg",
+          "key": "amazon:B0CTKNPQ69",
           "code": "variant",
           "reason": "farkli model olabilir (sorguda yok: pro)",
           "near": true
@@ -265,6 +240,18 @@
           "currency": "TRY",
           "image": "https://n11scdn.akamaized.net/a1/640/10/81/27/70/IMG-8850500626463178916.jpg",
           "key": "n11:110867382",
+          "code": "variant",
+          "reason": "farkli model olabilir (sorguda yok: pro)",
+          "near": true
+        },
+        {
+          "site": "n11.com",
+          "title": "Maxi Cosi MaxiCosi Mica 360 Pro İSize Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen Adac'Lı İsofix'Li 360 Dönebilir Yatabilir 018 Kg Bebek Oto Koltuğu Authentic Grey",
+          "price": 22990.0,
+          "url": "https://www.n11.com/urun/maxicosi-mica-360-pro-isize-dunyanin-ilk-kizakli-arac-disina-cikabilen-adacli-isofixli-360-donebilir-yatabilir-018-kg-bebek-oto-koltugu-authentic-grey-53614891",
+          "currency": "TRY",
+          "image": "https://n11scdn.akamaized.net/a1/640/03/48/25/48/IMG-1919905570097683288.jpg",
+          "key": "n11:53614891",
           "code": "variant",
           "reason": "farkli model olabilir (sorguda yok: pro)",
           "near": true
@@ -367,6 +354,18 @@
         },
         {
           "site": "n11.com",
+          "title": "Maxi-cosi Mica 360 Pro 0-18 Kg Grap - Bebeconfort Gaiafix 15-36 Kg Grap Oto Koltuğu Paketi",
+          "price": 24690.0,
+          "url": "https://www.n11.com/urun/maxi-cosi-mica-360-pro-0-18-kg-grap-bebeconfort-gaiafix-15-36-kg-grap-oto-koltugu-paketi-147313415",
+          "currency": "TRY",
+          "image": "https://n11scdn.akamaized.net/a1/640/01/98/88/83/IMG-6582041067418695350.jpg",
+          "key": "n11:147313415",
+          "code": "variant",
+          "reason": "farkli model olabilir (sorguda yok: pro)",
+          "near": true
+        },
+        {
+          "site": "n11.com",
           "title": "Maxi-cosi Mica 360 Pro 0-18 Kg Black - Bebeconfort Gaiafix 15-36 Kg Spiderman Oto Koltuğu Paketi",
           "price": 24690.0,
           "url": "https://www.n11.com/urun/maxi-cosi-mica-360-pro-0-18-kg-black-bebeconfort-gaiafix-15-36-kg-spiderman-oto-koltugu-paketi-147098066",
@@ -385,18 +384,6 @@
           "currency": "TRY",
           "image": "https://n11scdn.akamaized.net/a1/640/01/12/37/95/IMG-7391621113838578453.jpg",
           "key": "n11:147093997",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
-        },
-        {
-          "site": "n11.com",
-          "title": "Maxi-cosi Mica 360 Pro 0-18 Kg Grap - Bebeconfort Gaiafix 15-36 Kg Grap Oto Koltuğu Paketi",
-          "price": 24690.0,
-          "url": "https://www.n11.com/urun/maxi-cosi-mica-360-pro-0-18-kg-grap-bebeconfort-gaiafix-15-36-kg-grap-oto-koltugu-paketi-147313415",
-          "currency": "TRY",
-          "image": "https://n11scdn.akamaized.net/a1/640/01/98/88/83/IMG-6582041067418695350.jpg",
-          "key": "n11:147313415",
           "code": "variant",
           "reason": "farkli model olabilir (sorguda yok: pro)",
           "near": true
@@ -447,12 +434,12 @@
         },
         "hepsiburada": {
           "ok": true,
-          "found": 34,
+          "found": 35,
           "kept": 0
         },
         "amazon": {
           "ok": true,
-          "found": 21,
+          "found": 23,
           "kept": 0
         },
         "n11": {
@@ -488,10 +475,10 @@
       "in_stock": true,
       "lowest": 585.0,
       "highest": 1695.0,
-      "change_percent": 28.03,
-      "points": 35,
-      "note": "19 teklif | Ahşap Mama Sandalyesi Ayak Koyma Desteği, ikea Antilop, E Bebek Baby Plus (Star) Faros Orzo",
-      "scanned_at": "2026-10-30T12:17:22+00:00",
+      "change_percent": 0.0,
+      "points": 36,
+      "note": "18 teklif | Ahşap Mama Sandalyesi Ayak Koyma Desteği, ikea Antilop, E Bebek Baby Plus (Star) Faros Orzo",
+      "scanned_at": "2026-10-30T21:59:15+00:00",
       "offers": [
         {
           "site": "pazarama.com",
@@ -508,14 +495,6 @@
           "url": "https://www.trendyol.com/ikea/antilop-destek-minderi-kilifi-cok-renkli-p-1222803694?boutiqueId=61&merchantId=1198881",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1652/prod/QC/20250315/12/660b958f-8ed7-3971-8ae8-dcfdc9b10510/1_org_zoom.jpg",
           "key": "trendyol:1222803694"
-        },
-        {
-          "site": "trendyol.com",
-          "title": "IKEA ANTİLOP MAMA OTURMA YERİ",
-          "price": 975.82,
-          "url": "https://www.trendyol.com/ikea/antilop-mama-oturma-yeri-p-833005956?boutiqueId=61&merchantId=1335065",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1619/prod/QC/20241229/22/c840b498-a464-3995-91eb-c0b44a8d2355/1_org_zoom.jpg",
-          "key": "trendyol:833005956"
         },
         {
           "site": "n11.com",
@@ -544,10 +523,18 @@
         {
           "site": "trendyol.com",
           "title": "IKEA Antilop Mama Sandalyesi Emniyet Kemerli Tepsi Dahil Değildir",
-          "price": 1410.0,
-          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-emniyet-kemerli-tepsi-dahil-degildir-p-34236339?boutiqueId=61&merchantId=1065872",
+          "price": 1405.0,
+          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-emniyet-kemerli-tepsi-dahil-degildir-p-34236339?boutiqueId=61&merchantId=1288467",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1444/product/media/images/prod/QC/20240727/13/cebcbb19-ee90-3e63-8633-531a9fb98796/1_org_zoom.jpg",
           "key": "trendyol:34236339"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Antilop Beyaz Tepsili Kemerli Mama Sandalyesi 0 - 4 Yaş İçin Portatif Kullanım",
+          "price": 1421.0,
+          "url": "https://www.hepsiburada.com/ikea-antilop-siyah-tepsili-kemerli-mama-sandalyesi-0-4-yas-icin-portatif-kullanim-pm-HB000007RFQG",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001361871627.jpg",
+          "key": "hepsiburada:HB000007RFQG"
         },
         {
           "site": "hepsiburada.com",
@@ -559,14 +546,6 @@
         },
         {
           "site": "hepsiburada.com",
-          "title": "IKEA Antilop Beyaz Tepsili Kemerli Mama Sandalyesi 0 - 4 Yaş İçin Portatif Kullanım",
-          "price": 1453.5,
-          "url": "https://www.hepsiburada.com/ikea-antilop-siyah-tepsili-kemerli-mama-sandalyesi-0-4-yas-icin-portatif-kullanim-pm-HB000007RFQG",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001361871627.jpg",
-          "key": "hepsiburada:HB000007RFQG"
-        },
-        {
-          "site": "hepsiburada.com",
           "title": "IKEA Elite Antılop Mama Sandalyesi (Tepsisiz Model) 1 Adet",
           "price": 1490.0,
           "url": "https://www.hepsiburada.com/ikea-elite-antilop-mama-sandalyesi-tepsisiz-model-1-adet-pm-HBC00008YYSFK",
@@ -575,43 +554,51 @@
         },
         {
           "site": "trendyol.com",
-          "title": "IKEA Antilop Mama Sandalyesi Tepsili",
-          "price": 1625.0,
-          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-tepsili-p-32510146?boutiqueId=61&merchantId=604122",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1844/prod/QC_ENRICHMENT/20260323/20/73d05c58-4c7c-3ce6-81b5-822d20ca63ed/1_org_zoom.jpg",
-          "key": "trendyol:32510146"
-        },
-        {
-          "site": "trendyol.com",
           "title": "IKEA Antılop Tepsili Mama Sandalyesi",
-          "price": 1630.0,
-          "url": "https://www.trendyol.com/ikea/antilop-tepsili-mama-sandalyesi-p-216960231?boutiqueId=61&merchantId=604122",
+          "price": 1529.0,
+          "url": "https://www.trendyol.com/ikea/antilop-tepsili-mama-sandalyesi-p-216960231?boutiqueId=61&merchantId=1288467",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1601/prod/QC/20241112/00/925496f6-2bc0-3576-b306-4056984d1222/1_org_zoom.jpg",
           "key": "trendyol:216960231"
         },
         {
+          "site": "trendyol.com",
+          "title": "IKEA Premium Ürün Kaliteli Dayanıklı Taşınabilir Kolay Kurulum 90 Cm Tepsili Mama Sandalyesi ANTILOP",
+          "price": 1529.0,
+          "url": "https://www.trendyol.com/ikea/premium-urun-kaliteli-dayanikli-tasinabilir-kolay-kurulum-90-cm-tepsili-mama-sandalyesi-antilop-p-898225840?boutiqueId=61&merchantId=1288467",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1631/prod/QC/20250130/12/e9962148-2b2f-3051-bc95-a42bd9c3409d/1_org_zoom.jpg",
+          "key": "trendyol:898225840"
+        },
+        {
           "site": "hepsiburada.com",
           "title": "IKEA  Beyaz Antilop Tepsili Mama Sandalyesi 0 - 3 Yaş İçin Kemerli ve Portatif Tasarım",
-          "price": 1680.0,
+          "price": 1567.02,
           "url": "https://www.hepsiburada.com/ikea-unisex-beyaz-antilop-tepsili-mama-sandalyesi-pm-HBC00005L52NQ",
           "image": "https://productimages.hepsiburada.net/s/530/222-222/110000588049682.jpg",
           "key": "hepsiburada:HBC00005L52NQ"
         },
         {
           "site": "trendyol.com",
-          "title": "IKEA Premium Ürün Kaliteli Dayanıklı Taşınabilir Kolay Kurulum 90 Cm Tepsili Mama Sandalyesi ANTILOP",
-          "price": 1762.2,
-          "url": "https://www.trendyol.com/ikea/premium-urun-kaliteli-dayanikli-tasinabilir-kolay-kurulum-90-cm-tepsili-mama-sandalyesi-antilop-p-898225840?boutiqueId=61&merchantId=997706",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1631/prod/QC/20250130/12/e9962148-2b2f-3051-bc95-a42bd9c3409d/1_org_zoom.jpg",
-          "key": "trendyol:898225840"
+          "title": "IKEA Antilop Mama Sandalyesi Tepsili",
+          "price": 1683.0,
+          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-tepsili-p-32510146?boutiqueId=61&merchantId=997706",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1844/prod/QC_ENRICHMENT/20260323/20/73d05c58-4c7c-3ce6-81b5-822d20ca63ed/1_org_zoom.jpg",
+          "key": "trendyol:32510146"
         },
         {
           "site": "hepsiburada.com",
           "title": "IKEA Elite Unisex Beyaz Antilop Tepsili Mama Sandalyesi 1 Adet",
-          "price": 1794.0,
+          "price": 1744.4,
           "url": "https://www.hepsiburada.com/ikea-elite-unisex-beyaz-antilop-tepsili-mama-sandalyesi-1-adet-pm-HBC00008YYQGE",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001054921140.jpg",
           "key": "hepsiburada:HBC00008YYQGE"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "IKEA Elite Unisex Beyaz Antilop Tepsili Mama Sandalyesi 1 Adet",
+          "price": 1959.99,
+          "url": "https://www.hepsiburada.com/ikea-elite-unisex-beyaz-antilop-tepsili-mama-sandalyesi-1-adet-pm-HBC00008YYPA9",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001054919057.jpg",
+          "key": "hepsiburada:HBC00008YYPA9"
         },
         {
           "site": "trendyol.com",
@@ -620,14 +607,6 @@
           "url": "https://www.trendyol.com/ikea/unisex-mavi-antilop-tepsili-mama-sandalyesi-p-1055996070?boutiqueId=61&merchantId=668259",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1792/prod/QC_PREP/20251124/13/a99fe407-ed44-32fd-b5f1-b5eaf276c838/1_org_zoom.jpg",
           "key": "trendyol:1055996070"
-        },
-        {
-          "site": "trendyol.com",
-          "title": "IKEA Unisex Beyaz Antilop Tepsili Mama Sandalyesi DRK29067293, one size",
-          "price": 1970.0,
-          "url": "https://www.trendyol.com/ikea/unisex-beyaz-antilop-tepsili-mama-sandalyesi-drk29067293-one-size-p-1175570723?boutiqueId=61&merchantId=604122",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1940/prod/QC_PREP/20260724/17/267831aa-966b-39d1-a742-187c6e72472b/1_org_zoom.jpg",
-          "key": "trendyol:1175570723"
         },
         {
           "site": "trendyol.com",
@@ -673,24 +652,24 @@
         },
         {
           "site": "hepsiburada.com",
-          "title": "IKEA Antilop Mama Sandalyesi Tepsisi Beyaz, 42X42 cm",
+          "title": "IKEA Antilop Mama Sandalyesi Tepsisi Yükseltilmiş Kenarlarla Beyaz Renkli Kolay Temizlenebilir",
           "price": 487.0,
-          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-tepsisi-beyaz-42x42-cm-pm-HBC00003HZXNR",
+          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-tepsisi-yukseltilmis-kenarlarla-beyaz-renkli-kolay-temizlenebilir-pm-HB000007RFQQ",
           "currency": "TRY",
-          "image": "https://productimages.hepsiburada.net/s/338/222-222/110000343887603.jpg",
-          "key": "hepsiburada:HBC00003HZXNR",
+          "image": "https://productimages.hepsiburada.net/s/6/222-222/9715963920434.jpg",
+          "key": "hepsiburada:HB000007RFQQ",
           "code": "user",
           "reason": "bu ilani 'bu urun degil' diye isaretledin",
           "near": true
         },
         {
           "site": "hepsiburada.com",
-          "title": "IKEA Antilop Mama Sandalyesi Tepsisi Yükseltilmiş Kenarlarla Beyaz Renkli Kolay Temizlenebilir",
-          "price": 488.75,
-          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-tepsisi-yukseltilmis-kenarlarla-beyaz-renkli-kolay-temizlenebilir-pm-HB000007RFQQ",
+          "title": "IKEA Antilop Mama Sandalyesi Tepsisi Beyaz, 42X42 cm",
+          "price": 487.0,
+          "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-tepsisi-beyaz-42x42-cm-pm-HBC00003HZXNR",
           "currency": "TRY",
-          "image": "https://productimages.hepsiburada.net/s/6/222-222/9715963920434.jpg",
-          "key": "hepsiburada:HB000007RFQQ",
+          "image": "https://productimages.hepsiburada.net/s/338/222-222/110000343887603.jpg",
+          "key": "hepsiburada:HBC00003HZXNR",
           "code": "user",
           "reason": "bu ilani 'bu urun degil' diye isaretledin",
           "near": true
@@ -710,8 +689,8 @@
         {
           "site": "trendyol.com",
           "title": "IKEA Antilop Mama Sandalyesi Tepsisi Beyaz, 42x42 Cm",
-          "price": 534.6,
-          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-tepsisi-beyaz-42x42-cm-p-1174933439?boutiqueId=61&merchantId=1198881",
+          "price": 534.55,
+          "url": "https://www.trendyol.com/ikea/antilop-mama-sandalyesi-tepsisi-beyaz-42x42-cm-p-1174933439?boutiqueId=61&merchantId=1335065",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1619/prod/QC/20241229/22/e080d18d-a83d-360b-8ac2-c4dce51fb901/1_org_zoom.jpg",
           "key": "trendyol:1174933439",
@@ -878,8 +857,8 @@
         {
           "site": "trendyol.com",
           "title": "IKEA Antilop Bebek mama masa saandelyesi Destek Minderi Kılıfı, Çok Renkli",
-          "price": 857.75,
-          "url": "https://www.trendyol.com/ikea/antilop-bebek-mama-masa-saandelyesi-destek-minderi-kilifi-cok-renkli-p-866271423?boutiqueId=61&merchantId=1335065",
+          "price": 879.12,
+          "url": "https://www.trendyol.com/ikea/antilop-bebek-mama-masa-saandelyesi-destek-minderi-kilifi-cok-renkli-p-866271423?boutiqueId=61&merchantId=1316075",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1584/prod/QC/20241013/23/531c2307-6215-305d-868f-34125dabc81d/1_org_zoom.jpg",
           "key": "trendyol:866271423",
@@ -901,7 +880,7 @@
         },
         {
           "site": "amazon.com.tr",
-          "title": "Sponsorlu Bu reklam, ürünün arama sorgunuzla alaka düzeyine bağlı olarak gösteriliyor. Reklam için geri bildirim bırakın IKEA Antilop Uyumlu Mama Sandalyesi Aparatı (Lila) | Uzun Ömürlü, Su Geçirmez | Sadece Aparat",
+          "title": "IKEA Antilop Uyumlu Mama Sandalyesi Aparatı (Lila) | Uzun Ömürlü, Su Geçirmez | Sadece Aparat",
           "price": 1170.0,
           "url": "https://www.amazon.com.tr/dp/B0GZ4F9DYH",
           "currency": "TRY",
@@ -920,7 +899,7 @@
           "image": "https://n11scdn.akamaized.net/a1/640/06/75/46/56/IMG-7012498290413744519.jpg",
           "key": "n11:144307064",
           "code": "outlier",
-          "reason": "diger tekliflerden cok ucuz (medyan 1445); aksesuar ya da yanlis urun olabilir",
+          "reason": "diger tekliflerden cok ucuz (medyan 1421); aksesuar ya da yanlis urun olabilir",
           "near": true
         },
         {
@@ -932,19 +911,19 @@
           "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/7135849222KG/images/oringkauukhalka6adetantilopkeamamasandalyesineuyumluconta-12bbcde66-87a7-4647-bbf8-405925a68c3e.jpg",
           "key": "pazarama:7135849222KG",
           "code": "outlier",
-          "reason": "diger tekliflerden cok ucuz (medyan 1445); aksesuar ya da yanlis urun olabilir",
+          "reason": "diger tekliflerden cok ucuz (medyan 1421); aksesuar ya da yanlis urun olabilir",
           "near": true
         },
         {
-          "site": "pazarama.com",
-          "title": "K&G Foot Rest İkea Antilop Mama Sandalyesine Uyumlu Yeni Model Ayak Destegi Ayak Dayama Yeri Ahsap Ayaklik",
-          "price": 599.0,
-          "url": "https://www.pazarama.com/k-g-foot-rest-ikea-antilop-mama-sandalyesi-ayak-destegi-ahsap-k-gstore0b26671b-8af-p-kgstore0b26671b-8af",
+          "site": "amazon.com.tr",
+          "title": "Pamuklu Mama Sandalyesi Minderi, Doğa Hayvanları Desenli, İkea Antilop ve Benzer Modellere Uyumlu",
+          "price": 585.0,
+          "url": "https://www.amazon.com.tr/dp/B0GV817JXF",
           "currency": "TRY",
-          "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/K.GStore0b26671b-8af/images/kgfootrestikeaantilopmamasandalyesineuyumluyenimodelayakdesteiayakdayamayeriah-143f6e6b4-1178-4111-b757-64831b0be7e5.jpg",
-          "key": "pazarama.com/k-g-foot-rest-ikea-antilop-mama-sandalyesi-ayak-destegi-ahsap-k-gstore0b26671b-8af-p-kgstore0b26671b-8af",
+          "image": "https://m.media-amazon.com/images/I/611Snp3x6RL._AC_UL320_.jpg",
+          "key": "amazon:B0GV817JXF",
           "code": "outlier",
-          "reason": "diger tekliflerden cok ucuz (medyan 1445); aksesuar ya da yanlis urun olabilir",
+          "reason": "diger tekliflerden cok ucuz (medyan 1421); aksesuar ya da yanlis urun olabilir",
           "near": true
         }
       ],
@@ -953,12 +932,12 @@
         "trendyol": {
           "ok": true,
           "found": 36,
-          "kept": 9
+          "kept": 7
         },
         "hepsiburada": {
           "ok": true,
-          "found": 16,
-          "kept": 5
+          "found": 17,
+          "kept": 6
         },
         "amazon": {
           "ok": true,
@@ -999,9 +978,9 @@
       "lowest": 24377.5,
       "highest": 25380.0,
       "change_percent": 0.0,
-      "points": 35,
+      "points": 36,
       "note": "4 teklif | Uğur Ued 6204 Dtk Nf R65 6 Çekmeceli No-Frost Derin Dondurucu",
-      "scanned_at": "2026-10-30T12:17:30+00:00",
+      "scanned_at": "2026-10-30T21:59:21+00:00",
       "offers": [
         {
           "site": "hepsiburada.com",
@@ -1063,12 +1042,36 @@
         },
         {
           "site": "trendyol.com",
+          "title": "Tecna TDE 6210 6 Çekmeceli 210 Lt Derin Dondurucu - 7 Yıl Motor Garantili",
+          "price": 17349.0,
+          "url": "https://www.trendyol.com/tecna/tde-6210-6-cekmeceli-210-lt-derin-dondurucu-7-yil-motor-garantili-p-816135616?boutiqueId=61&merchantId=827023",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1858/prod/QC_ENRICHMENT/20260422/11/6658901d-732b-369e-9435-6326feb32523/1_org_zoom.jpg",
+          "key": "trendyol:816135616",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (4/5, eksik: ugur)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
           "title": "Profilo DF1024WEVV 6 Çekmeceli 192 Lt Beyaz Derin Dondurucu",
           "price": 20190.0,
           "url": "https://www.trendyol.com/profilo/df1024wevv-6-cekmeceli-192-lt-beyaz-derin-dondurucu-p-1019813731?boutiqueId=61&merchantId=1043642",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1767/prod/QC_PREP/20251010/15/86340884-9f15-3248-8981-c3c75980d2dd/1_org_zoom.jpg",
           "key": "trendyol:1019813731",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (4/5, eksik: ugur)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "Altus AL 609 NFE E Enerji Sınıfı 214 L 6 Çekmeceli No-Frost Derin Dondurucu Beyaz",
+          "price": 22016.0,
+          "url": "https://www.trendyol.com/altus/al-609-nfe-e-enerji-sinifi-214-l-6-cekmeceli-no-frost-derin-dondurucu-beyaz-p-836307840?boutiqueId=61&merchantId=873547",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1000386/product/media/images/prod/PIM/20260406/07/95146390-42a5-4e88-a91a-e1c6a4ed377e/1_org_zoom.jpg",
+          "key": "trendyol:836307840",
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (4/5, eksik: ugur)",
           "near": true
@@ -1110,6 +1113,18 @@
           "near": true
         },
         {
+          "site": "hepsiburada.com",
+          "title": "Uğur Ued 7242 Dtk R65  7 Çekmeceli Dikey Derin Dondurucu 242 lt A Enerji Sınıfı No Frost Teknolojisi ile Geniş İç Hacim",
+          "price": 30399.05,
+          "url": "https://www.hepsiburada.com/ugur-ued-7242-dtk-r65-7-cekmeceli-dikey-derin-dondurucu-beyaz-pm-HBC000098LWKF",
+          "currency": "TRY",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001089953492.jpg",
+          "key": "hepsiburada:HBC000098LWKF",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (4/5, eksik: 6)",
+          "near": true
+        },
+        {
           "site": "trendyol.com",
           "title": "Uğur UED 7238 DTK NFI DGT D/S R65 7 Çekmeceli No Frost Dikey Derin Dondurucu",
           "price": 31149.0,
@@ -1117,18 +1132,6 @@
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1920/prod/QC_PREP/20260502/14/7c972903-d946-31d2-8784-0bbf7bbae90f/1_org_zoom.jpg",
           "key": "trendyol:1141151353",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (4/5, eksik: 6)",
-          "near": true
-        },
-        {
-          "site": "hepsiburada.com",
-          "title": "Uğur Ued 7242 Dtk R65  7 Çekmeceli Dikey Derin Dondurucu 242 lt A Enerji Sınıfı No Frost Teknolojisi ile Geniş İç Hacim",
-          "price": 31349.05,
-          "url": "https://www.hepsiburada.com/ugur-ued-7242-dtk-r65-7-cekmeceli-dikey-derin-dondurucu-beyaz-pm-HBC000098LWKF",
-          "currency": "TRY",
-          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001089953492.jpg",
-          "key": "hepsiburada:HBC000098LWKF",
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (4/5, eksik: 6)",
           "near": true
@@ -1170,22 +1173,10 @@
           "near": true
         },
         {
-          "site": "amazon.com.tr",
-          "title": "Sponsorlu Bu reklam, ürünün arama sorgunuzla alaka düzeyine bağlı olarak gösteriliyor. Reklam için geri bildirim bırakın Hobby Life Alaska Derin Dondurucu Saklama Kabı 6'lı Set 9.5 Litre - BPA (Beyaz)",
-          "price": 398.0,
-          "url": "https://www.amazon.com.tr/dp/B0HCRS9H8L",
-          "currency": "TRY",
-          "image": "https://m.media-amazon.com/images/I/515e8mocEEL._AC_UL320_.jpg",
-          "key": "amazon:B0HCRS9H8L",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, cekmeceli)",
-          "near": true
-        },
-        {
           "site": "trendyol.com",
           "title": "KUMTEL 3 Çekmeceli Dikey Derin Dondurucu 88 LİTRE HFR-100",
           "price": 9499.0,
-          "url": "https://www.trendyol.com/kumtel/3-cekmeceli-dikey-derin-dondurucu-88-litre-hfr-100-p-831302462?boutiqueId=61&merchantId=324959",
+          "url": "https://www.trendyol.com/kumtel/3-cekmeceli-dikey-derin-dondurucu-88-litre-hfr-100-p-831302462?boutiqueId=61&merchantId=1280648",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1700/prod/QC_ENRICHMENT/20250625/14/eb1aad16-e5c8-33f6-8f72-d97a9d0081ec/1_org_zoom.jpg",
           "key": "trendyol:831302462",
@@ -1218,18 +1209,6 @@
           "near": true
         },
         {
-          "site": "amazon.com.tr",
-          "title": "ARCELIK 2030 Mb 65 Litre 3 Çekmeceli Derin Dondurucu Beyaz",
-          "price": 11029.87,
-          "url": "https://www.amazon.com.tr/dp/B0G5PTJL4R",
-          "currency": "TRY",
-          "image": "https://m.media-amazon.com/images/I/21ww78Y-ZOL._AC_UL320_.jpg",
-          "key": "amazon:B0G5PTJL4R",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, 6)",
-          "near": true
-        },
-        {
           "site": "teknosa.com",
           "title": "Uğur UED 3060 DTK R65 60 L Beyaz Dikey Derin Dondurucu",
           "price": 11958.96,
@@ -1256,8 +1235,8 @@
         {
           "site": "trendyol.com",
           "title": "Altus AL 511 M 5 Çekmeceli Dikey Derin Dondurucu",
-          "price": 18109.0,
-          "url": "https://www.trendyol.com/altus/al-511-m-5-cekmeceli-dikey-derin-dondurucu-p-830611351?boutiqueId=61&merchantId=871986",
+          "price": 17799.0,
+          "url": "https://www.trendyol.com/altus/al-511-m-5-cekmeceli-dikey-derin-dondurucu-p-830611351?boutiqueId=61&merchantId=1220906",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1847/prod/QC_PREP/20260327/18/57d400aa-613d-3eb5-a00c-690fb5ab1752/1_org_zoom.jpg",
           "key": "trendyol:830611351",
@@ -1291,24 +1270,24 @@
         },
         {
           "site": "trendyol.com",
-          "title": "Regal CD 62221 196 Lt 6 Çekmece Derin Dondurucu",
-          "price": 19950.0,
-          "url": "https://www.trendyol.com/regal/cd-62221-196-lt-6-cekmece-derin-dondurucu-p-818021156?boutiqueId=61&merchantId=544362",
+          "title": "Altus AL 708 NE 7 Çekmeceli Derin Dondurucu",
+          "price": 23999.0,
+          "url": "https://www.trendyol.com/altus/al-708-ne-7-cekmeceli-derin-dondurucu-p-834661783?boutiqueId=61&merchantId=961735",
           "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1777/prod/QC_ENRICHMENT/20251022/10/0c2961c5-ef15-3806-b8bd-996f81de7980/1_org_zoom.jpg",
-          "key": "trendyol:818021156",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1847/prod/QC_PREP/20260327/17/291152d3-7c81-34c6-a709-03d7d8f6aa84/1_org_zoom.jpg",
+          "key": "trendyol:834661783",
           "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, cekmeceli)",
+          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, 6)",
           "near": true
         },
         {
           "site": "trendyol.com",
-          "title": "Altus AL 809 NFE 8 Çekmeceli Dikey No Frost Derin Dondurucu",
-          "price": 26998.0,
-          "url": "https://www.trendyol.com/altus/al-809-nfe-8-cekmeceli-dikey-no-frost-derin-dondurucu-p-895572509?boutiqueId=61&merchantId=873547",
+          "title": "Altus AL 709 XNF JE Joker 7 Çekmeceli Dikey No Frost Derin Dondurucu",
+          "price": 27001.0,
+          "url": "https://www.trendyol.com/altus/al-709-xnf-je-joker-7-cekmeceli-dikey-no-frost-derin-dondurucu-p-866632585?boutiqueId=61&merchantId=873547",
           "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1000387/product/media/images/prod/PIM/20260406/07/1896a2aa-98fb-442e-9fd2-e1faf2111af8/1_org_zoom.jpg",
-          "key": "trendyol:895572509",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1941/prod/QC_ENRICHMENT/20260521/22/a740fd34-a45e-376e-8feb-4c71c84eb1dc/1_org_zoom.jpg",
+          "key": "trendyol:866632585",
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, 6)",
           "near": true
@@ -1327,14 +1306,14 @@
         },
         {
           "site": "trendyol.com",
-          "title": "Uğur Ued 7238 Dtk Nf Dgt D/s R65 Beyaz Dikey Derin Dondurucu",
-          "price": 29979.0,
-          "url": "https://www.trendyol.com/ugur/ued-7238-dtk-nf-dgt-d-s-r65-beyaz-dikey-derin-dondurucu-p-667445901?boutiqueId=61&merchantId=106539",
+          "title": "Bosch GSV33VWE0N 7 Çekmeceli Derin Dondurucu 220 l",
+          "price": 28894.0,
+          "url": "https://www.trendyol.com/bosch/gsv33vwe0n-7-cekmeceli-derin-dondurucu-220-l-p-77888559?boutiqueId=61&merchantId=959772",
           "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1741/prod/QC_ENRICHMENT/20250831/20/fe0a2a71-addc-3739-a6a8-2fabc1c144fd/1_org_zoom.jpg",
-          "key": "trendyol:667445901",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1832/prod/QC_ENRICHMENT/20260301/03/0434e834-2480-39c4-991a-28a689df3421/1_org_zoom.jpg",
+          "key": "trendyol:77888559",
           "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: 6, cekmeceli)",
+          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, 6)",
           "near": true
         }
       ],
@@ -1352,7 +1331,7 @@
         },
         "amazon": {
           "ok": true,
-          "found": 9,
+          "found": 6,
           "kept": 0
         },
         "n11": {
