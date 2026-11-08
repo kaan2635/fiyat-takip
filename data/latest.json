@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T12:52:49+00:00",
+  "generated_at": "2026-11-08T21:46:11+00:00",
   "products": [
     {
       "id": "besafe-izi-turn-b-i-size",
@@ -13,9 +13,9 @@
       "lowest": 39999.0,
       "highest": 49999.0,
       "change_percent": 0.0,
-      "points": 128,
+      "points": 129,
       "note": "3 teklif | BeSafe Besafe Izi Turn B i-Size 0-18kg Oto Koltuğu Metallic Melange",
-      "scanned_at": "2026-11-08T12:52:28+00:00",
+      "scanned_at": "2026-11-08T21:45:50+00:00",
       "offers": [
         {
           "site": "hepsiburada.com",
@@ -82,7 +82,7 @@
         },
         "amazon": {
           "ok": true,
-          "found": 9,
+          "found": 5,
           "kept": 0
         },
         "n11": {
@@ -110,364 +110,582 @@
     {
       "id": "maxi-cosi-mica",
       "name": "Maxi Cosi Mica",
-      "site": "n11.com",
-      "url": "https://www.n11.com/urun/maxi-cosi-mica-adacli-isofixli-0-18-kg-bebek-oto-koltugu-authentic-black-36591057",
+      "site": "trendyol.com",
+      "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-oto-koltugu-p-809702207?boutiqueId=61&merchantId=109213",
       "status": "ok",
-      "price": 19999.0,
+      "price": 22990.0,
       "currency": "TRY",
       "in_stock": true,
       "lowest": 19999.0,
       "highest": 50302.98,
-      "change_percent": 0.0,
-      "points": 93,
-      "note": "2 teklif | Maxi-cosi Mica Adac'lı İsofixli 0-18 Kg Bebek Oto Koltuğu Authentic Black",
-      "scanned_at": "2026-11-08T12:52:35+00:00",
+      "change_percent": 14.96,
+      "points": 94,
+      "note": "29 teklif | MAXİ-COSİ Maxi-cosi Mica 360 Pro I-size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 Kg Oto Koltuğu",
+      "scanned_at": "2026-11-08T21:45:58+00:00",
       "offers": [
-        {
-          "site": "n11.com",
-          "title": "Maxi-cosi Mica Adac'lı İsofixli 0-18 Kg Bebek Oto Koltuğu Authentic Black",
-          "price": 19999.0,
-          "url": "https://www.n11.com/urun/maxi-cosi-mica-adacli-isofixli-0-18-kg-bebek-oto-koltugu-authentic-black-36591057",
-          "image": "https://n11scdn.akamaized.net/a1/640/08/46/81/43/IMG-6543869797245386801.jpg",
-          "key": "n11:36591057"
-        },
-        {
-          "site": "pazarama.com",
-          "title": "Maxi-Cosi Mica ADAC'lı İsofixli 0-18 KG Bebek Oto Koltuğu Authentic Black",
-          "price": 21150.0,
-          "url": "https://www.pazarama.com/maxi-cosi-mica-oto-koltugu-360-isofix-siyah-0-18kg-micaaa-p-micaaa",
-          "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/micaaa/images/maxicosimicaadaclsofixli018kgbebekotokoltuuauthenticblack-19a46d097-1228-4940-b15c-44da7182b6a8.jpg",
-          "key": "pazarama:micaaa"
-        }
-      ],
-      "rejected": [
         {
           "site": "trendyol.com",
           "title": "MAXİ-COSİ Maxi-cosi Mica 360 Pro I-size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 Kg Oto Koltuğu",
           "price": 22990.0,
           "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-oto-koltugu-p-809702207?boutiqueId=61&merchantId=109213",
-          "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1732/prod/QC_ENRICHMENT/20250821/12/6e778837-7ef2-33ad-a382-fa5a75c667c5/1_org_zoom.jpg",
-          "key": "trendyol:809702207",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "trendyol:809702207"
         },
         {
           "site": "amazon.com.tr",
           "title": "Maxi-Cosi Mica 360 Pro I-Size SlideTech Kızaklı İsofix'li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic",
           "price": 22990.0,
           "url": "https://www.amazon.com.tr/dp/B0CTKNPQ69",
-          "currency": "TRY",
           "image": "https://m.media-amazon.com/images/I/615PjvFwA+L._AC_UL320_.jpg",
-          "key": "amazon:B0CTKNPQ69",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "amazon:B0CTKNPQ69"
         },
         {
           "site": "n11.com",
           "title": "Maxi Cosi MaxiCosi Mica 360 Pro İSize Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen Adac'Lı İsofix'Li 360 Dönebilir Yatabilir 018 Kg Bebek Oto Koltuğu Authentic Grey",
           "price": 22990.0,
           "url": "https://www.n11.com/urun/maxicosi-mica-360-pro-isize-dunyanin-ilk-kizakli-arac-disina-cikabilen-adacli-isofixli-360-donebilir-yatabilir-018-kg-bebek-oto-koltugu-authentic-grey-53614891",
-          "currency": "TRY",
           "image": "https://n11scdn.akamaized.net/a1/640/03/48/25/48/IMG-1919905570097683288.jpg",
-          "key": "n11:53614891",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "n11:53614891"
         },
         {
           "site": "hepsiburada.com",
           "title": "Maxi-Cosi MaxiCosi Mica 360 Pro İSize Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen İsofix'Li 360 Dönebilir Yatabilir 018 Kg Bebek Oto Koltuğu Authentic Graphite",
           "price": 23354.33,
           "url": "https://www.hepsiburada.com/maxicosi-mica-360-pro-isize-dunyanin-ilk-kizakli-arac-disina-cikabilen-isofix-li-360-donebilir-yatabilir-018-kg-bebek-oto-koltugu-authentic-graphite-p-HBCV00005TB8VU",
-          "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001209426891.jpg",
-          "key": "hepsiburada:HBCV00005TB8VU",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "hepsiburada:HBCV00005TB8VU"
         },
         {
           "site": "pazarama.com",
           "title": "Maxi-Cosi Mica 360 Pro I-Size SlideTech Kızaklı İsofix'li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic Graphite",
           "price": 23354.33,
           "url": "https://www.pazarama.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofixli-donebilir-yatabilir-0-18-kg-bebek-oto-koltugu-authentic-graphite-p-8712930187189",
-          "currency": "TRY",
           "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/8712930187189/images/maxicosimica360proisizeslidetechkzaklsofixlidnebiliryatabilir018kgbebekotokoltuuauthenticgraphite-1.jpg",
-          "key": "pazarama:8712930187189",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "pazarama:8712930187189"
         },
         {
           "site": "pazarama.com",
           "title": "Maxi-Cosi Mica 360 Pro İ-Size Slidetech Kızaklı İ̇Sofix'Li Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic Black",
           "price": 23354.33,
           "url": "https://www.pazarama.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofixli-donebilir-yatabilir-0-18-kg-bebek-oto-koltugu-authentic-black-p-8712930187172",
-          "currency": "TRY",
           "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/8712930187172/images/maxicosimica360proisizeslidetechkzaklsofixlidnebiliryatabilir018kgbebekotokoltuuauthenticblack-1.jpg",
-          "key": "pazarama:8712930187172",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "pazarama:8712930187172"
         },
         {
           "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro 0-18 kg Grap - Bebeconfort Gaiafix 15-36 kg Grap Oto Koltuğu Paketi",
           "price": 24690.0,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-0-18-kg-black-bebeconfort-gaiafix-15-36-kg-stitch-oto-koltugu-paketi-pm-HBC0000NWTF2T",
-          "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110002866910649.jpg",
-          "key": "hepsiburada:HBC0000NWTF2T",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "hepsiburada:HBC0000NWTF2T"
         },
         {
           "site": "n11.com",
           "title": "Maxi-cosi Mica 360 Pro 0-18 Kg Grap - Bebeconfort Gaiafix 15-36 Kg Grap Oto Koltuğu Paketi",
           "price": 24690.0,
           "url": "https://www.n11.com/urun/maxi-cosi-mica-360-pro-0-18-kg-grap-bebeconfort-gaiafix-15-36-kg-grap-oto-koltugu-paketi-147313415",
-          "currency": "TRY",
           "image": "https://n11scdn.akamaized.net/a1/640/01/98/88/83/IMG-6582041067418695350.jpg",
-          "key": "n11:147313415",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "n11:147313415"
         },
         {
           "site": "pazarama.com",
           "title": "Maxi-Cosi Mica 360 Pro 0-18 kg Grap - Bebeconfort GaiaFix 15-36 kg Grap Oto Koltuğu Paketi",
           "price": 24690.0,
           "url": "https://www.pazarama.com/maxi-cosi-mica-360-pro-bebeconfort-gaiafix-oto-koltugu-gri-8685338915213-p-8685338915213",
-          "currency": "TRY",
           "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/8685338915213/images/maxicosimica360pro018kggrapbebeconfortgaiafix1536kggrapotokoltuupaketi-1dd918815-ae67-412b-b002-93dea572df3b.jpg",
-          "key": "pazarama:8685338915213",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "pazarama:8685338915213"
         },
         {
           "site": "trendyol.com",
           "title": "MAXİ-COSİ Maxi-cosi Mica 360 Pro Adac'lı Slidetech Kızaklı Isofix'li Dönebilir 0-18 Kg Oto Koltuğu Black",
           "price": 24989.13,
           "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-mica-360-pro-adac-li-slidetech-kizakli-isofix-li-donebilir-0-18-kg-oto-koltugu-black-p-811428041?boutiqueId=61&merchantId=392",
-          "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1763/prod/QC_ENRICHMENT/20250923/11/520a2f11-b945-3113-8e8f-8aaf0a9cec7f/1_org_zoom.jpg",
-          "key": "trendyol:811428041",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "trendyol:811428041"
         },
         {
           "site": "trendyol.com",
           "title": "MAXİ-COSİ Mica Slide Pro i-Size 27 cm Araç Dışına Çıkabilen 360 Dönebilir 0-18 kg Bebek Oto Koltuğu Authentic Truffle",
           "price": 24990.0,
           "url": "https://www.trendyol.com/maxi-cosi/mica-slide-pro-i-size-27-cm-arac-disina-cikabilen-360-donebilir-0-18-kg-bebek-oto-koltugu-authentic-truffle-p-1216597640?boutiqueId=61&merchantId=109213",
-          "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1977/prod/QC_PREP/20261015/16/027b09a5-cccb-3ec3-a817-16ecb1b90efe/1_org_zoom.jpg",
-          "key": "trendyol:1216597640",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "trendyol:1216597640"
         },
         {
           "site": "trendyol.com",
           "title": "MAXİ-COSİ Mica Slide Pro i-Size 27 cm Araç Dışına Çıkabilen 360 Dönebilir 0-18 kg Bebek Oto Koltuğu Authentic Black",
           "price": 24990.0,
           "url": "https://www.trendyol.com/maxi-cosi/mica-slide-pro-i-size-27-cm-arac-disina-cikabilen-360-donebilir-0-18-kg-bebek-oto-koltugu-authentic-black-p-1216616536?boutiqueId=61&merchantId=109213",
-          "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1979/prod/QC_PREP/20261015/16/e4829c6c-f622-34fb-9c8e-f387e09ae0a9/1_org_zoom.jpg",
-          "key": "trendyol:1216616536",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "trendyol:1216616536"
         },
         {
           "site": "trendyol.com",
           "title": "MAXİ-COSİ Mica Slide Pro i-Size 27 cm Araç Dışına Çıkabilen 360 Dönebilir 0-18 kg Bebek Oto Koltuğu Authentic Green",
           "price": 24990.0,
           "url": "https://www.trendyol.com/maxi-cosi/mica-slide-pro-i-size-27-cm-arac-disina-cikabilen-360-donebilir-0-18-kg-bebek-oto-koltugu-authentic-green-p-1216622965?boutiqueId=61&merchantId=109213",
-          "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1979/prod/QC_PREP/20261015/16/38c247c3-4e02-320d-bfbc-06fb854afcb8/1_org_zoom.jpg",
-          "key": "trendyol:1216622965",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "trendyol:1216622965"
         },
         {
           "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica Slide Pro i-Size 27 cm Araç Dışına Çıkabilen 360 Dönebilir 0-18 kg Bebek Oto Koltuğu Authentic Truffle",
           "price": 24990.0,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-slide-pro-i-size-27-cm-arac-disina-cikabilen-360-donebilir-0-18-kg-bebek-oto-koltugu-authentic-truffle-p-HBCV0000MVDKY5",
-          "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110002708658078.jpg",
-          "key": "hepsiburada:HBCV0000MVDKY5",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "hepsiburada:HBCV0000MVDKY5"
         },
         {
           "site": "n11.com",
           "title": "Maxi-cosi Mica Slide Pro İ-size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen İsofix'li 360 Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic Truffle",
           "price": 24990.0,
           "url": "https://www.n11.com/urun/maxi-cosi-mica-slide-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-isofixli-360-donebilir-yatabilir-0-18-kg-bebek-oto-koltugu-authentic-truffle-144576412",
-          "currency": "TRY",
           "image": "https://n11scdn.akamaized.net/a1/640/01/39/89/10/IMG-7601441892169188614.jpg",
-          "key": "n11:144576412",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
-        },
-        {
-          "site": "n11.com",
-          "title": "Maxi-cosi Mica Slide Pro İ-size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen İsofix'li 360 Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic Black",
-          "price": 24990.0,
-          "url": "https://www.n11.com/urun/maxi-cosi-mica-slide-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-isofixli-360-donebilir-yatabilir-0-18-kg-bebek-oto-koltugu-authentic-black-144578601",
-          "currency": "TRY",
-          "image": "https://n11scdn.akamaized.net/a1/640/01/38/89/99/IMG-2550675669460407814.jpg",
-          "key": "n11:144578601",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "n11:144576412"
         },
         {
           "site": "n11.com",
           "title": "Maxi-cosi Mica Slide Pro İ-size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen İsofix'li 360 Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic Green",
           "price": 24990.0,
           "url": "https://www.n11.com/urun/maxi-cosi-mica-slide-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-isofixli-360-donebilir-yatabilir-0-18-kg-bebek-oto-koltugu-authentic-green-144585356",
-          "currency": "TRY",
           "image": "https://n11scdn.akamaized.net/a1/640/05/10/52/29/IMG-2286287813444797147.jpg",
-          "key": "n11:144585356",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "n11:144585356"
+        },
+        {
+          "site": "n11.com",
+          "title": "Maxi-cosi Mica Slide Pro İ-size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen İsofix'li 360 Dönebilir Yatabilir 0-18 Kg Bebek Oto Koltuğu Authentic Black",
+          "price": 24990.0,
+          "url": "https://www.n11.com/urun/maxi-cosi-mica-slide-pro-i-size-dunyanin-ilk-kizakli-arac-disina-cikabilen-isofixli-360-donebilir-yatabilir-0-18-kg-bebek-oto-koltugu-authentic-black-144578601",
+          "image": "https://n11scdn.akamaized.net/a1/640/01/38/89/99/IMG-2550675669460407814.jpg",
+          "key": "n11:144578601"
         },
         {
           "site": "pazarama.com",
           "title": "Maxi-Cosi Mica Slide Pro i-Size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen İsofix'li 360 Dönebilir Yatabilir 0-18 kg Bebek Oto Koltuğu Authentic Truffle",
           "price": 24990.0,
           "url": "https://www.pazarama.com/maxi-cosi-mica-slide-pro-oto-koltugu-bej-0-18kg-isofix-8720291001686-p-8720291001686",
-          "currency": "TRY",
           "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/8720291001686/images/maxicosimicaslideproisizednyannlkkzaklaradnakabilensofixli360dnebiliryatabilir018kgbebekotokoltuuauthentictruffle-153e7730b-1aba-40d8-b244-0c557f5d392d.png",
-          "key": "pazarama:8720291001686",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "pazarama:8720291001686"
         },
         {
           "site": "pazarama.com",
           "title": "Maxi-Cosi Mica Slide Pro i-Size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen İsofix'li 360 Dönebilir Yatabilir 0-18 kg Bebek Oto Koltuğu Authentic Green",
           "price": 24990.0,
           "url": "https://www.pazarama.com/maxi-cosi-mica-slide-pro-oto-koltugu-yesil-0-18kg-isofix-8720291001709-p-8720291001709",
-          "currency": "TRY",
           "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/8720291001709/images/maxicosimicaslideproisizednyannlkkzaklaradnakabilensofixli360dnebiliryatabilir018kgbebekotokoltuuauthenticgreen-1e55b94b2-a50a-4668-820e-3a7729694c6c.png",
-          "key": "pazarama:8720291001709",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "pazarama:8720291001709"
         },
         {
           "site": "pazarama.com",
           "title": "Maxi-Cosi Mica Slide Pro i-Size Dünyanın İlk Kızaklı, Araç Dışına Çıkabilen İsofix'li 360 Dönebilir Yatabilir 0-18 kg Bebek Oto Koltuğu Authentic Black",
           "price": 24990.0,
           "url": "https://www.pazarama.com/maxi-cosi-mica-slide-pro-oto-koltugu-siyah-0-18kg-isofix-8720291001679-p-8720291001679",
-          "currency": "TRY",
           "image": "https://img.pzrmcdn.com/mnresize/452/448/asset/8720291001679/images/maxicosimicaslideproisizednyannlkkzaklaradnakabilensofixli360dnebiliryatabilir018kgbebekotokoltuuauthenticblack-195dce4e3-1f59-42a7-b98d-369371661d3c.png",
-          "key": "pazarama:8720291001679",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "pazarama:8720291001679"
         },
         {
           "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
           "price": 44664.35,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-p-HBCV0000IB5X6F",
-          "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110002104281880.jpg",
-          "key": "hepsiburada:HBCV0000IB5X6F",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "hepsiburada:HBCV0000IB5X6F"
         },
         {
           "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
           "price": 49274.22,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000HIOLEU",
-          "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110002013829403.jpg",
-          "key": "hepsiburada:HBC0000HIOLEU",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "hepsiburada:HBC0000HIOLEU"
         },
         {
           "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
           "price": 49634.75,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000IB4EOJ",
-          "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110002104197794.jpg",
-          "key": "hepsiburada:HBC0000IB4EOJ",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "hepsiburada:HBC0000IB4EOJ"
         },
         {
           "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
           "price": 50629.6,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000JNS01P",
-          "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110002269518952.jpg",
-          "key": "hepsiburada:HBC0000JNS01P",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
-          "near": true
+          "key": "hepsiburada:HBC0000JNS01P"
         },
         {
           "site": "hepsiburada.com",
           "title": "Maxi-Cosi Mica 360 Pro Dönebilir Yatabilir Bebek Oto Koltuğu 0-18 kg Isofix'li Çok Renkli Konfor",
           "price": 51427.78,
           "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000H7IBME",
-          "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001982772937.jpg",
-          "key": "hepsiburada:HBC0000H7IBME",
-          "code": "variant",
-          "reason": "farkli model olabilir (sorguda yok: pro)",
+          "key": "hepsiburada:HBC0000H7IBME"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "AyrStore Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
+          "price": 53974.44,
+          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000GHFSDX",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001899766819.jpg",
+          "key": "hepsiburada:HBC0000GHFSDX"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "Maxi-Cosi Mica 360 Pro Dönebilir Yatabilir Bebek Oto Koltuğu 0-18 kg Isofix Özellikli Çok Renkli",
+          "price": 54129.6,
+          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000HMHH43",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110002025326819.jpg",
+          "key": "hepsiburada:HBC0000HMHH43"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
+          "price": 54129.6,
+          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-p-HBCV0000GWW0EB",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001951835240.jpg",
+          "key": "hepsiburada:HBCV0000GWW0EB"
+        },
+        {
+          "site": "hepsiburada.com",
+          "title": "Maxi-Cosi Mica 360 Pro I-Size Slidetech Kızaklı Isofix'li Dönebilir Yatabilir 0-18 kg Bebek Oto",
+          "price": 55642.45,
+          "url": "https://www.hepsiburada.com/maxi-cosi-mica-360-pro-i-size-slidetech-kizakli-isofix-li-donebilir-yatabilir-0-18-kg-bebek-oto-pm-HBC0000H7FZ77",
+          "image": "https://productimages.hepsiburada.net/s/777/222-222/110001982576354.jpg",
+          "key": "hepsiburada:HBC0000H7FZ77"
+        }
+      ],
+      "rejected": [
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Şeffaf Bebek Arabası Yağmurluğu (Leona2, Soho, Lara2 ile uyumludur)",
+          "price": 2190.0,
+          "url": "https://www.trendyol.com/maxi-cosi/seffaf-bebek-arabasi-yagmurlugu-leona2-soho-lara2-ile-uyumludur-p-970448245?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1722/prod/QC_PREP/20250812/12/dcdba14b-f7d9-3617-b3e9-1c1e303180f0/1_org_zoom.jpg",
+          "key": "trendyol:970448245",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-Cosi Polar Astarlı Konforlu Ayak Örtüsü Twillic Truffle",
+          "price": 3990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-polar-astarli-konforlu-ayak-ortusu-twillic-truffle-p-922370106?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1653/prod/QC/20250325/12/598ec0ee-76bc-320a-967d-9c40a4393e05/1_org_zoom.jpg",
+          "key": "trendyol:922370106",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-Cosi Polar Astarlı Konforlu Ayak Örtüsü Twillic Black",
+          "price": 3990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-polar-astarli-konforlu-ayak-ortusu-twillic-black-p-882213885?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1610/prod/QC/20241206/16/3769ba30-772c-3084-98e7-0b5adf249798/1_org_zoom.jpg",
+          "key": "trendyol:882213885",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-Cosi Fonksiyonel Bebek Bakım Çantası XL Alt Değiştirme Matı Ve Ekstra Bebek Bezi Çantalı Sand",
+          "price": 7590.0,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-fonksiyonel-bebek-bakim-cantasi-xl-alt-degistirme-mati-ve-ekstra-bebek-bezi-cantali-sand-p-946335787?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1696/prod/QC_PREP/20250619/15/2ec366f0-7e34-3bc2-bdd4-59d06dcef470/1_org_zoom.jpg",
+          "key": "trendyol:946335787",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Dove Pro Dünyada İlk CloudSoft Titreşimli Sezgisel Sallanan Ikonik Tasarım Ev Tipi Ana Kuc",
+          "price": 9990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/dove-pro-dunyada-ilk-cloudsoft-titresimli-sezgisel-sallanan-ikonik-tasarim-ev-tipi-ana-kuc-p-970751525?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1727/prod/QC_PREP/20250813/12/bf2285c4-ffb4-3f4f-82fe-a6ae111d1367/1_org_zoom.jpg",
+          "key": "trendyol:970751525",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Lara2 Ultra Kompakt Otomatik Katlanan Kabin Boy Bebek Arabası Essential Graphite",
+          "price": 9990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/lara2-ultra-kompakt-otomatik-katlanan-kabin-boy-bebek-arabasi-essential-graphite-p-299365998?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1643/prod/QC/20250225/14/ceee0b20-1730-3e65-8a34-752f3fc52494/1_org_zoom.jpg",
+          "key": "trendyol:299365998",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Dove Pro Cloudsoft Titreşimli Sezgisel Sallanan Ikonik Tasarım Ev Tipi Ana Kucağı Elegance Beige",
+          "price": 9990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/dove-pro-cloudsoft-titresimli-sezgisel-sallanan-ikonik-tasarim-ev-tipi-ana-kucagi-elegance-beige-p-929719048?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1669/prod/QC/20250424/17/3023a1b5-4fc7-3895-9b0e-7f2da9d43456/1_org_zoom.jpg",
+          "key": "trendyol:929719048",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-cosi Lara2 Ultra Kompakt Otomatik Katlanan Kabin Boy Seyahat Sistem Olabilen Bebek Arabası Esse",
+          "price": 9990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-lara2-ultra-kompakt-otomatik-katlanan-kabin-boy-seyahat-sistem-olabilen-bebek-arabasi-esse-p-292890141?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1661/prod/QC/20250409/17/8ef889d0-8539-34c0-b740-58f1bb3f872c/1_org_zoom.jpg",
+          "key": "trendyol:292890141",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Cabrio Fix I-size Adac'lı Bebek Oto Koltuğu Ve Ana Kucağı 0-13 Kg Essential Black",
+          "price": 9990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/cabrio-fix-i-size-adac-li-bebek-oto-koltugu-ve-ana-kucagi-0-13-kg-essential-black-p-377532529?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1154/product/media/images/prod/SPM/PIM/20240131/15/23dfd57f-d1fb-3c97-9327-adb556de0bed/1_org_zoom.jpg",
+          "key": "trendyol:377532529",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi CabrioFix i-Size ADAC'lı Bebek Oto Koltuğu ve Ana Kucağı, Essential Black, 0-13 kg",
+          "price": 9990.0,
+          "url": "https://www.amazon.com.tr/dp/B09LVM4ZF5",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/51bDztQ19UL._AC_UL320_.jpg",
+          "key": "amazon:B09LVM4ZF5",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Lara2 Ultra Kompakt Otomatik Katlanan Kabin Boy Seyahat Sistem Olabilen Bebek Arabası Essential Graphite",
+          "price": 9990.0,
+          "url": "https://www.amazon.com.tr/dp/B0B4PMSKGV",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/51UQA22Ti8L._AC_UL320_.jpg",
+          "key": "amazon:B0B4PMSKGV",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Ava Plus 2'si Bir Arada Leke Tutmayan Ultra Kompakt Mama Sandalyesi Beige",
+          "price": 10990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/ava-plus-2-si-bir-arada-leke-tutmayan-ultra-kompakt-mama-sandalyesi-beige-p-1195241814?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1952/prod/QC_PREP/20260903/14/b686f881-e9d1-3446-9548-188d80ed3e0c/1_org_zoom.jpg",
+          "key": "trendyol:1195241814",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Ava Plus 2'Si Bir Arada Leke Tutmayan Ultra Kompakt Mama Sandalyesi Graphite Graphite",
+          "price": 10990.0,
+          "url": "https://www.amazon.com.tr/dp/B0GZ879699",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/51kI8D13L4L._AC_UL320_.jpg",
+          "key": "amazon:B0GZ879699",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-cosi Eva Otomatik Katlanan Kompakt Bebek Arabası Essesntial Black Champagne",
+          "price": 11290.0,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-eva-otomatik-katlanan-kompakt-bebek-arabasi-essesntial-black-champagne-p-841530158?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1587/prod/QC/20241018/14/fd6c1cd1-340e-3870-a6e8-f4b125d0e1d1/1_org_zoom.jpg",
+          "key": "trendyol:841530158",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Maxi Cosi Eva Otomatik Katlanan Kompakt Bebek Arabası Essential Black Champagne",
+          "price": 11290.0,
+          "url": "https://www.amazon.com.tr/dp/B09SNQLZ2D",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/51KcA+6ZMNL._AC_UL320_.jpg",
+          "key": "amazon:B09SNQLZ2D",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Maxi Cosi Eva Otomatik Katlanan Kompakt Bebek Arabası Select Grey",
+          "price": 11290.0,
+          "url": "https://www.amazon.com.tr/dp/B0DB8YZMK3",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/5115HQGi27L._AC_UL320_.jpg",
+          "key": "amazon:B0DB8YZMK3",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Pebble S Bebek Oto Koltuğu ve Ana Kucağı 0-13 Kg Tonal Graphite",
+          "price": 11490.0,
+          "url": "https://www.amazon.com.tr/dp/B0D226XLXW",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/71mc4h3whIL._AC_UL320_.jpg",
+          "key": "amazon:B0D226XLXW",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-Cosi Minla Plus 6'sı Bir Arada Ahşap Görünümlü 4 Tekerlekli Mama Sandalyesi Elegance Graphite",
+          "price": 11990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-minla-plus-6-si-bir-arada-ahsap-gorunumlu-4-tekerlekli-mama-sandalyesi-elegance-graphite-p-875727445?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1761/prod/QC_ENRICHMENT/20250924/11/8af7598f-979e-30f9-abb1-fe6ea7778c1b/1_org_zoom.jpg",
+          "key": "trendyol:875727445",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Maxi-Cosi RodiFix Pro I-Size İsofix'li 15-36 Kg Çocuk Oto Koltuğu Authentic Truffle",
+          "price": 11990.0,
+          "url": "https://www.trendyol.com/maxi-cosi/maxi-cosi-rodifix-pro-i-size-isofix-li-15-36-kg-cocuk-oto-koltugu-authentic-truffle-p-925776241?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1762/prod/QC_ENRICHMENT/20250922/14/b4a96ea9-ee8a-3f67-8084-c24a2978b3a0/1_org_zoom.jpg",
+          "key": "trendyol:925776241",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi RodiFix Pro I-Size İsofix'li 15-36 Kg Çocuk Oto Koltuğu Authentic Blue",
+          "price": 11990.0,
+          "url": "https://www.amazon.com.tr/dp/B0CN1GTNRC",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/51MwpPT6SWL._AC_UL320_.jpg",
+          "key": "amazon:B0CN1GTNRC",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi RodiFix Pro I-Size İsofix'li 15-36 Kg Çocuk Oto Koltuğu Authentic Black",
+          "price": 11990.0,
+          "url": "https://www.amazon.com.tr/dp/B0C8ZND5M9",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/61-eFI3EAcL._AC_UL320_.jpg",
+          "key": "amazon:B0C8ZND5M9",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi RodiFix Pro I-Size İsofix'li 15-36 Kg Çocuk Oto Koltuğu Authentic Graphite",
+          "price": 11990.0,
+          "url": "https://www.amazon.com.tr/dp/B0CN1GDQT9",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/81uU4PwUAOL._AC_UL320_.jpg",
+          "key": "amazon:B0CN1GDQT9",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi Maxi Cosi RodiFix Pro I-Size İsofix'li 15-36 Kg Çocuk Oto Koltuğu Authentic Green",
+          "price": 11990.0,
+          "url": "https://www.amazon.com.tr/dp/B0CN1H7M4B",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/51R1MCfoViL._AC_UL320_.jpg",
+          "key": "amazon:B0CN1H7M4B",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Maxi-Cosi RodiFix Pro² i-Size çocuk koltuğu, 100 – 150 cm, 3,5 – 12 yaş, ISOFIX çocuk oto koltuğu, 3 yatma pozisyonu, ClimaFlow, ayarlanabilir yükseklik/genişlik, G-CELL Side Impact Protection,",
+          "price": 11990.0,
+          "url": "https://www.amazon.com.tr/dp/B0DNKGVGZF",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/51qIofsuakL._AC_UL320_.jpg",
+          "key": "amazon:B0DNKGVGZF",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "MAXİ-COSİ Kore Pro Işık Sensörlü Adac'lı Isofixli I-size 15-36 Kg Çocuk Oto Koltuğu Authentic Graphite",
+          "price": 12390.0,
+          "url": "https://www.trendyol.com/maxi-cosi/kore-pro-isik-sensorlu-adac-li-isofixli-i-size-15-36-kg-cocuk-oto-koltugu-authentic-graphite-p-284664833?boutiqueId=61&merchantId=109213",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1742/prod/QC_ENRICHMENT/20250902/17/8e95c33b-0ef4-355f-9c75-ac43b675face/1_org_zoom.jpg",
+          "key": "trendyol:284664833",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (2/3, eksik: mica)",
           "near": true
         }
       ],
-      "warnings": [],
+      "warnings": [
+        "Bulunan ürünlerin adında sorguda olmayan \"pro\" geçiyor; farklı bir model olabilir. Doğru ürün olduğunu kontrol et."
+      ],
       "per_site": {
         "trendyol": {
           "ok": true,
           "found": 36,
-          "kept": 0
+          "kept": 5
         },
         "hepsiburada": {
           "ok": true,
           "found": 12,
-          "kept": 0
+          "kept": 12
         },
         "amazon": {
           "ok": true,
-          "found": 31,
-          "kept": 0
+          "found": 43,
+          "kept": 1
         },
         "n11": {
           "ok": true,
-          "found": 6,
-          "kept": 1
+          "found": 5,
+          "kept": 5
         },
         "pazarama": {
           "ok": true,
-          "found": 7,
-          "kept": 1
+          "found": 6,
+          "kept": 6
         },
         "teknosa": {
           "ok": true,
@@ -493,9 +711,9 @@
       "lowest": 585.0,
       "highest": 1695.0,
       "change_percent": 0.0,
-      "points": 53,
-      "note": "15 teklif | Ahşap Mama Sandalyesi Ayak Koyma Desteği, ikea Antilop, E Bebek Baby Plus (Star) Faros Orzo",
-      "scanned_at": "2026-11-08T12:52:42+00:00",
+      "points": 54,
+      "note": "17 teklif | Ahşap Mama Sandalyesi Ayak Koyma Desteği, ikea Antilop, E Bebek Baby Plus (Star) Faros Orzo",
+      "scanned_at": "2026-11-08T21:46:04+00:00",
       "offers": [
         {
           "site": "pazarama.com",
@@ -616,6 +834,22 @@
           "url": "https://www.hepsiburada.com/ikea-elite-unisex-beyaz-antilop-tepsili-mama-sandalyesi-1-adet-pm-HBC00008YYPA9",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001054919057.jpg",
           "key": "hepsiburada:HBC00008YYPA9"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Unisex Beyaz Antilop Tepsili Mama Sandalyesi DRK29067293, one size",
+          "price": 1979.99,
+          "url": "https://www.trendyol.com/ikea/unisex-beyaz-antilop-tepsili-mama-sandalyesi-drk29067293-one-size-p-1175570723?boutiqueId=61&merchantId=1335065",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1940/prod/QC_PREP/20260724/17/267831aa-966b-39d1-a742-187c6e72472b/1_org_zoom.jpg",
+          "key": "trendyol:1175570723"
+        },
+        {
+          "site": "trendyol.com",
+          "title": "IKEA Antılop Tepsili Mama Sandalyesi Ve Destekleyici Minderi",
+          "price": 2029.5,
+          "url": "https://www.trendyol.com/ikea/antilop-tepsili-mama-sandalyesi-ve-destekleyici-minderi-p-472501796?boutiqueId=61&merchantId=997706",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1551/product/media/images/ty1547/prod/QC/20240915/19/a7674128-12d4-317c-8c91-68b8589d0880/1_org_zoom.jpg",
+          "key": "trendyol:472501796"
         }
       ],
       "rejected": [
@@ -718,7 +952,7 @@
         {
           "site": "hepsiburada.com",
           "title": "IKEA Antılop Beyaz Mama Sandalyesi Ayağı Ergonomik Tasarım İle Kolay Temizlenebilir",
-          "price": 653.0,
+          "price": 648.0,
           "url": "https://www.hepsiburada.com/antilop-mama-sandalyesi-ayagi-beyaz-pm-HBC0000AL34RD",
           "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001260399806.jpg",
@@ -790,7 +1024,7 @@
         {
           "site": "trendyol.com",
           "title": "IKEA Antilop Bebek mama masa saandelyesi Destek Minderi Kılıfı, Çok Renkli",
-          "price": 834.0,
+          "price": 831.0,
           "url": "https://www.trendyol.com/ikea/antilop-bebek-mama-masa-saandelyesi-destek-minderi-kilifi-cok-renkli-p-866271423?boutiqueId=61&merchantId=196295",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1584/prod/QC/20241013/23/531c2307-6215-305d-868f-34125dabc81d/1_org_zoom.jpg",
@@ -826,7 +1060,7 @@
         {
           "site": "hepsiburada.com",
           "title": "IKEA Ikea Antilop Mama Sandalyesi Oturma Yeri, Beyaz, 39X37X35 cm",
-          "price": 1096.0,
+          "price": 1093.0,
           "url": "https://www.hepsiburada.com/ikea-antilop-mama-sandalyesi-oturma-yeri-beyaz-39x37x35-cm-pm-HBC0000A8XKEH",
           "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001223621892.jpg",
@@ -856,7 +1090,7 @@
           "image": "https://n11scdn.akamaized.net/a1/640/06/75/46/56/IMG-7012498290413744519.jpg",
           "key": "n11:144307064",
           "code": "outlier",
-          "reason": "diger tekliflerden cok ucuz (medyan 1439); aksesuar ya da yanlis urun olabilir",
+          "reason": "diger tekliflerden cok ucuz (medyan 1445); aksesuar ya da yanlis urun olabilir",
           "near": true
         },
         {
@@ -868,7 +1102,7 @@
           "image": "https://m.media-amazon.com/images/I/611Snp3x6RL._AC_UL320_.jpg",
           "key": "amazon:B0GV817JXF",
           "code": "outlier",
-          "reason": "diger tekliflerden cok ucuz (medyan 1439); aksesuar ya da yanlis urun olabilir",
+          "reason": "diger tekliflerden cok ucuz (medyan 1445); aksesuar ya da yanlis urun olabilir",
           "near": true
         }
       ],
@@ -877,7 +1111,7 @@
         "trendyol": {
           "ok": true,
           "found": 36,
-          "kept": 5
+          "kept": 7
         },
         "hepsiburada": {
           "ok": true,
@@ -886,12 +1120,12 @@
         },
         "amazon": {
           "ok": true,
-          "found": 23,
+          "found": 25,
           "kept": 0
         },
         "n11": {
           "ok": true,
-          "found": 4,
+          "found": 5,
           "kept": 3
         },
         "pazarama": {
@@ -923,9 +1157,9 @@
       "lowest": 20700.0,
       "highest": 25380.0,
       "change_percent": 0.0,
-      "points": 53,
+      "points": 54,
       "note": "5 teklif | Uğur Ued 6204 Dtk Nf R65 6 Çekmeceli No-Frost Derin Dondurucu",
-      "scanned_at": "2026-11-08T12:52:49+00:00",
+      "scanned_at": "2026-11-08T21:46:11+00:00",
       "offers": [
         {
           "site": "hepsiburada.com",
@@ -972,7 +1206,7 @@
         {
           "site": "hepsiburada.com",
           "title": "Uğur Ued 3087 Dtk R65 3 Çekmeceli 87 Litre Derin Dondurucu",
-          "price": 9564.0,
+          "price": 9568.0,
           "url": "https://www.hepsiburada.com/ugur-ued-3087-dtk-r65-3-cekmeceli-87-litre-derin-dondurucu-pm-HBC00008XB1GG",
           "currency": "TRY",
           "image": "https://productimages.hepsiburada.net/s/777/222-222/110001088936877.jpg",
@@ -984,8 +1218,8 @@
         {
           "site": "trendyol.com",
           "title": "Tecna TDE 6210 6 Çekmeceli 210 Lt Derin Dondurucu - 7 Yıl Motor Garantili",
-          "price": 17229.0,
-          "url": "https://www.trendyol.com/tecna/tde-6210-6-cekmeceli-210-lt-derin-dondurucu-7-yil-motor-garantili-p-816135616?boutiqueId=61&merchantId=827023",
+          "price": 17249.0,
+          "url": "https://www.trendyol.com/tecna/tde-6210-6-cekmeceli-210-lt-derin-dondurucu-7-yil-motor-garantili-p-816135616?boutiqueId=61&merchantId=871986",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1858/prod/QC_ENRICHMENT/20260422/11/6658901d-732b-369e-9435-6326feb32523/1_org_zoom.jpg",
           "key": "trendyol:816135616",
@@ -996,8 +1230,8 @@
         {
           "site": "trendyol.com",
           "title": "Altus AL 609 NFE E Enerji Sınıfı 214 L 6 Çekmeceli No-Frost Derin Dondurucu Beyaz",
-          "price": 21448.99,
-          "url": "https://www.trendyol.com/altus/al-609-nfe-e-enerji-sinifi-214-l-6-cekmeceli-no-frost-derin-dondurucu-beyaz-p-836307840?boutiqueId=61&merchantId=873547",
+          "price": 21408.99,
+          "url": "https://www.trendyol.com/altus/al-609-nfe-e-enerji-sinifi-214-l-6-cekmeceli-no-frost-derin-dondurucu-beyaz-p-836307840?boutiqueId=61&merchantId=106539",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1000386/product/media/images/prod/PIM/20260406/07/95146390-42a5-4e88-a91a-e1c6a4ed377e/1_org_zoom.jpg",
           "key": "trendyol:836307840",
@@ -1078,13 +1312,73 @@
           "near": true
         },
         {
-          "site": "trendyol.com",
-          "title": "KEYSMART 3 Çekmeceli Derin Dondurucu",
-          "price": 9395.0,
-          "url": "https://www.trendyol.com/keysmart/3-cekmeceli-derin-dondurucu-p-935127198?boutiqueId=61&merchantId=1052209",
+          "site": "amazon.com.tr",
+          "title": "ATA HOME 6'Lı Kırılmaz Saklama Kabı Derin Dondurucu Difrize Uygun Buzdolabı Düzenleyici Organizeri 1,5 Lt Şeffaf",
+          "price": 343.71,
+          "url": "https://www.amazon.com.tr/dp/B0GC5HVWZD",
           "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1679/prod/QC/20250512/13/ec9a7519-64da-31c3-b129-e180642042e0/1_org_zoom.jpg",
-          "key": "trendyol:935127198",
+          "image": "https://m.media-amazon.com/images/I/710X2AB6UiL._AC_UL320_.jpg",
+          "key": "amazon:B0GC5HVWZD",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, cekmeceli)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Hobby Life Alaska Derin Dondurucu Saklama Kabı 6'lı Set 9.5 Litre - BPA (Yeşil)",
+          "price": 398.0,
+          "url": "https://www.amazon.com.tr/dp/B0D7Q1JWCZ",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/610C45sOZkL._AC_UL320_.jpg",
+          "key": "amazon:B0D7Q1JWCZ",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, cekmeceli)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Hobby Life Alaska Derin Dondurucu Saklama Kabı 6'lı Set 9.5 Litre - BPA (Beyaz)",
+          "price": 398.0,
+          "url": "https://www.amazon.com.tr/dp/B0HCRS9H8L",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/515e8mocEEL._AC_UL320_.jpg",
+          "key": "amazon:B0HCRS9H8L",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, cekmeceli)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Hobby Life Alaska Derin Dondurucu Saklama Kabı 6'lı Set 9.5 Litre - BPA (Vişne)",
+          "price": 398.0,
+          "url": "https://www.amazon.com.tr/dp/B0DVGTQCFL",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/61ii-y02N9L._AC_UL320_.jpg",
+          "key": "amazon:B0DVGTQCFL",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, cekmeceli)",
+          "near": true
+        },
+        {
+          "site": "amazon.com.tr",
+          "title": "Orret Home 6’lı Derin Dondurucu Saklama Kabı Seti, -20°C Deep Freeze No Frost Buzluk Kabı, 6 Farklı Boy Kapaklı Gıda Saklama Kabı, BPA İçermez, İstiflenebilir Dondurucu ve Buzdolabı Kabı (ASORTİ RENK)",
+          "price": 599.0,
+          "url": "https://www.amazon.com.tr/dp/B0HH3HHF9B",
+          "currency": "TRY",
+          "image": "https://m.media-amazon.com/images/I/51XlIBOf30L._AC_UL320_.jpg",
+          "key": "amazon:B0HH3HHF9B",
+          "code": "tokens",
+          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, cekmeceli)",
+          "near": true
+        },
+        {
+          "site": "trendyol.com",
+          "title": "Windsor CD310320W0 3 Çekmeceli 103 Litre Beyaz Derin Dondurucu",
+          "price": 9499.0,
+          "url": "https://www.trendyol.com/windsor/cd310320w0-3-cekmeceli-103-litre-beyaz-derin-dondurucu-p-1134746729?boutiqueId=61&merchantId=296336",
+          "currency": "TRY",
+          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1857/prod/QC_PREP/20260418/06/ed495190-84b4-394f-a8e3-23bce1243a07/1_org_zoom.jpg",
+          "key": "trendyol:1134746729",
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, 6)",
           "near": true
@@ -1092,7 +1386,7 @@
         {
           "site": "trendyol.com",
           "title": "KUMTEL 3 Çekmeceli Dikey Derin Dondurucu 88 LİTRE HFR-100",
-          "price": 9640.0,
+          "price": 9850.0,
           "url": "https://www.trendyol.com/kumtel/3-cekmeceli-dikey-derin-dondurucu-88-litre-hfr-100-p-831302462?boutiqueId=61&merchantId=113012",
           "currency": "TRY",
           "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1700/prod/QC_ENRICHMENT/20250625/14/eb1aad16-e5c8-33f6-8f72-d97a9d0081ec/1_org_zoom.jpg",
@@ -1199,18 +1493,6 @@
         },
         {
           "site": "trendyol.com",
-          "title": "Altus AL 709 XNF JE Joker 7 Çekmeceli Dikey No Frost Derin Dondurucu",
-          "price": 26506.9,
-          "url": "https://www.trendyol.com/altus/al-709-xnf-je-joker-7-cekmeceli-dikey-no-frost-derin-dondurucu-p-866632585?boutiqueId=61&merchantId=871988",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1941/prod/QC_ENRICHMENT/20260521/22/a740fd34-a45e-376e-8feb-4c71c84eb1dc/1_org_zoom.jpg",
-          "key": "trendyol:866632585",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, 6)",
-          "near": true
-        },
-        {
-          "site": "trendyol.com",
           "title": "Profilo DF1033WEVV 7 Çekmeceli 231 Litre Hacim E Enerji Sınıfı Dikey Tipi Derin Dondurucu Beyaz",
           "price": 26599.0,
           "url": "https://www.trendyol.com/profilo/df1033wevv-7-cekmeceli-231-litre-hacim-e-enerji-sinifi-dikey-tipi-derin-dondurucu-beyaz-p-744810425?boutiqueId=61&merchantId=1307409",
@@ -1219,54 +1501,6 @@
           "key": "trendyol:744810425",
           "code": "tokens",
           "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, 6)",
-          "near": true
-        },
-        {
-          "site": "trendyol.com",
-          "title": "Bosch GSV33VWE0N 7 Çekmeceli Derin Dondurucu 220 l",
-          "price": 27984.0,
-          "url": "https://www.trendyol.com/bosch/gsv33vwe0n-7-cekmeceli-derin-dondurucu-220-l-p-77888559?boutiqueId=61&merchantId=959772",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1832/prod/QC_ENRICHMENT/20260301/03/0434e834-2480-39c4-991a-28a689df3421/1_org_zoom.jpg",
-          "key": "trendyol:77888559",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: ugur, 6)",
-          "near": true
-        },
-        {
-          "site": "trendyol.com",
-          "title": "Uğur DERİN DONDURUCU",
-          "price": 28200.0,
-          "url": "https://www.trendyol.com/ugur/derin-dondurucu-p-1136499739?boutiqueId=61&merchantId=1205705",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1892/prod/QC_ENRICHMENT/20260518/19/3ba5597e-4a57-338c-b980-77f0725f5999/1_org_zoom.jpg",
-          "key": "trendyol:1136499739",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: 6, cekmeceli)",
-          "near": true
-        },
-        {
-          "site": "trendyol.com",
-          "title": "Uğur Ued 7238 Dtk Nf Dgt D/s R65 Beyaz Dikey Derin Dondurucu",
-          "price": 29999.0,
-          "url": "https://www.trendyol.com/ugur/ued-7238-dtk-nf-dgt-d-s-r65-beyaz-dikey-derin-dondurucu-p-667445901?boutiqueId=61&merchantId=1147149",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1741/prod/QC_ENRICHMENT/20250831/20/fe0a2a71-addc-3739-a6a8-2fabc1c144fd/1_org_zoom.jpg",
-          "key": "trendyol:667445901",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: 6, cekmeceli)",
-          "near": true
-        },
-        {
-          "site": "trendyol.com",
-          "title": "Uğur Ued 7238 Dtk Nfı Dgt D/s R66 Inox Dikey Derin Dondurucu",
-          "price": 31149.0,
-          "url": "https://www.trendyol.com/ugur/ued-7238-dtk-nfi-dgt-d-s-r66-inox-dikey-derin-dondurucu-p-362919916?boutiqueId=61&merchantId=1147149",
-          "currency": "TRY",
-          "image": "https://cdn.dsmcdn.com/mnresize/400/-/ty1519/product/media/images/prod/QC/20240902/20/868da0a0-a42f-3d7f-a017-cbf241de973b/1_org_zoom.jpg",
-          "key": "trendyol:362919916",
-          "code": "tokens",
-          "reason": "baslik sorguyla ortusmuyor (3/5, eksik: 6, cekmeceli)",
           "near": true
         }
       ],
@@ -1284,7 +1518,7 @@
         },
         "amazon": {
           "ok": true,
-          "found": 3,
+          "found": 6,
           "kept": 0
         },
         "n11": {
